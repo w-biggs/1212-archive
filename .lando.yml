@@ -1,0 +1,21 @@
+name: '1212'
+recipe: wordpress
+proxy:
+  theme: # Optional: add this if you include the Sage specific config down below
+    - localhost:3000
+env_file:
+  - .env
+config:
+  via: nginx
+  webroot: web
+  xdebug: true
+# Add the following if you plan to use Sage as a starter theme
+services:
+  theme:
+    type: node
+    services:
+      ports:
+        - 3000:3000
+tooling:
+  yarn:
+    service: theme
