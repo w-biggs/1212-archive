@@ -1,0 +1,11 @@
+.l-container {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3rem auto 3rem;
+  grid-template-areas: 
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
+  padding: .5rem;
+}
