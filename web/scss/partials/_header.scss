@@ -1,5 +1,5 @@
 .header {
-  padding: .75rem 0;
+  padding: $pad 0;
   grid-area: header;
   border-bottom: 2px solid black;
   display: flex;
@@ -7,4 +7,9 @@
 
 .header-logo{
   height: 100%;
+
+  img{
+    height: 100%;
+    display: block;
+  }
 }

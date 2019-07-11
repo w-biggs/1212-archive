@@ -1,0 +1,79 @@
+$base-font-family: "HK Grotesk", "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+$mono-font-family: "Ubuntu Mono", Menlo, Monaco, Consolas, monospace;
+
+body{
+  font-family: $base-font-family;
+  font-size: 1em;
+}
+
+$modularscale: (
+  base: 1em,
+  ratio: $fourth,
+  $breakpoint-sm: (
+    ratio: $minor-third
+  ),
+  $breakpoint-md: (
+    ratio: $fourth
+  )
+);
+
+h1 {
+  @include ms-respond(font-size,3);
+}
+h2 {
+  @include ms-respond(font-size,2);
+}
+h3 {
+  @include ms-respond(font-size,1);
+}
+h4 {
+  @include ms-respond(font-size,1);
+}
+
+.section-header{
+  @include ms-respond(font-size,0);
+  font-family: $mono-font-family;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: $faded;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: $pad;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&display=swap&subset=latin-ext');
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: local('HK Grotesk Regular'), local('HKGrotesk-Regular'),
+      url('/fonts/HKGrotesk-Regular.woff2') format('woff2'),
+      url('/fonts/HKGrotesk-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: local('HK Grotesk Bold Italic'), local('HKGrotesk-BoldItalic'),
+      url('/fonts/HKGrotesk-BoldItalic.woff2') format('woff2'),
+      url('/fonts/HKGrotesk-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: local('HK Grotesk Italic'), local('HKGrotesk-Italic'),
+      url('/fonts/HKGrotesk-Italic.woff2') format('woff2'),
+      url('/fonts/HKGrotesk-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: local('HK Grotesk Bold'), local('HKGrotesk-Bold'),
+      url('/fonts/HKGrotesk-Bold.woff2') format('woff2'),
+      url('/fonts/HKGrotesk-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}

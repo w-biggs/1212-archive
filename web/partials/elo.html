@@ -1,0 +1,51 @@
+<div class="elo">
+  <h2 class="section-header">Elo Ratings</h2>
+  <table class="elo-table is-collapsed">
+    <thead>
+      <tr>
+        <th class="elo-rating">
+          <span>Elo</span>
+          <div class="sorter">
+            <span class="asc">▲</span>
+            <span class="desc">▼</span>
+          </div>
+        </th>
+        <th class="elo-team">
+          <span>Team</span>
+          <div class="sorter">
+            <span class="asc">▲</span>
+            <span class="desc">▼</span>
+          </div>
+        </th>
+        <th class="elo-conf">
+          <span>Conference<span class="elo-div"> / Division</span></span>
+          <div class="sorter">
+            <span class="asc">▲</span>
+            <span class="desc">▼</span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <each loop="team in elo">
+        <tr>
+          <td class="elo-rating" title="{{ team.elo.toFixed(4) }}" data-value="{{ team.elo }}">{{ Math.round(team.elo) }}</td>
+          <td class="elo-team" data-value="{{ team.name }}">
+            {{ team.name }}
+            <span class="elo-record">
+              ({{ team.wins }}-{{ team.losses }}<if condition="team.ties > 0">-{{ team.ties }})</if><else>)</else>
+            </span>
+          </td>
+          <td class="elo-conf" title="{{ team.fullConf }} - {{ team.div }}" data-value="{{ team.fullConf }} - {{ team.div }}">
+            {{ team.conf }}
+            <if condition="team.div">
+              <span class="elo-div">- {{ team.div }}</span>
+            </if>
+          </td>
+        </tr>
+      </each>
+    </tbody>
+  </table>
+  <div class="elo-expand">
+    <button data-collapse-text="Show less">Show more</button>
+  </div>

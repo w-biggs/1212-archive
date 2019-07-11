@@ -1,7 +1,17 @@
-// Modules and Variables
-@import "partials/base";
+// Vendor
+@import "vendor/modularscale";
+
+// Base
+@import "base/misc";
+@import "base/reboot";
+@import "base/colors";
+@import "base/typography";
+
+// Layout
+@import "layout/grid";
 
 // Partials
-@import "partials/reboot";
-@import "partials/layouts";
 @import "partials/header";
+@import "partials/scoreboard";
+@import "partials/elo";
+@import "partials/article_listing";

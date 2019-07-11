@@ -1,0 +1,15 @@
+.scoreboard-container {
+  grid-area: scboard;
+  padding: $pad 0;
+  border-bottom: 1px solid $border-color;
+}
+
+.scoreboard{
+  width: 100%;
+  height: 100%;
+  background-color: $placeholder-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $pad 0;
+}

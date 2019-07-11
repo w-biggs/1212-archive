@@ -1,0 +1,118 @@
+.elo {
+  padding: $pad 0;
+  grid-area: elo;
+
+  @media screen and (min-width: $breakpoint-md){
+    padding-right: $pad;
+  }
+}
+
+.elo-table{
+  width: 100%;
+  overflow: hidden;
+
+  th{
+    font-weight: 400;
+    text-transform: uppercase;
+    @include ms-respond(font-size,-1);
+    padding: .25rem .5rem;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    background-clip: padding-box;
+
+    &:hover{
+      background-color: #ccc;
+    }
+
+    & > span{
+      vertical-align: baseline;
+    }
+  }
+
+  thead{
+    border-bottom: 2px solid black;
+  }
+
+  td{
+    padding: .5rem;
+  }
+
+  tbody > tr{
+    border-bottom: 1px solid $border-color;
+  }
+
+  &.is-collapsed{
+    tr:nth-of-type(n+11){
+      visibility: collapse;
+    }
+  }
+}
+
+.elo-rating{
+  width: 1%;
+}
+
+td.elo-team{
+  font-weight: 700;
+}
+
+.elo-record{
+  font-family: $mono-font-family;
+  @include ms-respond(font-size,-1);
+  color: $faded;
+}
+
+.elo-conf{
+  min-width: 20%;
+  white-space: nowrap;
+}
+
+.elo-div{
+  display: none;
+
+  @media screen and (min-width: $breakpoint-sm){
+    display: inline;
+  }
+}
+
+.elo-expand{
+  width: 100%;
+  
+  button{
+    margin: 0.5rem auto;
+    background-color: white;
+    border: 1px solid black;
+    padding: 0.625rem 0.5rem;
+    line-height: 1;
+    display: block;
+    transition: background-color 0.15s ease;
+
+    &:hover{
+      background-color: $placeholder-grey;
+    }
+  }
+}
+
+.sorter{
+  display: inline-block;
+  position: absolute;
+  bottom: .375rem;
+  margin-left: .25rem;
+  color: $faded;
+  font-size: 0.5rem;
+  line-height: calc(1rem * (7 / 16));
+
+  &.asc span.asc{
+    color: black;
+  }
+
+  &.desc span.desc{
+    color: black;
+  }
+  
+  span{
+    display: block;
+  }
+}
