@@ -67,7 +67,6 @@ const drawChart = function drawEloHistoryChart(team) {
     }
     teamElos.push(point);
   }
-  console.log(teamElos);
   const eloChart = Highcharts.chart('elo-chart', {
     title: {
       text: `${team.name} Elo history`,
@@ -88,6 +87,22 @@ const drawChart = function drawEloHistoryChart(team) {
       },
       minorTickLength: 0,
       tickLength: 0,
+      plotLines: [{
+        color: '#f4f4f4',
+        width: 2,
+        value: 13.5,
+        label: {
+          text: 'PLAYOFFS',
+          verticalAlign: 'middle',
+          textAlign: 'center',
+          style: {
+            color: 'rgba(0,0,0,0.5)',
+            fontWeight: 'bold',
+          },
+          y: 50,
+        },
+        zIndex: 5,
+      }],
     },
     yAxis: {
       title: {
@@ -218,5 +233,9 @@ const closeChart = function closeEloHistoryChart() {
 eloLightboxClose.addEventListener('click', (event) => {
   event.preventDefault();
 
+  closeChart();
+});
+
+eloLightboxBg.addEventListener('click', () => {
   closeChart();
 });
