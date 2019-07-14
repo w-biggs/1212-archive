@@ -90,7 +90,7 @@ const drawChart = function drawEloHistoryChart(team) {
       plotLines: [{
         color: '#f4f4f4',
         width: 2,
-        value: 13.5,
+        value: 14.5,
         label: {
           text: 'PLAYOFFS',
           verticalAlign: 'middle',
