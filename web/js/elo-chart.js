@@ -44,7 +44,7 @@ const gameString = function createGameString(team, index) {
 
   const resultString = `${gameInfo.result.charAt(0).toUpperCase()} ${gameInfo.score}-${gameInfo.oppScore} vs. ${gameInfo.oppName}`;
 
-  const recordString = `${wins}-${losses}${ties ? `-${ties}` : ''}`
+  const recordString = `${wins}-${losses}${ties ? `-${ties}` : ''}`;
 
   return `${resultString} | ${recordString}`;
 };
@@ -179,6 +179,7 @@ const drawChart = function drawEloHistoryChart(team) {
       enableMouseTracking: false,
     }],
   });
+  return eloChart;
 };
 
 const openChart = function openEloHistoryChart() {
