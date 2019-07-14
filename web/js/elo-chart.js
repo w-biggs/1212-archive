@@ -51,7 +51,7 @@ const gameString = function createGameString(team, index) {
 
 const drawChart = function drawEloHistoryChart(team) {
   const teamElos = [{
-    name: 'Start of Season 2',
+    name: 'Start of FCS Season 1',
     y: 1500,
   }];
   for (let i = 0; i <= seasonLength; i += 1) {
