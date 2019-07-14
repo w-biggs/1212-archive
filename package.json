@@ -25,5 +25,8 @@
     "posthtml-expressions": "^1.1.1",
     "posthtml-modules": "^0.4.2",
     "sass": "^1.22.3"
+  },
+  "dependencies": {
+    "highcharts": "^7.1.2"
   }
 }

@@ -31,7 +31,7 @@
         <tr>
           <td class="elo-rating" title="{{ team.elo.toFixed(4) }}" data-value="{{ team.elo }}">{{ Math.round(team.elo) }}</td>
           <td class="elo-team" data-value="{{ team.name }}">
-            {{ team.name }}
+            <a href="#{{ encodeURI(team.name) }}">{{ team.name }}</a>
             <span class="elo-record">
               ({{ team.wins }}-{{ team.losses }}<if condition="team.ties > 0">-{{ team.ties }})</if><else>)</else>
             </span>
@@ -49,3 +49,9 @@
   <div class="elo-expand">
     <button data-collapse-text="Show less">Show more</button>
   </div>
+</div>
+<div class="elo-lightbox-bg"></div>
+<div class="elo-lightbox">
+  <div class="elo-chart" id="elo-chart"></div>
+  <a class="elo-lightbox-close" href="#">×</a>
+</div>
