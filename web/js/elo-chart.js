@@ -74,7 +74,7 @@ const drawChart = function drawEloHistoryChart(team) {
     chart: {
       backgroundColor: '#f4f4f4',
       style: {
-        fontFamily: '',
+        fontFamily: '"HK Grotesk", "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif',
       },
     },
     xAxis: {
