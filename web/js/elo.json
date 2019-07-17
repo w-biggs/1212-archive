@@ -3,6 +3,13 @@
     {
       "name": "Cal Poly",
       "elo": 1654.5819579468427,
+      "abbr": "CPSU",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -312,6 +319,13 @@
     {
       "name": "Sacramento State",
       "elo": 1645.1107561699966,
+      "abbr": "CSUS",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -604,6 +618,13 @@
     {
       "name": "Princeton",
       "elo": 1605.4073280817213,
+      "abbr": "PRIN",
+      "conf": "Ivy League",
+      "fullConf": "Ivy League",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -896,6 +917,13 @@
     {
       "name": "Montana",
       "elo": 1601.3021432560436,
+      "abbr": "UM",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -1188,6 +1216,13 @@
     {
       "name": "Dayton",
       "elo": 1599.2467093616851,
+      "abbr": "UD",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Metro",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -1429,6 +1464,13 @@
     {
       "name": "Yale",
       "elo": 1589.9671406435004,
+      "abbr": "YALE",
+      "conf": "Ivy League",
+      "fullConf": "Ivy League",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -1704,6 +1746,13 @@
     {
       "name": "Northern Iowa",
       "elo": 1581.965925520045,
+      "abbr": "UNI",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Prairie",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -1979,6 +2028,13 @@
     {
       "name": "Incarnate Word",
       "elo": 1576.561868662228,
+      "abbr": "UIW",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Texas",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -2220,6 +2276,13 @@
     {
       "name": "Eastern Kentucky",
       "elo": 1571.3078259316032,
+      "abbr": "EKU",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Tennessee Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -2444,6 +2507,13 @@
     {
       "name": "Bethune-Cookman",
       "elo": 1570.756862620995,
+      "abbr": "B-CU",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -2668,6 +2738,13 @@
     {
       "name": "Sacred Heart",
       "elo": 1567.3710882650114,
+      "abbr": "SHU",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -2909,6 +2986,13 @@
     {
       "name": "San Diego",
       "elo": 1563.4609479613478,
+      "abbr": "USND",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -3150,6 +3234,13 @@
     {
       "name": "Idaho State",
       "elo": 1561.202253920232,
+      "abbr": "IDSU",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -3408,6 +3499,13 @@
     {
       "name": "Howard",
       "elo": 1558.685114142261,
+      "abbr": "HOW",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Atlantic",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -3598,6 +3696,13 @@
     {
       "name": "James Madison",
       "elo": 1558.1369849318812,
+      "abbr": "JMU",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -3822,6 +3927,13 @@
     {
       "name": "St. Francis",
       "elo": 1557.189069000663,
+      "abbr": "SFU",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Adirondack",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -3927,6 +4039,13 @@
     {
       "name": "McNeese State",
       "elo": 1554.5421321519923,
+      "abbr": "MCNSU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Louisiana",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -4134,6 +4253,13 @@
     {
       "name": "Jacksonville State",
       "elo": 1554.2445225721242,
+      "abbr": "JSU",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -4392,6 +4518,13 @@
     {
       "name": "Stony Brook",
       "elo": 1550.001592038924,
+      "abbr": "SBU",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -4650,6 +4783,13 @@
     {
       "name": "Stetson",
       "elo": 1547.5196895520426,
+      "abbr": "STET",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -4874,6 +5014,13 @@
     {
       "name": "Butler",
       "elo": 1546.3980253269588,
+      "abbr": "BUT",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Metro",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -5132,6 +5279,13 @@
     {
       "name": "Mississippi Valley State",
       "elo": 1543.988714105735,
+      "abbr": "MVSU",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Mississippi Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -5373,6 +5527,13 @@
     {
       "name": "Southeast Missouri",
       "elo": 1541.917429347137,
+      "abbr": "SEMO",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Mississippi Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -5580,6 +5741,13 @@
     {
       "name": "Grambling State",
       "elo": 1539.6482156762656,
+      "abbr": "GSU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Louisiana",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -5719,6 +5887,13 @@
     {
       "name": "Jacksonville",
       "elo": 1539.1783489165634,
+      "abbr": "JU",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -5858,6 +6033,13 @@
     {
       "name": "Arkansas-Pine Bluff",
       "elo": 1536.1163383595044,
+      "abbr": "UAPB",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Mississippi Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -6014,6 +6196,13 @@
     {
       "name": "Central Arkansas",
       "elo": 1535.8821920705066,
+      "abbr": "UCA",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Mississippi Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -6238,6 +6427,13 @@
     {
       "name": "Delaware State",
       "elo": 1535.6221262043862,
+      "abbr": "DESU",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -6496,6 +6692,13 @@
     {
       "name": "Hampton",
       "elo": 1535.0156285071216,
+      "abbr": "HU",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Atlantic",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -6737,6 +6940,13 @@
     {
       "name": "Chattanooga",
       "elo": 1533.315302733787,
+      "abbr": "UTC",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -6978,6 +7188,13 @@
     {
       "name": "Campbell",
       "elo": 1531.7262182818617,
+      "abbr": "CAMP",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -7202,6 +7419,13 @@
     {
       "name": "The Citadel",
       "elo": 1525.4162151806365,
+      "abbr": "TC",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -7426,6 +7650,13 @@
     {
       "name": "Montana State",
       "elo": 1524.6192456027584,
+      "abbr": "MTSU",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -7684,6 +7915,13 @@
     {
       "name": "Maine",
       "elo": 1523.718051082403,
+      "abbr": "UME",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -7908,6 +8146,13 @@
     {
       "name": "UC Davis",
       "elo": 1523.534053608648,
+      "abbr": "UCD",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -8132,6 +8377,13 @@
     {
       "name": "Prairie View A&M",
       "elo": 1521.7786985632106,
+      "abbr": "PVAMU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Texas",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -8271,6 +8523,13 @@
     {
       "name": "Norfolk State",
       "elo": 1521.556881673981,
+      "abbr": "NSU",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Atlantic",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -8376,6 +8635,13 @@
     {
       "name": "Rhode Island",
       "elo": 1520.8751385136052,
+      "abbr": "URI",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -8566,6 +8832,13 @@
     {
       "name": "Northern Colorado",
       "elo": 1519.7246906383386,
+      "abbr": "UNCO",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -8824,6 +9097,13 @@
     {
       "name": "Brown",
       "elo": 1518.4945349598668,
+      "abbr": "BRWN",
+      "conf": "Ivy League",
+      "fullConf": "Ivy League",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -9048,6 +9328,13 @@
     {
       "name": "Wagner",
       "elo": 1517.7440892643442,
+      "abbr": "WAG",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Atlantic",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -9255,6 +9542,13 @@
     {
       "name": "Nicholls State",
       "elo": 1517.2988090653014,
+      "abbr": "NIC",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Louisiana",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -9445,6 +9739,13 @@
     {
       "name": "Alabama A&M",
       "elo": 1515.8437197675737,
+      "abbr": "AAMU",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -9567,6 +9868,13 @@
     {
       "name": "Furman",
       "elo": 1514.6418163581216,
+      "abbr": "FURM",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -9757,6 +10065,13 @@
     {
       "name": "Columbia",
       "elo": 1509.010661980686,
+      "abbr": "COLU",
+      "conf": "Ivy League",
+      "fullConf": "Ivy League",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -9947,6 +10262,13 @@
     {
       "name": "Savannah State",
       "elo": 1508.7941160058056,
+      "abbr": "SSU",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -10120,6 +10442,13 @@
     {
       "name": "Penn",
       "elo": 1508.2088715555974,
+      "abbr": "PENN",
+      "conf": "Ivy League",
+      "fullConf": "Ivy League",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -10276,6 +10605,13 @@
     {
       "name": "Eastern Washington",
       "elo": 1507.1903388568708,
+      "abbr": "EWU",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -10483,6 +10819,13 @@
     {
       "name": "Southern Illinois",
       "elo": 1503.7598462976746,
+      "abbr": "SIU",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Metro",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -10673,6 +11016,13 @@
     {
       "name": "Presbyterian",
       "elo": 1503.1135546793232,
+      "abbr": "PC",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -10880,6 +11230,13 @@
     {
       "name": "Morgan State",
       "elo": 1502.3956661746438,
+      "abbr": "MSU",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -11002,6 +11359,13 @@
     {
       "name": "East Tennessee State",
       "elo": 1502.281769025716,
+      "abbr": "ETSU",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -11226,6 +11590,13 @@
     {
       "name": "Sam Houston State",
       "elo": 1501.952139094261,
+      "abbr": "SHSU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Texas",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -11467,6 +11838,13 @@
     {
       "name": "Morehead State",
       "elo": 1500.6020522583538,
+      "abbr": "MORE",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Tennessee Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -11640,6 +12018,13 @@
     {
       "name": "Drake",
       "elo": 1499.5893331152868,
+      "abbr": "DRKE",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Prairie",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -11864,6 +12249,13 @@
     {
       "name": "Alcorn State",
       "elo": 1498.1914467186593,
+      "abbr": "ASU",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Mississippi Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -11986,6 +12378,13 @@
     {
       "name": "Idaho",
       "elo": 1498.1692970346219,
+      "abbr": "UOFI",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -12193,6 +12592,13 @@
     {
       "name": "Houston Baptist",
       "elo": 1497.3223673743832,
+      "abbr": "HBU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Texas",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -12332,6 +12738,13 @@
     {
       "name": "Harvard",
       "elo": 1496.863636779284,
+      "abbr": "HARV",
+      "conf": "Ivy League",
+      "fullConf": "Ivy League",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -12556,6 +12969,13 @@
     {
       "name": "Dartmouth",
       "elo": 1496.2174871253562,
+      "abbr": "DART",
+      "conf": "Ivy League",
+      "fullConf": "Ivy League",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -12763,6 +13183,13 @@
     {
       "name": "Charleston Southern",
       "elo": 1493.1320660650047,
+      "abbr": "CSU",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -12936,6 +13363,13 @@
     {
       "name": "Southern",
       "elo": 1492.5551161963242,
+      "abbr": "SUBR",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Louisiana",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -13075,6 +13509,13 @@
     {
       "name": "Wofford",
       "elo": 1492.4469695748742,
+      "abbr": "WOFF",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -13265,6 +13706,13 @@
     {
       "name": "Northern Arizona",
       "elo": 1489.6615706604432,
+      "abbr": "NAU",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -13421,6 +13869,13 @@
     {
       "name": "Lafayette",
       "elo": 1489.3952585352242,
+      "abbr": "LAF",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Adirondack",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -13611,6 +14066,13 @@
     {
       "name": "VMI",
       "elo": 1489.339597772566,
+      "abbr": "VMI",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -13801,6 +14263,13 @@
     {
       "name": "Colgate",
       "elo": 1489.2193277236427,
+      "abbr": "COLG",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Adirondack",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -13957,6 +14426,13 @@
     {
       "name": "Gardner-Webb",
       "elo": 1488.534708615609,
+      "abbr": "GWU",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -14113,6 +14589,13 @@
     {
       "name": "North Dakota State",
       "elo": 1486.811381927379,
+      "abbr": "NDSU",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Prairie",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -14354,6 +14837,13 @@
     {
       "name": "Tennessee Tech",
       "elo": 1486.7373853077422,
+      "abbr": "TTU",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Tennessee Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -14561,6 +15051,13 @@
     {
       "name": "Illinois State",
       "elo": 1486.7190671977653,
+      "abbr": "ILSU",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Metro",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -14768,6 +15265,13 @@
     {
       "name": "Monmouth",
       "elo": 1486.2184958300265,
+      "abbr": "MON",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Atlantic",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -14941,6 +15445,13 @@
     {
       "name": "South Dakota",
       "elo": 1484.0116804278528,
+      "abbr": "USD",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Prairie",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -15131,6 +15642,13 @@
     {
       "name": "Western Illinois",
       "elo": 1483.4670048223807,
+      "abbr": "WIU",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Prairie",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -15304,6 +15822,13 @@
     {
       "name": "Fordham",
       "elo": 1482.9699320137288,
+      "abbr": "FDHM",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -15443,6 +15968,13 @@
     {
       "name": "Central Connecticut",
       "elo": 1482.3110482961686,
+      "abbr": "CCSU",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -15599,6 +16131,13 @@
     {
       "name": "Duquesne",
       "elo": 1482.0371412162908,
+      "abbr": "DUQ",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -15755,6 +16294,13 @@
     {
       "name": "Elon",
       "elo": 1481.5815002563227,
+      "abbr": "ELON",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -15945,6 +16491,13 @@
     {
       "name": "Mercer",
       "elo": 1480.3586815178735,
+      "abbr": "MERC",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -16169,6 +16722,13 @@
     {
       "name": "Georgetown",
       "elo": 1480.0972272547288,
+      "abbr": "GTU",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Atlantic",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -16308,6 +16868,13 @@
     {
       "name": "North Carolina Central",
       "elo": 1479.9499486848229,
+      "abbr": "NCCU",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -16413,6 +16980,13 @@
     {
       "name": "Villanova",
       "elo": 1479.9022269978307,
+      "abbr": "VILL",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -16603,6 +17177,13 @@
     {
       "name": "Valparaiso",
       "elo": 1479.8252622770185,
+      "abbr": "VLPO",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Metro",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -16776,6 +17357,13 @@
     {
       "name": "Jackson State",
       "elo": 1478.774328977186,
+      "abbr": "JSUMS",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Mississippi Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -16915,6 +17503,13 @@
     {
       "name": "Lamar",
       "elo": 1477.1198332230347,
+      "abbr": "LU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Louisiana",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -17156,6 +17751,13 @@
     {
       "name": "Abilene Christian",
       "elo": 1476.271181861034,
+      "abbr": "ACU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Texas",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -17312,6 +17914,13 @@
     {
       "name": "Murray State",
       "elo": 1475.1822978398934,
+      "abbr": "MURR",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Tennessee Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -17485,6 +18094,13 @@
     {
       "name": "South Carolina State",
       "elo": 1475.0896732919307,
+      "abbr": "SCSU",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -17624,6 +18240,13 @@
     {
       "name": "North Carolina A&T",
       "elo": 1471.7413334116902,
+      "abbr": "NCAT",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -17814,6 +18437,13 @@
     {
       "name": "Towson",
       "elo": 1469.2147626736496,
+      "abbr": "TU",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -17970,6 +18600,13 @@
     {
       "name": "Indiana State",
       "elo": 1466.8487466652973,
+      "abbr": "INSU",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Metro",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -18160,6 +18797,13 @@
     {
       "name": "Alabama State",
       "elo": 1464.2609934088382,
+      "abbr": "ALASU",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -18350,6 +18994,13 @@
     {
       "name": "Tennessee State",
       "elo": 1463.6082427878819,
+      "abbr": "TNSU",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Tennessee Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -18523,6 +19174,13 @@
     {
       "name": "Austin Peay",
       "elo": 1462.944916414983,
+      "abbr": "APSU",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Tennessee Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -18662,6 +19320,13 @@
     {
       "name": "Northwestern State",
       "elo": 1462.4205497324604,
+      "abbr": "NSULA",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Louisiana",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -18784,6 +19449,13 @@
     {
       "name": "Portland State",
       "elo": 1462.2228882374231,
+      "abbr": "PDX",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -19008,6 +19680,13 @@
     {
       "name": "Florida A&M",
       "elo": 1460.1792165021345,
+      "abbr": "FAMU",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -19198,6 +19877,13 @@
     {
       "name": "Southern Utah",
       "elo": 1459.7816276409937,
+      "abbr": "SUU",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -19405,6 +20091,13 @@
     {
       "name": "Holy Cross",
       "elo": 1459.4299974472929,
+      "abbr": "CHC",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -19578,6 +20271,13 @@
     {
       "name": "Missouri State",
       "elo": 1459.1694024787153,
+      "abbr": "MOSU",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Mississippi Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -19802,6 +20502,13 @@
     {
       "name": "William & Mary",
       "elo": 1458.5036128683225,
+      "abbr": "WM",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -19975,6 +20682,13 @@
     {
       "name": "Richmond",
       "elo": 1457.7266823108234,
+      "abbr": "UR",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -20148,6 +20862,13 @@
     {
       "name": "Robert Morris",
       "elo": 1455.5318613457555,
+      "abbr": "RMU",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -20338,6 +21059,13 @@
     {
       "name": "UT Martin",
       "elo": 1455.5132362596028,
+      "abbr": "UTM",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Tennessee Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -20494,6 +21222,13 @@
     {
       "name": "Davidson",
       "elo": 1455.192062130103,
+      "abbr": "DAV",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -20616,6 +21351,13 @@
     {
       "name": "Texas Southern",
       "elo": 1454.0251873086927,
+      "abbr": "TSU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Texas",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -20755,6 +21497,13 @@
     {
       "name": "Samford",
       "elo": 1453.234063960198,
+      "abbr": "SAM",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -20877,6 +21626,13 @@
     {
       "name": "Lehigh",
       "elo": 1452.536451310412,
+      "abbr": "LEHI",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Adirondack",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -21084,6 +21840,13 @@
     {
       "name": "Cornell",
       "elo": 1451.4248861668914,
+      "abbr": "CU",
+      "conf": "Ivy League",
+      "fullConf": "Ivy League",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -21274,6 +22037,13 @@
     {
       "name": "South Dakota State",
       "elo": 1449.0450968884425,
+      "abbr": "SDSU",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Prairie",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -21481,6 +22251,13 @@
     {
       "name": "Albany",
       "elo": 1448.1392796601715,
+      "abbr": "UA",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -21705,6 +22482,13 @@
     {
       "name": "New Hampshire",
       "elo": 1446.9322317565861,
+      "abbr": "UNH",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -21878,6 +22662,13 @@
     {
       "name": "Western Carolina",
       "elo": 1446.8635639749534,
+      "abbr": "WCU",
+      "conf": "CFC",
+      "fullConf": "Carolina Football Conference",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -22017,6 +22808,13 @@
     {
       "name": "Eastern Illinois",
       "elo": 1446.5921914323262,
+      "abbr": "EIU",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Metro",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -22224,6 +23022,13 @@
     {
       "name": "Marist",
       "elo": 1445.1916760330826,
+      "abbr": "MAR",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Adirondack",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -22397,6 +23202,13 @@
     {
       "name": "Youngstown State",
       "elo": 1444.804486874966,
+      "abbr": "YSU",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "North",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -22553,6 +23365,13 @@
     {
       "name": "North Dakota",
       "elo": 1441.8604375090315,
+      "abbr": "UND",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Prairie",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -22777,6 +23596,13 @@
     {
       "name": "Southeastern Louisiana",
       "elo": 1440.4430259485546,
+      "abbr": "SLU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Louisiana",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -22967,6 +23793,13 @@
     {
       "name": "Stephen F. Austin",
       "elo": 1433.231124653489,
+      "abbr": "SFASU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Texas",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -23106,6 +23939,13 @@
     {
       "name": "Weber State",
       "elo": 1431.2004355180043,
+      "abbr": "WESU",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -23330,6 +24170,13 @@
     {
       "name": "Kennesaw State",
       "elo": 1428.6756151369004,
+      "abbr": "KSU",
+      "conf": "Atlantic Sun",
+      "fullConf": "Atlantic Sun",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -23486,6 +24333,13 @@
     {
       "name": "Bucknell",
       "elo": 1428.5628955576208,
+      "abbr": "BCK",
+      "conf": "Mid-Atlantic",
+      "fullConf": "Mid-Atlantic",
+      "div": "Adirondack",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -23642,6 +24496,13 @@
     {
       "name": "Delaware",
       "elo": 1410.3631718833076,
+      "abbr": "UDEL",
+      "conf": "Colonial",
+      "fullConf": "Colonial",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,
@@ -23883,6 +24744,13 @@
     {
       "name": "Bryant",
       "elo": 1366.585151129424,
+      "abbr": "BRY",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
       "seasons": [
         {
           "seasonNo": 1,

@@ -1,4 +1,4 @@
-const elo = require('./elo.json');
+const elo = require('./web/js/elo.json');
 
 module.exports = {
   "plugins": {
