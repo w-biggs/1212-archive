@@ -8833,9 +8833,9 @@
       "name": "Northern Colorado",
       "elo": 1519.7246906383386,
       "abbr": "UNCO",
-      "conf": "Big Sky",
-      "fullConf": "Big Sky",
-      "div": "North",
+      "conf": "Great Plains",
+      "fullConf": "Great Plains",
+      "div": "Prairie",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -10820,9 +10820,9 @@
       "name": "Southern Illinois",
       "elo": 1503.7598462976746,
       "abbr": "SIU",
-      "conf": "Great Plains",
-      "fullConf": "Great Plains",
-      "div": "Metro",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Mississippi Valley",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -12010,6 +12010,94 @@
             {
               "weekNo": 0,
               "elo": 1500.6020522583538
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dixie State",
+      "elo": 1500,
+      "abbr": "UNA",
+      "conf": "Big Sky",
+      "fullConf": "Big Sky",
+      "div": "South",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "seasons": [
+        {
+          "seasonNo": 2,
+          "weeks": [
+            {
+              "weekNo": 0,
+              "elo": 1500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "North Alabama",
+      "elo": 1500,
+      "abbr": "UNA",
+      "conf": "DIC",
+      "fullConf": "Delta Intercollegiate",
+      "div": "Tennessee Valley",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "seasons": [
+        {
+          "seasonNo": 2,
+          "weeks": [
+            {
+              "weekNo": 0,
+              "elo": 1500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Long Island",
+      "elo": 1500,
+      "abbr": "LIU",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "seasons": [
+        {
+          "seasonNo": 2,
+          "weeks": [
+            {
+              "weekNo": 0,
+              "elo": 1500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Merrimack",
+      "elo": 1500,
+      "abbr": "MU",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "N/A",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "seasons": [
+        {
+          "seasonNo": 2,
+          "weeks": [
+            {
+              "weekNo": 0,
+              "elo": 1500
             }
           ]
         }
@@ -15645,7 +15733,7 @@
       "abbr": "WIU",
       "conf": "Great Plains",
       "fullConf": "Great Plains",
-      "div": "Prairie",
+      "div": "Metro",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -23942,7 +24030,7 @@
       "abbr": "WESU",
       "conf": "Big Sky",
       "fullConf": "Big Sky",
-      "div": "South",
+      "div": "North",
       "wins": 0,
       "losses": 0,
       "ties": 0,

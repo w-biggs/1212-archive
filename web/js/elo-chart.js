@@ -120,77 +120,81 @@ const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeri
     const teamSeason = team.seasons.find(season => season.seasonNo === seasonNo);
     const teamSeries = [];
 
-    /* Start series at offset if more than one season */
-    let pointStart = 0;
-    if (i > 0) {
-      pointStart = eloHistory.seasons.slice(0, i).reduce((a, b) => a + b.weeks.length, 0) - 1;
-    }
-
-    /* Push each week's Elo to the series */
-    for (let j = 0; j < seasonRanges.length; j += 1) {
-      const { weekNo, name } = eloHistory.seasons[i].weeks[j];
-
-      const point = {
-        name: `Week ${weekNo}`,
-        y: null,
-      };
-
-      if (name) {
-        point.name = name;
+    /* If team played that season */
+    if (teamSeason) {
+      /* Start series at offset if more than one season */
+      let pointStart = 0;
+      if (i > 0) {
+        pointStart = eloHistory.seasons.slice(0, i).reduce((a, b) => a + b.weeks.length, 0) - 1;
       }
-
-      /**
-       * Only set elo if team played this week - avoid an error.
-       * Week -1 is only used in season 1 for the initial Elo of 1500.
-       */
-      if (weekNo < 0) {
-        point.y = 1500;
-      } else {
-        const teamWeek = teamSeason.weeks.find(week => week.weekNo === weekNo);
-        if (teamWeek) {
-          point.y = teamWeek.elo;
+  
+      /* Push each week's Elo to the series */
+      for (let j = 0; j < seasonRanges.length; j += 1) {
+        const { weekNo, name } = eloHistory.seasons[i].weeks[j];
+  
+        const point = {
+          name: `Week ${weekNo}`,
+          y: null,
+        };
+  
+        if (name) {
+          point.name = name;
         }
+  
+        /**
+         * Only set elo if team played this week - avoid an error.
+         * Week -1 is only used in season 1 for the initial Elo of 1500.
+         */
+        if (weekNo < 0) {
+          point.y = 1500;
+        } else {
+          const teamWeek = teamSeason.weeks.find(week => week.weekNo === weekNo);
+          if (teamWeek) {
+            point.y = teamWeek.elo;
+          }
+        }
+        
+        teamSeries.push(point);
       }
-      
-      teamSeries.push(point);
-    }
-
-    /* Push series with options */
-    series.push(...[
-      {
-        name: `Season ${seasonNo} Elo`,
-        seasonNo,
-        data: teamSeries,
-        zIndex: 6,
-        lineWidth: 3,
-        color: '#7cb5ec',
-        connectNulls: true,
-        states: {
-          hover: {
-            lineWidthPlus: 0,
-          },
-        },
-        marker: {
-          enabled: false,
-          fillColor: '#999',
-          radius: 4,
-          symbol: 'circle',
+  
+      /* Push series with options */
+      series.push(...[
+        {
+          name: `Season ${seasonNo} Elo`,
+          seasonNo,
+          data: teamSeries,
+          zIndex: 6,
+          lineWidth: 3,
+          color: '#7cb5ec',
+          connectNulls: true,
           states: {
             hover: {
-              enabled: true,
-              lineWidth: 0,
               lineWidthPlus: 0,
-              radiusPlus: 0,
             },
           },
+          marker: {
+            enabled: false,
+            fillColor: '#999',
+            radius: 4,
+            symbol: 'circle',
+            states: {
+              hover: {
+                enabled: true,
+                lineWidth: 0,
+                lineWidthPlus: 0,
+                radiusPlus: 0,
+              },
+            },
+          },
+          id: `S${seasonNo}`,
+          linkedTo: 'S1',
+          pointStart,
         },
-        id: `S${seasonNo}`,
-        linkedTo: 'S1',
-        pointStart,
-      },
-      seasonRangeSeries,
-    ]);
+        seasonRangeSeries,
+      ]);
+    }
   });
+
   return series;
 };
 

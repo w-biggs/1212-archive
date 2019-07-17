@@ -27,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-      <each loop="team in elo">
+      <each loop="team in teams">
         <tr>
           <td class="elo-rating" title="{{ team.elo.toFixed(4) }}" data-value="{{ team.elo }}">{{ Math.round(team.elo) }}</td>
           <td class="elo-team" data-value="{{ team.name }}">
@@ -38,7 +38,7 @@
           </td>
           <td class="elo-conf" title="{{ team.fullConf }} - {{ team.div }}" data-value="{{ team.fullConf }} - {{ team.div }}">
             {{ team.conf }}
-            <if condition="team.div">
+            <if condition="team.div !== 'N/A'">
               <span class="elo-div">- {{ team.div }}</span>
             </if>
           </td>

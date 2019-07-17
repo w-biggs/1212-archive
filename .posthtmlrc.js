@@ -1,4 +1,4 @@
-const elo = require('./web/js/elo.json');
+const { teams } = require('./web/js/elo.json');
 
 module.exports = {
   "plugins": {
@@ -7,7 +7,7 @@ module.exports = {
     },
     "posthtml-expressions": {
       "root": "./web",
-      "locals": { elo }
+      "locals": { teams }
     }
   }
 };
