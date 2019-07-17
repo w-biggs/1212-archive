@@ -8,8 +8,6 @@ const eloLightbox = document.getElementsByClassName('elo-lightbox')[0];
 const eloLightboxBg = document.getElementsByClassName('elo-lightbox-bg')[0];
 const eloLightboxClose = eloLightbox.getElementsByClassName('elo-lightbox-close')[0];
 
-const seasonLength = 18;
-
 const playoffRounds = {
   14: '1st Round',
   15: '2nd Round',
@@ -18,7 +16,9 @@ const playoffRounds = {
   18: 'Championship',
 };
 
-const gameString = function createGameString(team, index) {
+const gameString = function createGameString(team, point) {
+  const { index } = point;
+  const { seasonNo } = point.series.options;
   if (index === 0) {
     return false;
   }
@@ -29,10 +29,11 @@ const gameString = function createGameString(team, index) {
   let ties = 0;
 
   for (let i = 0; i <= weekNo; i += 1) {
-    if (Object.prototype.hasOwnProperty.call(team.weeks, i)) {
-      if (team.weeks[i].gameInfo.result === 'win') {
+    if (Object.prototype.hasOwnProperty.call(team.seasons[seasonNo], i)) {
+      const week = team.seasons[seasonNo][i];
+      if (week.gameInfo.result === 'win') {
         wins += 1;
-      } else if (team.weeks[i].gameInfo.result === 'loss') {
+      } else if (week.gameInfo.result === 'loss') {
         losses += 1;
       } else {
         ties += 1;
@@ -40,7 +41,7 @@ const gameString = function createGameString(team, index) {
     }
   }
 
-  const { gameInfo } = team.weeks[weekNo];
+  const { gameInfo } = team.seasons[seasonNo][weekNo];
 
   const resultString = `${gameInfo.result.charAt(0).toUpperCase()} ${gameInfo.score}-${gameInfo.oppScore} vs. ${gameInfo.oppName}`;
 
@@ -49,24 +50,107 @@ const gameString = function createGameString(team, index) {
   return `${resultString} | ${recordString}`;
 };
 
-const drawChart = function drawEloHistoryChart(team) {
-  const teamElos = [{
-    name: 'Start of FCS Season 1',
-    y: 1500,
-  }];
-  for (let i = 0; i <= seasonLength; i += 1) {
-    const point = {
-      name: `Week ${i}`,
-      y: null,
+const generateRangeSeries = function generateEloRangeSeries() {
+  const series = {};
+  Object.keys(eloHistory.seasons).forEach((seasonNo) => {
+    const season = eloHistory.seasons[seasonNo];
+    series[seasonNo] = {
+      name: `Season ${seasonNo} Ranges`,
+      data: season,
+      type: 'arearange',
+      lineWidth: 0,
+      linkedTo: ':previous',
+      fillOpacity: 0.1,
+      zIndex: 0,
+      marker: {
+        enabled: false,
+      },
+      enableMouseTracking: false,
     };
-    if (Object.prototype.hasOwnProperty.call(team.weeks, i)) {
-      if (i > 13) {
-        point.name = playoffRounds[i];
-      }
-      point.y = team.weeks[i].elo;
+  });
+  return series;
+};
+
+const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeries) {
+  const series = [];
+  Object.keys(rangeSeries).forEach((seasonNo) => {
+    const seasonRangeSeries = rangeSeries[seasonNo];
+    const seasonRanges = seasonRangeSeries.data;
+    console.log(team);
+    const teamElos = team.seasons[seasonNo];
+    const teamSeries = [];
+
+    /**
+     * Season 1 had a Week 0, which means that we can't use
+     * week 0 as the starting Elo for that season.
+     */
+    if (parseInt(seasonNo, 10) === 1) {
+      teamSeries.push({
+        name: 'Start of FCS Season 1',
+        y: 1500,
+      });
     }
-    teamElos.push(point);
-  }
+
+    /* Push each week's Elo to the series */
+    for (let i = 0; i < seasonRanges.length; i += 1) {
+      /**
+       * Skip final week of Season 1, as Season 1's ranges
+       * include "Week 0", adding an extra week.
+       */
+      if (seasonNo !== 0 && i !== seasonRanges.length - 1) {
+        const point = {
+          name: `Week ${i}`,
+          y: null,
+        };
+        if (i === 0 && seasonNo > 1) {
+          point.name = `Start of FCS Season ${seasonNo}`;
+        } else if (i > 13) {
+          point.name = playoffRounds[i];
+        }
+        /* Only set elo if team played this week - avoid an error */
+        if (Object.prototype.hasOwnProperty.call(teamElos, i)) {
+          point.y = teamElos[i].elo;
+        }
+        teamSeries.push(point);
+      }
+    }
+
+    /* Push series with options */
+    series.push(...[
+      {
+        name: `Season ${seasonNo} Elo`,
+        seasonNo,
+        data: teamSeries,
+        zIndex: 1,
+        lineWidth: 3,
+        connectNulls: true,
+        states: {
+          hover: {
+            lineWidthPlus: 0,
+          },
+        },
+        marker: {
+          enabled: false,
+          fillColor: '#999',
+          radius: 4,
+          states: {
+            hover: {
+              enabled: true,
+              lineWidth: 0,
+              lineWidthPlus: 0,
+              radiusPlus: 0,
+            },
+          },
+        },
+      },
+      seasonRangeSeries,
+    ]);
+  });
+  return series;
+};
+
+const drawChart = function drawEloHistoryChart(team, series) {
+  console.log(series);
   const eloChart = Highcharts.chart('elo-chart', {
     title: {
       text: `${team.name} Elo history`,
@@ -122,7 +206,8 @@ const drawChart = function drawEloHistoryChart(team) {
       padding: 0,
       formatter: function formatTooltip() {
         const { chart } = this.series;
-        const game = gameString(team, this.point.index);
+        console.log(this.point);
+        const game = gameString(team, this.point);
         const gameInfoString = game ? `<div class="elo-tooltip-game">${game}</div>` : '';
         const lineTop = chart.plotTop + 16;
         const lineLeft = chart.plotLeft + this.point.plotX + 16;
@@ -133,7 +218,6 @@ const drawChart = function drawEloHistoryChart(team) {
         <div class="elo-tooltip-line" style="top: ${lineTop}px; left: ${lineLeft}px; bottom: ${lineBottom}px"></div>`;
       },
       positioner: function positionTooltip(labelWidth, labelHeight, point) {
-        // console.log(labelHeight);
         let calcLeft = point.plotX + this.chart.plotLeft - (labelWidth / 2);
         const minLeft = this.chart.plotLeft;
         const maxLeft = this.chart.plotLeft + this.chart.plotWidth - labelWidth;
@@ -156,46 +240,13 @@ const drawChart = function drawEloHistoryChart(team) {
     legend: {
       enabled: false,
     },
-    series: [{
-      name: 'Elo',
-      data: teamElos,
-      zIndex: 1,
-      lineWidth: 3,
-      connectNulls: true,
-      states: {
-        hover: {
-          lineWidthPlus: 0,
-        },
-      },
-      marker: {
-        enabled: false,
-        fillColor: '#999',
-        radius: 4,
-        states: {
-          hover: {
-            enabled: true,
-            lineWidth: 0,
-            lineWidthPlus: 0,
-            radiusPlus: 0,
-          },
-        },
-      },
-    }, {
-      name: 'Range',
-      data: eloHistory.range,
-      type: 'arearange',
-      lineWidth: 0,
-      linkedTo: ':previous',
-      fillOpacity: 0.1,
-      zIndex: 0,
-      marker: {
-        enabled: false,
-      },
-      enableMouseTracking: false,
-    }],
+    series,
   });
   return eloChart;
 };
+
+/* Generate ranges once */
+let rangeSeries;
 
 const openChart = function openEloHistoryChart() {
   if (!window.location.hash) {
@@ -207,10 +258,17 @@ const openChart = function openEloHistoryChart() {
     const team = eloHistory.teams[i];
 
     if (team.name === hash) {
+      /* Generate ranges if not generated yet */
+      if (!rangeSeries) {
+        rangeSeries = generateRangeSeries();
+      }
+
+      const series = generateSeries(team, rangeSeries);
+
       eloLightboxBg.classList.add('is-visible');
       eloLightbox.classList.add('is-visible');
 
-      drawChart(team);
+      drawChart(team, series);
     }
   }
 };
