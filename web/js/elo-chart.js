@@ -5,6 +5,28 @@ import * as eloHistory from './elo-history.json';
 /* Apply Highcharts-More */
 HCMore(Highcharts);
 
+/**
+ * Plugin to allow plot band Z indexes in between series
+ */
+Highcharts.wrap(Highcharts.PlotLineOrBand.prototype, 'render', function plotLine(proceed) {
+  const { chart } = this.axis;
+
+  proceed.call(this);
+
+  if (!chart.seriesGroup) {
+    chart.seriesGroup = chart.renderer.g('series-group')
+      .attr({ zIndex: 3 })
+      .add();
+  }
+
+  if (this.svgElem.parentGroup !== chart.seriesGroup) {
+    this.svgElem
+      .attr({ zIndex: this.options.zIndex })
+      .add(chart.seriesGroup);
+  }
+  return this;
+});
+
 const eloLightbox = document.getElementsByClassName('elo-lightbox')[0];
 const eloLightboxBg = document.getElementsByClassName('elo-lightbox-bg')[0];
 const eloLightboxClose = eloLightbox.getElementsByClassName('elo-lightbox-close')[0];
@@ -32,7 +54,7 @@ const gameString = function createGameString(team, point) {
   const season = team.seasons.find(teamSeason => teamSeason.seasonNo === seasonNo);
 
   season.weeks.forEach((week) => {
-    if (week.weekNo <= weekNo) {
+    if (week.weekNo <= weekNo && Object.prototype.hasOwnProperty.call(week, 'gameInfo')) {
       if (week.gameInfo.result === 'win') {
         wins += 1;
       } else if (week.gameInfo.result === 'loss') {
@@ -58,19 +80,33 @@ const generateRangeSeries = function generateEloRangeSeries() {
   eloHistory.seasons.forEach((season, i) => {
     const { seasonNo, weeks } = season;
     const data = weeks.map(week => week.range);
+
+    /* Start series at offset if more than one season */
+    let pointStart = 0;
+    if (i > 0) {
+      pointStart = eloHistory.seasons.slice(0, i).reduce((a, b) => a + b.weeks.length, 0) - 1;
+    }
+
     series[i] = {
       name: `Season ${seasonNo} Ranges`,
       data,
       seasonNo,
       type: 'arearange',
       lineWidth: 0,
-      linkedTo: ':previous',
-      fillOpacity: 0.1,
+      linkedTo: 'S1',
+      fillOpacity: 0.05,
       zIndex: 0,
+      color: 'black',
       marker: {
         enabled: false,
       },
+      states: {
+        inactive: {
+          opacity: 1,
+        },
+      },
       enableMouseTracking: false,
+      pointStart,
     };
   });
 
@@ -83,6 +119,12 @@ const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeri
     const { data: seasonRanges, seasonNo } = seasonRangeSeries;
     const teamSeason = team.seasons.find(season => season.seasonNo === seasonNo);
     const teamSeries = [];
+
+    /* Start series at offset if more than one season */
+    let pointStart = 0;
+    if (i > 0) {
+      pointStart = eloHistory.seasons.slice(0, i).reduce((a, b) => a + b.weeks.length, 0) - 1;
+    }
 
     /* Push each week's Elo to the series */
     for (let j = 0; j < seasonRanges.length; j += 1) {
@@ -119,8 +161,9 @@ const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeri
         name: `Season ${seasonNo} Elo`,
         seasonNo,
         data: teamSeries,
-        zIndex: 1,
+        zIndex: 6,
         lineWidth: 3,
+        color: '#7cb5ec',
         connectNulls: true,
         states: {
           hover: {
@@ -131,6 +174,7 @@ const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeri
           enabled: false,
           fillColor: '#999',
           radius: 4,
+          symbol: 'circle',
           states: {
             hover: {
               enabled: true,
@@ -140,6 +184,9 @@ const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeri
             },
           },
         },
+        id: `S${seasonNo}`,
+        linkedTo: 'S1',
+        pointStart,
       },
       seasonRangeSeries,
     ]);
@@ -147,7 +194,62 @@ const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeri
   return series;
 };
 
+const generatePlotLines = function generatePlotLines(series) {
+  const plotLines = [];
+  /* Get all but last season */
+  const rangeSeries = series.filter(singleSeries => singleSeries.type === 'arearange');
+  rangeSeries.forEach((season, i) => {
+    /* Season markers */
+    let seasonStart = 0;
+    if (season.seasonNo > 1) {
+      seasonStart = eloHistory.seasons.slice(0, i).reduce((a, b) => a + b.weeks.length, 0) - 1;
+    }
+    plotLines.push({
+      color: '#d1d1d1',
+      width: 1,
+      value: seasonStart,
+      label: {
+        text: `Season ${season.seasonNo}`,
+        align: 'right',
+        verticalAlign: 'bottom',
+        textAlign: 'right',
+        style: {
+          color: 'rgba(0,0,0,0.5)',
+          fontWeight: 'bold',
+          fontSize: '1.25em',
+        },
+        y: -20,
+      },
+      zIndex: 3,
+    });
+
+    /* Playoff markers */
+    let playoffStartWeek = 13 + seasonStart;
+    if (season.seasonNo === 1) {
+      playoffStartWeek = 14 + seasonStart;
+    }
+    plotLines.push({
+      color: '#f4f4f4',
+      width: 2,
+      value: playoffStartWeek + 0.5,
+      label: {
+        text: 'PLAYOFFS',
+        verticalAlign: 'middle',
+        textAlign: 'center',
+        style: {
+          color: 'rgba(0,0,0,0.5)',
+          fontWeight: 'bold',
+        },
+        y: 50,
+      },
+      zIndex: 5,
+    });
+  });
+  return plotLines;
+};
+
 const drawChart = function drawEloHistoryChart(team, series) {
+  const plotLines = generatePlotLines(series);
   const eloChart = Highcharts.chart('elo-chart', {
     title: {
       text: `${team.name} Elo history`,
@@ -168,22 +270,7 @@ const drawChart = function drawEloHistoryChart(team, series) {
       },
       minorTickLength: 0,
       tickLength: 0,
-      plotLines: [{
-        color: '#f4f4f4',
-        width: 2,
-        value: 14.5,
-        label: {
-          text: 'PLAYOFFS',
-          verticalAlign: 'middle',
-          textAlign: 'center',
-          style: {
-            color: 'rgba(0,0,0,0.5)',
-            fontWeight: 'bold',
-          },
-          y: 50,
-        },
-        zIndex: 5,
-      }],
+      plotLines,
     },
     yAxis: {
       title: {
