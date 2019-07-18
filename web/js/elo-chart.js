@@ -165,7 +165,7 @@ const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeri
           data: teamSeries,
           zIndex: 6,
           lineWidth: 3,
-          color: '#7cb5ec',
+          color: team.color,
           connectNulls: true,
           states: {
             hover: {
