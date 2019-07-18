@@ -2,6 +2,8 @@ import Highcharts from 'highcharts';
 import HCMore from 'highcharts/highcharts-more';
 import * as eloHistory from './elo.json';
 
+window.eloHistory = eloHistory;
+
 /* Apply Highcharts-More */
 HCMore(Highcharts);
 

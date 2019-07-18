@@ -7,9 +7,76 @@
 .scoreboard{
   width: 100%;
   height: 100%;
-  background-color: $placeholder-grey;
+}
+
+.scoreboard-games{
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
-  padding: $pad 0;
+  
+  @media screen and (min-width: $breakpoint-sm){
+    justify-content: flex-start;
+  }
+}
+
+.scoreboard-game{
+  border: 1px solid $border-color;
+  display: table;
+  margin: 0.5rem;
+}
+
+.scoreboard-teams{
+  border-bottom: 1px solid $border-color;
+}
+
+.scoreboard-team{
+  display: flex;
+  width: 14.5rem;
+}
+
+.scoreboard-team-name{
+  @include ms-respond(font-size,0);
+  flex: 1;
+  line-height: 2rem;
+  padding: 0 0.5rem;
+}
+
+.scoreboard-team-score{
+  @include ms-respond(font-size,1);
+  border-left: 1px solid $border-color;
+  font-family: $mono-font-family;
+  padding: 0 0.25rem;
+  flex: 0 0 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  line-height: 2rem;
+
+  &.is-final{
+    font-weight: bold;
+  }
+
+  &.is-loss{
+    color: $faded;
+  }
+}
+
+.scoreboard-status{
+  border-bottom: 1px solid $border-color;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  @include ms-respond(font-size,-1);
+}
+
+.scoreboard-stream-link{
+  display: block;
+  line-height: 1;
+  @include ms-respond(font-size,-2);
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  text-align: right;
+
+  &:hover{
+    text-decoration: none;
+  }
 }

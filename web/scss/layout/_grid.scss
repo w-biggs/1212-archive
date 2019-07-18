@@ -2,7 +2,7 @@
   max-width: 1024px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3rem 15rem auto auto 3rem;
+  grid-template-rows: 3rem auto auto auto 3rem;
   grid-template-areas: 
     "header"
     "scboard"
@@ -16,7 +16,7 @@
 @media screen and (min-width: $breakpoint-md){
   .l-container {
     grid-template-columns: 1fr 1fr 1fr 15rem;
-    grid-template-rows: 3rem 15rem auto 3rem;
+    grid-template-rows: 3rem auto auto 3rem;
     grid-template-areas: 
       "header header header header"
       "scboard scboard scboard scboard"
