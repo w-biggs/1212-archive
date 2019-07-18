@@ -5,6 +5,7 @@
     }]
   ],
   "ignore": [
-    "./web/js/vendor/"
-  ]
+    "./src/js/vendor/"
+  ],
+  "compact": false
 }

@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>OneTwoOneTwo</title>
-  <link rel="stylesheet" href="/scss/main.scss">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
   <div class="container l-container">
-    <module href="/partials/header.html"></module>
-    <module href="/partials/scoreboard.html"></module>
-    <module href="/partials/elo.html"></module>
-    <module href="/partials/article-listing.html"></module>
+    <% include ../partials/header %>
+    <% include ../partials/scoreboard %>
+    <% include ../partials/elo %>
+    <% include ../partials/article-listing %>
   </div>
   <script src="/js/elo.js"></script>
+  <script src="/js/vendor/highcharts.js"></script>
+  <script src="/js/vendor/highcharts-more.js"></script>
   <script src="/js/elo-chart.js"></script>
   <script src="/js/scoreboard.js"></script>
 </body>
