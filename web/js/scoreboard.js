@@ -129,6 +129,9 @@ gameIDs.forEach((gameID) => {
     if (request.readyState === 4 && request.status === 200) {
       const response = JSON.parse(request.response);
       printGame(parseResponse(response, gameID), scoreboardGames);
+    } else {
+      emptyNode(scoreboardGames);
+      scoreboardGames.appendChild(document.createTextNode('Try using Firefox for now. Fixing this ASAP though.'));
     }
   };
   request.send();
