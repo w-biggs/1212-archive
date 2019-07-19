@@ -56,7 +56,7 @@ gulp.task('serverfiles', () => {
 });
 
 gulp.task('vendorjs', () => {
-  return gulp.src(['./src/static/js/vendor/*.js', './src/static/js/vendor/*.js.map'])
+  return gulp.src(['./src/static/js/vendor/**/*.js', './src/static/js/vendor/**/*.js.map'], { base: './src/static/js/vendor/' })
     .pipe(gulp.dest('./app/static/js/vendor/'));
 });
 

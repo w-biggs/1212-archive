@@ -1,10 +1,14 @@
 const path = require('path');
 const express = require('express');
+const compression = require('compression');
 const ejs = require('ejs');
 const elo = require('./server/elo.json');
 const fetchGames = require('./server/fetchGames');
 
 const app = express();
+
+/* gzip */
+app.use(compression());
 
 /* Views */
 app.set('views', path.join(__dirname, 'views'));

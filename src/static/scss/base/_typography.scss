@@ -17,17 +17,21 @@ $modularscale: (
   )
 );
 
-h1 {
+h1, .h1 {
   @include ms-respond(font-size,3);
+  font-weight: bold;
 }
-h2 {
+h2, .h2 {
   @include ms-respond(font-size,2);
+  font-weight: bold;
 }
-h3 {
+h3, .h3 {
   @include ms-respond(font-size,1);
+  font-weight: bold;
 }
-h4 {
+h4, .h4 {
   @include ms-respond(font-size,1);
+  font-weight: bold;
 }
 
 .is-disabled{
@@ -48,6 +52,7 @@ h4 {
 
 @font-face {
   font-family: 'HK Grotesk';
+  font-display: swap;
   src: local('HK Grotesk Regular'), local('HKGrotesk-Regular'),
       url('/fonts/HKGrotesk-Regular.woff2') format('woff2'),
       url('/fonts/HKGrotesk-Regular.woff') format('woff');
@@ -57,6 +62,7 @@ h4 {
 
 @font-face {
   font-family: 'HK Grotesk';
+  font-display: swap;
   src: local('HK Grotesk Bold Italic'), local('HKGrotesk-BoldItalic'),
       url('/fonts/HKGrotesk-BoldItalic.woff2') format('woff2'),
       url('/fonts/HKGrotesk-BoldItalic.woff') format('woff');
@@ -66,6 +72,7 @@ h4 {
 
 @font-face {
   font-family: 'HK Grotesk';
+  font-display: swap;
   src: local('HK Grotesk Italic'), local('HKGrotesk-Italic'),
       url('/fonts/HKGrotesk-Italic.woff2') format('woff2'),
       url('/fonts/HKGrotesk-Italic.woff') format('woff');
@@ -75,6 +82,7 @@ h4 {
 
 @font-face {
   font-family: 'HK Grotesk';
+  font-display: swap;
   src: local('HK Grotesk Bold'), local('HKGrotesk-Bold'),
       url('/fonts/HKGrotesk-Bold.woff2') format('woff2'),
       url('/fonts/HKGrotesk-Bold.woff') format('woff');

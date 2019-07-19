@@ -328,9 +328,60 @@ const drawChart = function drawEloHistoryChart(team, series) {
     legend: {
       enabled: false,
     },
+    exporting: {
+      accessibility: {
+        enabled: true,
+      },
+      buttons: {
+        contextButton: {
+          align: 'left',
+          theme: {
+            fill: 'transparent',
+          },
+        },
+      },
+    },
     series,
   });
   return eloChart;
+};
+
+const closeChart = function closeEloHistoryChart() {
+  eloLightboxBg.classList.remove('is-visible');
+  eloLightbox.classList.remove('is-visible');
+
+  window.history.replaceState(null, null, ' ');
+};
+
+const handleKeys = function handleKeysForAccessibility(lightboxEl) {
+  /* Close */
+  lightboxEl.addEventListener('keydown', (event) => {
+    if (event.keyCode === 27) {
+      closeChart();
+    }
+  });
+
+  /* Focus */
+  const focusable = lightboxEl.querySelectorAll('button:not([tabindex="-1"]), [href]:not([tabindex="-1"]), [tabindex]:not([tabindex="-1"])');
+
+  const firstFocus = focusable[0];
+  const lastFocus = focusable[focusable.length - 1];
+
+  firstFocus.focus();
+
+  firstFocus.addEventListener('keydown', (event) => {
+    if (event.shiftKey && event.keyCode === 9) {
+      event.preventDefault();
+      lastFocus.focus();
+    }
+  });
+
+  lastFocus.addEventListener('keydown', (event) => {
+    if (!event.shiftKey && event.keyCode === 9) {
+      event.preventDefault();
+      firstFocus.focus();
+    }
+  });
 };
 
 /* Generate ranges once */
@@ -350,10 +401,15 @@ const openChart = function openEloHistoryChart() {
 
   const series = generateSeries(team, rangeSeries);
 
+  eloLightbox.setAttribute('aria-label', `${team.name} Elo history`);
+
   eloLightboxBg.classList.add('is-visible');
   eloLightbox.classList.add('is-visible');
 
   drawChart(team, series);
+
+  /* Accessibility */
+  handleKeys(eloLightbox);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -363,13 +419,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('hashchange', () => {
   openChart();
 });
-
-const closeChart = function closeEloHistoryChart() {
-  eloLightboxBg.classList.remove('is-visible');
-  eloLightbox.classList.remove('is-visible');
-
-  window.history.replaceState(null, null, ' ');
-};
 
 eloLightboxClose.addEventListener('click', (event) => {
   event.preventDefault();
