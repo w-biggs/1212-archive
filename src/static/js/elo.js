@@ -8,12 +8,12 @@ const eloTable = document.getElementsByClassName('elo-table')[0];
 
 eloExpandButton.addEventListener('click', () => {
   if (eloExpandButton.getAttribute('aria-expanded') === 'true') {
-    eloTable.classList.remove('is-collapsed');
-    eloExpandButton.innerText = collapseText;
-    eloExpandButton.setAttribute('aria-expanded', 'false');
-  } else {
     eloTable.classList.add('is-collapsed');
     eloExpandButton.innerText = expandText;
+    eloExpandButton.setAttribute('aria-expanded', 'false');
+  } else {
+    eloTable.classList.remove('is-collapsed');
+    eloExpandButton.innerText = collapseText;
     eloExpandButton.setAttribute('aria-expanded', 'true');
   }
 });
