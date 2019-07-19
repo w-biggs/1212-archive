@@ -1,15 +1,16 @@
 const path = require('path');
 const express = require('express');
 const ejs = require('ejs');
-const elo = require('./src/static/js/elo.json');
+const elo = require('./server/elo.json');
+const fetchGames = require('./server/fetchGames');
 
 const app = express();
 
 /* Views */
-app.set('views', path.join(__dirname, 'app/views'));
+app.set('views', path.join(__dirname, 'views'));
 
 /* Static assets */
-app.use(express.static(path.join(__dirname, 'app/static')));
+app.use(express.static(path.join(__dirname, 'static')));
 
 /* Live reload */
 if (app.get('env') === 'development') {
@@ -31,7 +32,13 @@ const data = {
 
 /* Routes */
 app.get('/', (req, res) => {
-  res.render('pages/index', data);
+  fetchGames()
+    .then((response) => {
+      console.log(response.message);
+      data.scores = response.data;
+    })
+    .catch(error => console.error(error))
+    .then(() => res.render('pages/index', data));
 });
 
 /* Serve */

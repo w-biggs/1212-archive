@@ -2,7 +2,32 @@
   <div class="scoreboard">
     <h2 class="section-header">Scoreboard</h2>
     <div class="scoreboard-games">
-      <span>Loading...</span>
+      <% for (score of scores) { %>
+        <% const { status, teams, gameID } = score; %>
+        <div class="scoreboard-game">
+          <div class="scoreboard-teams">
+            <% teams.forEach((team, i) => { %>
+              <div class="scoreboard-team">
+                <div class="scoreboard-team-name <%= team.name === team.possession ? 'is-possession' : '' %>">
+                  <%= team.name %>
+                </div>
+                <div class="scoreboard-team-score
+                  <%= status.final ? 'is-final' : '' %>
+                  <%= team.score > teams[(i + 1) % 2].score ? 'is-win' : 'is-loss' %>
+                ">
+                  <%= team.score %>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+          <div class="scoreboard-status">
+            <%= status.final ? 'Final' : `${status.time} ${status.quarter}Q - ${status.down} & ${status.toGo} on ${status.whoseYardline} ${status.yardline}` %>
+          </div>
+          <a href="<%= `https://reddit-stream.com/comments/${gameID}` %>" class="scoreboard-stream-link">
+            <span>View on reddit-stream &gt;</span>
+          </a>
+        </div>
+      <% } %>
     </div>
   </div>
 </div>

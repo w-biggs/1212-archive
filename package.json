@@ -21,13 +21,15 @@
   "dependencies": {
     "ejs": "^2.6.2",
     "express": "^4.17.1",
-    "highcharts": "^7.1.2"
+    "highcharts": "^7.1.2",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "browserify": "^16.3.0",
     "connect-livereload": "^0.6.1",
+    "del": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-changed": "^4.0.0",

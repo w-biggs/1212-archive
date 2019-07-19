@@ -1,5 +1,5 @@
 /* eslint arrow-body-style: 0 */
-
+const del = require('del');
 const gulp = require('gulp');
 const changed = require('gulp-changed');
 const tap = require('gulp-tap');
@@ -16,7 +16,11 @@ const gls = require('gulp-live-server');
 
 sass.compiler = require('node-sass');
 
-// https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-with-globs.md
+gulp.task('clean', () => {
+  return del(['./app/**']);
+});
+
+// https://github.com/gulpjs/gulp/blob/master/docs/recipes/
 gulp.task('js', () => {
   return gulp.src('./src/static/js/*.js', { read: false, base: './src/static/js/' })
     .pipe(changed('./app/static/js/'))
@@ -33,6 +37,11 @@ gulp.task('js', () => {
     .pipe(gulp.dest('./app/static/js/'))
     .pipe(rev.manifest())
     .pipe(gulp.dest('./app/static/js/'));
+});
+
+gulp.task('serverfiles', () => {
+  return gulp.src(['./src/server.js', './src/server/*'], { base: './src/' })
+    .pipe(gulp.dest('./app/'));
 });
 
 gulp.task('vendorjs', () => {
@@ -66,17 +75,18 @@ gulp.task('ejs', () => {
     .pipe(gulp.dest('./app/'));
 });
 
-gulp.task('build', gulp.series('js', 'vendorjs', 'scss', 'ejs', 'images'));
+gulp.task('build', gulp.series('clean', 'js', 'serverfiles', 'vendorjs', 'scss', 'ejs', 'images'));
 
 gulp.task('watch', () => {
   gulp.watch('./src/static/scss/**/*.scss', gulp.series('scss'));
   gulp.watch('./src/static/js/**/*.js', gulp.series('js'));
+  gulp.watch(['./src/server.js', './src/server/*.js'], gulp.series('serverfiles'));
   gulp.watch('./src/static/images/*', gulp.series('images'));
   gulp.watch('./src/views/**/*.ejs', gulp.series('ejs'));
 });
 
 gulp.task('serve', () => {
-  const server = gls.new('./server.js');
+  const server = gls.new('./app/server.js');
   server.start();
 
   gulp.watch([
@@ -86,7 +96,7 @@ gulp.task('serve', () => {
     './app/views/**/*.ejs',
   ]).on('change', path => server.notify.call(server, { path }));
 
-  gulp.watch('./server.js')
+  gulp.watch(['./app/server.js', './app/server/*', '!./app/server/cache/*'])
     .on('change', () => server.start.bind(server)());
 });
 
