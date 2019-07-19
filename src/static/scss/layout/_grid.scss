@@ -1,8 +1,11 @@
+$header-height: 3rem;
+$footer-height: 3rem;
+
 .l-container {
   max-width: $container-width;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3rem auto auto auto 3rem;
+  grid-template-rows: $header-height auto auto auto $footer-height;
   grid-template-areas: 
     "header"
     "scboard"
@@ -16,7 +19,7 @@
 @media screen and (min-width: $breakpoint-md){
   .l-container {
     grid-template-columns: 1fr 1fr 1fr 15rem;
-    grid-template-rows: 3rem auto auto 3rem;
+    grid-template-rows: $header-height auto auto $footer-height;
     grid-template-areas: 
       "header header header header"
       "scboard scboard scboard scboard"

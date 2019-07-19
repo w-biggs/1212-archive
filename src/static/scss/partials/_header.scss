@@ -1,6 +1,7 @@
 .header {
   padding: $pad 0;
   grid-area: header;
+  height: $header-height;
   border-bottom: 2px solid black;
   display: flex;
 }

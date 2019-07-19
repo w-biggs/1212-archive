@@ -45,7 +45,7 @@
 
   &.is-collapsed{
     tr:nth-of-type(n+11){
-      visibility: collapse;
+      display: none;
     }
   }
 }
