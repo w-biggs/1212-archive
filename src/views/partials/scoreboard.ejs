@@ -1,33 +1,74 @@
 <div class="scoreboard-container">
   <div class="scoreboard">
     <h2 class="section-header">Scoreboard</h2>
-    <div class="scoreboard-games">
-      <% for (score of scores) { %>
-        <% const { status, teams, gameID } = score; %>
+    <% if (typeof scores === 'undefined') { %>
+      <div class="scoreboard-games">
         <div class="scoreboard-game">
           <div class="scoreboard-teams">
-            <% teams.forEach((team, i) => { %>
-              <div class="scoreboard-team">
-                <div class="scoreboard-team-name <%= team.name === team.possession ? 'is-possession' : '' %>">
-                  <%= team.name %>
-                </div>
-                <div class="scoreboard-team-score
-                  <%= status.final ? 'is-final' : '' %>
-                  <%= team.score > teams[(i + 1) % 2].score ? 'is-win' : 'is-loss' %>
-                ">
-                  <%= team.score %>
-                </div>
+            <div class="scoreboard-team">
+              <div class="scoreboard-team-name">
+                Loading...
               </div>
-            <% }); %>
+              <div class="scoreboard-team-score">
+                ?
+              </div>
+            </div>
+            <div class="scoreboard-team">
+              <div class="scoreboard-team-name">
+                Loading...
+              </div>
+              <div class="scoreboard-team-score">
+                ?
+              </div>
+            </div>
           </div>
           <div class="scoreboard-status">
-            <%= status.final ? 'Final' : `${status.time} ${status.quarter}Q - ${status.down} & ${status.toGo} on ${status.whoseYardline} ${status.yardline}` %>
+            Loading...
           </div>
-          <a href="<%= `https://reddit-stream.com/comments/${gameID}` %>" class="scoreboard-stream-link">
-            <span>View on reddit-stream &gt;</span>
+          <span class="scoreboard-stream-link">
+            <span>Loading...</span>
           </a>
         </div>
-      <% } %>
-    </div>
+      </div>
+    <% } else { %>
+      <%
+        let collapseClass = '';
+        if (scores.length > 2) {
+          const collapseAt = Math.min(4, scores.length - 1);
+          collapseClass = `collapse-${collapseAt} is-collapsed`;
+        }
+      %>
+      <div class="scoreboard-games <%= collapseClass %>">
+        <% for (score of scores) { %>
+          <% const { status, teams, gameID } = score; %>
+          <div class="scoreboard-game">
+            <div class="scoreboard-teams">
+              <% teams.forEach((team, i) => { %>
+                <div class="scoreboard-team">
+                  <div class="scoreboard-team-name <%= team.name !== status.possession && !status.final ? 'is-defense' : '' %>">
+                    <%= team.name %>
+                  </div>
+                  <div class="scoreboard-team-score
+                    <%= status.final ? 'is-final' : '' %>
+                    <%= team.score > teams[(i + 1) % 2].score ? 'is-win' : 'is-loss' %>
+                  ">
+                    <%= team.score %>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+            <div class="scoreboard-status">
+              <%= status.final ? 'Final' : `${status.time} ${status.quarter}Q - ${status.down} & ${status.toGo} on ${status.whoseYardline} ${status.yardline}` %>
+            </div>
+            <a href="<%= `https://reddit-stream.com/comments/${gameID}` %>" class="scoreboard-stream-link">
+              <span>View on reddit-stream &gt;</span>
+            </a>
+          </div>
+        <% } %>
+        <div class="scoreboard-expand">
+          <button data-collapse-text="Show less">Show more</button>
+        </div>
+      </div>
+    <% }; %>
   </div>
 </div>

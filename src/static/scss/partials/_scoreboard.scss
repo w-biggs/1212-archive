@@ -9,14 +9,59 @@
   height: 100%;
 }
 
+.scoreboard-expand{
+  width: 100%;
+  display: none;
+  
+  button{
+    margin: 0.5rem auto;
+    background-color: white;
+    border: 1px solid black;
+    padding: 0.625rem 0.5rem;
+    line-height: 1;
+    display: block;
+    transition: background-color 0.15s ease;
+
+    &:hover{
+      background-color: $placeholder-grey;
+    }
+  }
+}
+
 .scoreboard-games{
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: center;
-  
-  @media screen and (min-width: $breakpoint-sm){
-    justify-content: flex-start;
+  justify-content: space-around;
+
+  @media screen and (max-width: $breakpoint-md){
+    &.collapse-2, &.collapse-3, &.collapse-4{
+      &.is-collapsed .scoreboard-game:nth-of-type(n+3){
+        display: none;
+      }
+      .scoreboard-expand{
+        display: block;
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint-lg){
+    &.collapse-3, &.collapse-4{
+      &.is-collapsed .scoreboard-game:nth-of-type(n+4){
+        display: none;
+      }
+      .scoreboard-expand{
+        display: block;
+      }
+    }
+  }
+
+  &.collapse-4{
+    &.is-collapsed .scoreboard-game:nth-of-type(n+5){
+      display: none;
+    }
+    .scoreboard-expand{
+      display: block;
+    }
   }
 }
 
@@ -40,6 +85,11 @@
   flex: 1;
   line-height: 2rem;
   padding: 0 0.5rem;
+  position: relative;
+
+  &.is-defense{
+    color: $faded;
+  }
 }
 
 .scoreboard-team-score{
@@ -54,10 +104,10 @@
 
   &.is-final{
     font-weight: bold;
-  }
 
-  &.is-loss{
-    color: $faded;
+    &.is-loss{
+      color: $faded;
+    }
   }
 }
 

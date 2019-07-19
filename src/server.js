@@ -32,23 +32,18 @@ const data = {
 
 /* Routes */
 app.get('/', (req, res) => {
-  fetchGames()
-    .then((response) => {
-      console.log(response.message);
-      data.scores = response.data;
-    })
-    .catch(error => console.error(error))
-    .then(() => res.render('pages/index', data));
+  res.render('pages/index', data);
 });
 
 app.post('/reload-scores', (req, res) => {
+  const scoreData = {};
   fetchGames()
     .then((response) => {
       console.log(response.message);
-      data.scores = response.data;
+      scoreData.scores = response.data;
     })
     .catch(error => console.error(error))
-    .then(() => res.render('partials/scoreboard', data));
+    .then(() => res.render('partials/scoreboard', scoreData));
 });
 
 /* Serve */

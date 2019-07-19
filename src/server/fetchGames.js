@@ -3,6 +3,16 @@ const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
 const games = require('./games.json');
+const elo = require('./elo.json');
+
+const getAbbreviation = function getTeamAbbreviation(name) {
+  const teamInfo = elo.teams.filter(team => team.name === name);
+  if (teamInfo) {
+    return teamInfo[0].abbr;
+  }
+  console.error(`No abbreviation found for ${name}`);
+  return name;
+};
 
 const fetchGameJson = function fetchGameJsonViaHttps(gameID) {
   return new Promise((resolve, reject) => {
@@ -56,7 +66,7 @@ const parseResponse = function parseJSONResponse(response, gameID) {
       down: match[3],
       toGo: match[4],
       yardline: match[5],
-      whoseYardline: match[6],
+      whoseYardline: getAbbreviation(match[6]),
       possession: match[7],
       final,
     },
