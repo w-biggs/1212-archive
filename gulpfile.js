@@ -7,6 +7,7 @@ const browserify = require('browserify');
 const buffer = require('vinyl-buffer');
 const rev = require('gulp-rev');
 const revRewrite = require('gulp-rev-rewrite');
+const revDel = require('rev-del');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 // const uglify = require('gulp-uglify');
@@ -16,9 +17,14 @@ const gls = require('gulp-live-server');
 
 sass.compiler = require('node-sass');
 
-gulp.task('clean', () => {
-  return del(['./app/**']);
-});
+const clean = function cleanDirectory(dir, done) {
+  del(dir)
+    .then(() => {
+      if (done) {
+        done();
+      }
+    });
+};
 
 // https://github.com/gulpjs/gulp/blob/master/docs/recipes/
 gulp.task('js', () => {
@@ -36,6 +42,10 @@ gulp.task('js', () => {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./app/static/js/'))
     .pipe(rev.manifest())
+    .pipe(revDel({
+      dest: './app/static/js/',
+      deleteMapExtensions: true,
+    }))
     .pipe(gulp.dest('./app/static/js/'));
 });
 
@@ -58,6 +68,10 @@ gulp.task('scss', () => {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./app/static/css/'))
     .pipe(rev.manifest())
+    .pipe(revDel({
+      dest: './app/static/css/',
+      deleteMapExtensions: true,
+    }))
     .pipe(gulp.dest('./app/static/css/'));
 });
 
@@ -75,11 +89,11 @@ gulp.task('ejs', () => {
     .pipe(gulp.dest('./app/'));
 });
 
-gulp.task('build', gulp.series('clean', 'js', 'serverfiles', 'vendorjs', 'scss', 'ejs', 'images'));
+gulp.task('build', gulp.series((done) => { clean('./app/**', done); }, 'js', 'serverfiles', 'vendorjs', 'scss', 'ejs', 'images'));
 
 gulp.task('watch', () => {
-  gulp.watch('./src/static/scss/**/*.scss', gulp.series('scss'));
-  gulp.watch('./src/static/js/**/*.js', gulp.series('js'));
+  gulp.watch('./src/static/scss/**/*.scss', gulp.series('scss', 'ejs'));
+  gulp.watch('./src/static/js/**/*.js', gulp.series('js', 'ejs'));
   gulp.watch(['./src/server.js', './src/server/*.js'], gulp.series('serverfiles'));
   gulp.watch('./src/static/images/*', gulp.series('images'));
   gulp.watch('./src/views/**/*.ejs', gulp.series('ejs'));
@@ -89,9 +103,8 @@ gulp.task('serve', () => {
   const server = gls.new('./app/server.js');
   server.start();
 
+  /* scss & js compilation automatically compile ejs already */
   gulp.watch([
-    './app/static/css/**/*.css',
-    './app/static/js/**/*.js',
     './app/static/images/*',
     './app/views/**/*.ejs',
   ]).on('change', path => server.notify.call(server, { path }));

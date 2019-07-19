@@ -41,6 +41,16 @@ app.get('/', (req, res) => {
     .then(() => res.render('pages/index', data));
 });
 
+app.post('/reload-scores', (req, res) => {
+  fetchGames()
+    .then((response) => {
+      console.log(response.message);
+      data.scores = response.data;
+    })
+    .catch(error => console.error(error))
+    .then(() => res.render('partials/scoreboard', data));
+});
+
 /* Serve */
 const PORT = process.env.PORT || 1212;
 app.listen(PORT, () => {
