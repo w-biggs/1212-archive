@@ -92,6 +92,11 @@ gulp.task('png', () => {
     .pipe(gulp.dest('./app/static/images/'));
 });
 
+gulp.task('other-static', () => {
+  return gulp.src('./src/static/*')
+    .pipe(gulp.dest('./app/static/'));
+});
+
 gulp.task('images', gulp.series('svg', 'png'));
 
 gulp.task('ejs', () => {
@@ -115,6 +120,7 @@ gulp.task('build',
       'scss',
       'fonts',
       'images',
+      'other-static',
     ),
     'ejs',
   ));
