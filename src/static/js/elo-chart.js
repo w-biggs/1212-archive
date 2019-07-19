@@ -52,7 +52,7 @@ const gameString = function createGameString(team, point) {
   let losses = 0;
   let ties = 0;
 
-  const season = team.seasons.find(teamSeason => teamSeason.seasonNo === seasonNo);
+  const season = team.seasons.filter(teamSeason => teamSeason.seasonNo === seasonNo)[0];
 
   season.weeks.forEach((week) => {
     if (week.weekNo <= weekNo && Object.prototype.hasOwnProperty.call(week, 'gameInfo')) {
@@ -66,7 +66,7 @@ const gameString = function createGameString(team, point) {
     }
   });
 
-  const { gameInfo } = season.weeks.find(week => week.weekNo === weekNo);
+  const { gameInfo } = season.weeks.filter(week => week.weekNo === weekNo)[0];
 
   const resultString = `${gameInfo.result.charAt(0).toUpperCase()} ${gameInfo.score}-${gameInfo.oppScore} vs. ${gameInfo.oppName}`;
 
@@ -118,7 +118,7 @@ const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeri
   const series = [];
   rangeSeries.forEach((seasonRangeSeries, i) => {
     const { data: seasonRanges, seasonNo } = seasonRangeSeries;
-    const teamSeason = team.seasons.find(season => season.seasonNo === seasonNo);
+    const teamSeason = team.seasons.filter(season => season.seasonNo === seasonNo)[0];
     const teamSeries = [];
 
     /* If team played that season */
@@ -149,7 +149,7 @@ const generateSeries = function generateEloSeriesForSpecificTeam(team, rangeSeri
         if (weekNo < 0) {
           point.y = 1500;
         } else {
-          const teamWeek = teamSeason.weeks.find(week => week.weekNo === weekNo);
+          const teamWeek = teamSeason.weeks.filter(week => week.weekNo === weekNo)[0];
           if (teamWeek) {
             point.y = teamWeek.elo;
           }
@@ -342,7 +342,7 @@ const openChart = function openEloHistoryChart() {
   }
   const hash = decodeURI(window.location.hash.replace(/^#/, ''));
 
-  const team = eloHistory.teams.find(eloTeam => eloTeam.name === hash);
+  const team = eloHistory.teams.filter(eloTeam => eloTeam.name === hash)[0];
 
   if (!rangeSeries) {
     rangeSeries = generateRangeSeries();

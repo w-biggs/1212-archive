@@ -5,10 +5,10 @@ const reloadScores = function reloadScoresWithPostRequest() {
   request.open('POST', '/reload-scores');
   request.onreadystatechange = function log() {
     if (request.readyState === 4 && request.status === 200) {
-      const scoreboardTemplate = document.createElement('template');
-      scoreboardTemplate.innerHTML = request.response.trim();
+      const placeholderDiv = document.createElement('div');
+      placeholderDiv.innerHTML = request.response.trim();
       scoreboardContainer.parentNode.replaceChild(
-        scoreboardTemplate.content.firstChild,
+        placeholderDiv.firstChild,
         scoreboardContainer,
       );
     }
