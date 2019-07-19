@@ -142,7 +142,7 @@ const checkCache = function checkAgeOfCachedScores(cachePath) {
         } else {
           reject(err);
         }
-      } else if (Date.now() - stats.mtimeMs > 60000) {
+      } else if (Date.now() - stats.mtimeMs >= 60000) {
         const age = Math.round((Date.now() - stats.mtimeMs) / 1000, 0);
         console.log(`Updating scores - cached file is ${age}s old.`);
         resolve(fetchAndWriteGames(cachePath));
