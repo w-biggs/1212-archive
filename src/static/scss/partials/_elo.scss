@@ -54,14 +54,29 @@
   width: 1%;
 }
 
-.elo-team > a{
-  font-weight: 700;
-  text-decoration: none;
-  color: inherit;
+.elo-team{
+  vertical-align: middle;
 }
 
-.elo-team > a:hover{
+.elo-team > a{
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  padding-left: 1.5rem; // image size
+  position: relative;
+}
+
+.elo-team > a:hover {
   text-decoration: underline;
+}
+
+.elo-team-logo{
+  height: 1.25rem;
+  width: 1.25rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .elo-record{

@@ -32,6 +32,7 @@
     "gulp-rev-rewrite": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgmin": "^2.2.0",
     "gulp-tap": "^1.0.1",
     "gulp-uglify": "^3.0.2",
     "node-sass": "^4.12.0",

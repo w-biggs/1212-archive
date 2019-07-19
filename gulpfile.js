@@ -10,8 +10,9 @@ const revRewrite = require('gulp-rev-rewrite');
 const revDel = require('rev-del');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
-// const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
+const svgmin = require('gulp-svgmin');
 const gls = require('gulp-live-server');
 // const debug = require('gulp-debug');
 
@@ -37,7 +38,7 @@ gulp.task('js', () => {
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(babel())
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(rev())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./app/static/js/'))
@@ -75,10 +76,23 @@ gulp.task('scss', () => {
     .pipe(gulp.dest('./app/static/css/'));
 });
 
-gulp.task('images', () => {
-  return gulp.src('./src/static/images/*')
+gulp.task('fonts', () => {
+  return gulp.src('./src/static/fonts/**/*', { base: './src/static/fonts/' })
+    .pipe(gulp.dest('./app/static/fonts/'));
+});
+
+gulp.task('svg', () => {
+  return gulp.src('./src/static/images/**/*.svg', { base: './src/static/images/' })
+    .pipe(svgmin())
     .pipe(gulp.dest('./app/static/images/'));
 });
+
+gulp.task('png', () => {
+  return gulp.src('./src/static/images/**/*.png', { base: './src/static/images/' })
+    .pipe(gulp.dest('./app/static/images/'));
+});
+
+gulp.task('images', gulp.series('svg', 'png'));
 
 gulp.task('ejs', () => {
   const jsManifest = gulp.src('./app/static/js/rev-manifest.json');
@@ -89,7 +103,21 @@ gulp.task('ejs', () => {
     .pipe(gulp.dest('./app/'));
 });
 
-gulp.task('build', gulp.series((done) => { clean('./app/**', done); }, 'js', 'serverfiles', 'vendorjs', 'scss', 'ejs', 'images'));
+gulp.task('build',
+  gulp.series(
+    (done) => {
+      clean('./app/**', done);
+    },
+    gulp.parallel(
+      'js',
+      'serverfiles',
+      'vendorjs',
+      'scss',
+      'fonts',
+      'images',
+    ),
+    'ejs',
+  ));
 
 gulp.task('watch', () => {
   gulp.watch('./src/static/scss/**/*.scss', gulp.series('scss', 'ejs'));
