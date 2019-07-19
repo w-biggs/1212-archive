@@ -10,7 +10,7 @@ $modularscale: (
   base: 1em,
   ratio: $fourth,
   $breakpoint-sm: (
-    ratio: $minor-third
+    ratio: $major-third
   ),
   $breakpoint-md: (
     ratio: $fourth
@@ -28,6 +28,10 @@ h3 {
 }
 h4 {
   @include ms-respond(font-size,1);
+}
+
+.is-disabled{
+  color: $faded !important;
 }
 
 .section-header{
