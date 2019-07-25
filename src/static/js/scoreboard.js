@@ -33,12 +33,11 @@ const checkOverflow = function checkIfScoresAreOverflowingAndShowButton() {
 
 const checkShowButton = function checkIfExpandScoreboardButtonShouldShow() {
   const overflow = checkOverflow();
-  const scoreboard = document.getElementsByClassName('scoreboard')[0];
 
   if (overflow) {
-    scoreboard.classList.add('is-overflowing');
+    document.body.classList.add('scoreboard-is-overflowing');
   } else {
-    scoreboard.classList.remove('is-overflowing');
+    document.body.classList.remove('scoreboard-is-overflowing');
   }
 };
 
@@ -73,7 +72,7 @@ const setMaxHeight = function setMaxHeightOfCollapsedScoreboard() {
     * 2;
 
   const styleEl = document.createElement('style');
-  styleEl.appendChild(document.createTextNode(`.scoreboard.is-collapsed .scoreboard-games{ max-height: ${maxHeight.toFixed(2)}px }`));
+  styleEl.appendChild(document.createTextNode(`body.scoreboard-is-collapsed .scoreboard-games{ max-height: ${maxHeight.toFixed(2)}px }`));
 
   document.getElementsByTagName('head')[0].appendChild(styleEl);
 };
@@ -83,18 +82,17 @@ const clickListener = function addScoreboardExpandButtonClickListener() {
 
   document.addEventListener('click', (event) => {
     if (event.target.parentNode.classList.contains('scoreboard-expand')) {
-      const scoreboard = document.getElementsByClassName('scoreboard')[0];
-      const scoreboardExpand = scoreboard.getElementsByClassName('scoreboard-expand')[0];
+      const scoreboardExpand = document.getElementsByClassName('scoreboard-expand')[0];
       const scoreboardExpandButton = scoreboardExpand.getElementsByTagName('button')[0];
       expandText = expandText || scoreboardExpandButton.innerText;
       const { collapseText } = scoreboardExpandButton.dataset;
   
       if (scoreboardExpandButton.getAttribute('aria-expanded') === 'true') {
-        scoreboard.classList.add('is-collapsed');
+        document.body.classList.add('scoreboard-is-collapsed');
         scoreboardExpandButton.innerText = expandText;
         scoreboardExpandButton.setAttribute('aria-expanded', 'false');
       } else {
-        scoreboard.classList.remove('is-collapsed');
+        document.body.classList.remove('scoreboard-is-collapsed');
         scoreboardExpandButton.innerText = collapseText;
         scoreboardExpandButton.setAttribute('aria-expanded', 'true');
       }

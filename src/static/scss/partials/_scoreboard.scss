@@ -28,7 +28,7 @@
   }
 }
 
-.scoreboard.is-overflowing .scoreboard-expand{
+body.scoreboard-is-overflowing .scoreboard-expand{
   display: block;
 }
 
@@ -39,7 +39,7 @@
   justify-content: space-around;
 }
 
-.scoreboard.is-collapsed .scoreboard-games{
+body.scoreboard-is-collapsed .scoreboard-games{
   overflow: hidden;
 }
 
