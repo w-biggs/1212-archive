@@ -31,12 +31,12 @@ document.addEventListener('click', (event) => {
     const { collapseText } = scoreboardExpandButton.dataset;
 
     if (scoreboardExpandButton.getAttribute('aria-expanded') === 'true') {
-      scoreboardGames.classList.remove('is-collapsed');
-      scoreboardExpandButton.innerText = collapseText;
-      scoreboardExpandButton.setAttribute('aria-expanded', 'false');
-    } else {
       scoreboardGames.classList.add('is-collapsed');
       scoreboardExpandButton.innerText = expandText;
+      scoreboardExpandButton.setAttribute('aria-expanded', 'false');
+    } else {
+      scoreboardGames.classList.remove('is-collapsed');
+      scoreboardExpandButton.innerText = collapseText;
       scoreboardExpandButton.setAttribute('aria-expanded', 'true');
     }
   }

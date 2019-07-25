@@ -7,7 +7,7 @@ const elo = require('./elo.json');
 
 const getAbbreviation = function getTeamAbbreviation(name) {
   const teamInfo = elo.teams.filter(team => team.name === name);
-  if (teamInfo) {
+  if (teamInfo.length) {
     return teamInfo[0].abbr;
   }
   console.error(`No abbreviation found for ${name}`);
@@ -37,9 +37,13 @@ const fetchGameJson = function fetchGameJsonViaHttps(gameID) {
   });
 };
 
+const fixEntities = function fixHtmlEntities(string) {
+  return string.replace('&amp;', '&').replace('&amp;', '&').replace('&amp;', '&');
+};
+
 const parseResponse = function parseJSONResponse(response, gameID) {
   const text = response.data.children[0].data.selftext;
-  const regex = /[\s\S]*?Clock.*\n.*\n([0-9]+:[0-9]+)\|([0-9])\|(.+) &amp; ([0-9]+)\|([0-9]+) \[(.+?)\].+?\|\[(.+?)\][\s\S]*?Team.*\n.*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n/gm;
+  const regex = /[\s\S]*?Clock.*\n.*\n([0-9]+:[0-9]+)\|([0-9])\|(.+) &amp; ([0-9]+)\|(-?[0-9]+) \[(.+?)\].+?\|\[(.+?)\][\s\S]*?Team.*\n.*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n/gm;
 
   const match = regex.exec(text);
   if (!match) {
@@ -48,15 +52,15 @@ const parseResponse = function parseJSONResponse(response, gameID) {
   }
 
   const final = text.includes('Game complete');
-    
-  return {
+
+  const parsedJson = {
     teams: [
       {
-        name: match[8],
+        name: fixEntities(match[8]),
         score: match[9],
       },
       {
-        name: match[10],
+        name: fixEntities(match[10]),
         score: match[11],
       },
     ],
@@ -66,12 +70,14 @@ const parseResponse = function parseJSONResponse(response, gameID) {
       down: match[3],
       toGo: match[4],
       yardline: match[5],
-      whoseYardline: getAbbreviation(match[6]),
+      whoseYardline: getAbbreviation(fixEntities(match[6])),
       possession: match[7],
       final,
     },
     gameID,
   };
+    
+  return parsedJson;
 };
 
 const parseGames = function parseGames(responses) {
@@ -124,7 +130,7 @@ const fetchAndWriteGames = async function fetchGamesAndWriteToCache(cachePath) {
       message: `Got ${responses.length} responses and wrote to cache.`,
       data: responses,
     }))
-    .catch(error => error);
+    .catch(error => console.error(error));
 };
 
 const readCache = function readCachedScores(cachePath) {
