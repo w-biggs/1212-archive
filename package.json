@@ -8,6 +8,9 @@
     "url": "git+https://github.com/w-biggs/1212.git"
   },
   "license": "ISC",
+  "scripts": {
+    "push": "rsync -rvzh --progress --delete ./app server:/srv/1212.one"
+  },
   "bugs": {
     "url": "https://github.com/w-biggs/1212/issues"
   },

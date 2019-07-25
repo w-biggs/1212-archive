@@ -58,7 +58,7 @@ const parseResponse = function parseJSONResponse(response, gameID) {
 
   let match = regex.exec(text);
   if (!match) {
-    console.error('No regex match.', text);
+    console.error(`No regex match for game ${gameID}`);
     return false;
   }
 
@@ -109,7 +109,8 @@ const parseResponse = function parseJSONResponse(response, gameID) {
 };
 
 const parseGames = function parseGames(responses) {
-  const parsedResponses = responses.map(response => parseResponse(response.json, response.gameID));
+  const parsedResponses = responses.map(response => parseResponse(response.json, response.gameID))
+    .filter(response => response);
 
   // Sort based on time elapsed, final last, 4q first
   return parsedResponses.sort((a, b) => {
