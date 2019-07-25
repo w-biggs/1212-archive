@@ -41,47 +41,86 @@ const fixEntities = function fixHtmlEntities(string) {
   return string.replace('&amp;', '&').replace('&amp;', '&').replace('&amp;', '&');
 };
 
+const calcTime = function calculateTimeElapsedFromTimeAndQuarter(time, quarter, final) {
+  if (final) {
+    return (28 * 60);
+  }
+  let minSec = time.split(':');
+  minSec = minSec.map(num => parseInt(num, 10));
+  const quarterInt = Math.min(4, parseInt(quarter, 10));
+  const quarterSec = (quarterInt - 1) * (7 * 60);
+  return quarterSec + ((7 * 60) - ((minSec[0] * 60) + minSec[1]));
+};
+
 const parseResponse = function parseJSONResponse(response, gameID) {
   const text = response.data.children[0].data.selftext;
   const regex = /[\s\S]*?Clock.*\n.*\n([0-9]+:[0-9]+)\|([0-9])\|(.+) &amp; ([0-9]+)\|(-?[0-9]+) \[(.+?)\].+?\|\[(.+?)\][\s\S]*?Team.*\n.*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n/gm;
 
-  const match = regex.exec(text);
+  let match = regex.exec(text);
   if (!match) {
     console.error('No regex match.', text);
     return false;
   }
 
+  match = match.slice(1, 12);
+
+  const [time,
+    quarter,
+    down,
+    toGo,
+    yardline,
+    whoseYardline,
+    possession,
+    homeName,
+    homeScore,
+    awayName,
+    awayScore] = match;
+
   const final = text.includes('Game complete');
+
+  const timeElapsed = calcTime(time, quarter, final);
 
   const parsedJson = {
     teams: [
       {
-        name: fixEntities(match[8]),
-        score: match[9],
+        name: fixEntities(homeName),
+        score: homeScore,
       },
       {
-        name: fixEntities(match[10]),
-        score: match[11],
+        name: fixEntities(awayName),
+        score: awayScore,
       },
     ],
     status: {
-      time: match[1],
-      quarter: match[2],
-      down: match[3],
-      toGo: match[4],
-      yardline: match[5],
-      whoseYardline: getAbbreviation(fixEntities(match[6])),
-      possession: match[7],
+      time,
+      quarter,
+      down,
+      toGo,
+      yardline,
+      whoseYardline: getAbbreviation(fixEntities(whoseYardline)),
+      possession,
       final,
     },
     gameID,
+    timeElapsed,
   };
     
   return parsedJson;
 };
 
 const parseGames = function parseGames(responses) {
-  return responses.map(response => parseResponse(response.json, response.gameID));
+  const parsedResponses = responses.map(response => parseResponse(response.json, response.gameID));
+
+  // Sort based on time elapsed, final last, 4q first
+  return parsedResponses.sort((a, b) => {
+    if (a.timeElapsed === 1680) {
+      return 1;
+    }
+    if (b.timeElapsed === 1680) {
+      return -1;
+    }
+    return b.timeElapsed - a.timeElapsed;
+  });
 };
 
 const fetchAllGames = async function fetchAllGames() {
