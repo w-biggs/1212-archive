@@ -54,7 +54,7 @@ const calcTime = function calculateTimeElapsedFromTimeAndQuarter(time, quarter, 
 
 const parseResponse = function parseJSONResponse(response, gameID) {
   const text = response.data.children[0].data.selftext;
-  const regex = /[\s\S]*?Clock.*\n.*\n([0-9]+:[0-9]+)\|([0-9])\|(.+) &amp; ([0-9]+)\|(-?[0-9]+) \[(.+?)\].+?\|\[(.+?)\][\s\S]*?Team.*\n.*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n/gm;
+  const regex = /[\s\S]*?Clock.*\n.*\n([0-9]+:[0-9]+)\|([0-9])\|(.+) &amp; ([0-9]+)\|(-?[0-9]+)(?: \[(.+?)\])?.*?\|\[(.+?)\][\s\S]*?Team.*\n.*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n/gm;
 
   let match = regex.exec(text);
   if (!match) {
@@ -62,9 +62,7 @@ const parseResponse = function parseJSONResponse(response, gameID) {
     return false;
   }
 
-  match = match.slice(1, 12);
-
-  const [time,
+  let [time,
     quarter,
     down,
     toGo,
@@ -74,7 +72,36 @@ const parseResponse = function parseJSONResponse(response, gameID) {
     homeName,
     homeScore,
     awayName,
-    awayScore] = match;
+    awayScore] = '';
+
+  if (match.length === 12) {
+    match = match.slice(1, 12);
+  
+    [time,
+      quarter,
+      down,
+      toGo,
+      yardline,
+      whoseYardline,
+      possession,
+      homeName,
+      homeScore,
+      awayName,
+      awayScore] = match;
+  } else if (match.length === 11) {
+    match = match.slice(1, 11);
+  
+    [time,
+      quarter,
+      down,
+      toGo,
+      yardline,
+      possession,
+      homeName,
+      homeScore,
+      awayName,
+      awayScore] = match;
+  }
 
   const final = text.includes('Game complete');
 
@@ -97,7 +124,7 @@ const parseResponse = function parseJSONResponse(response, gameID) {
       down,
       toGo,
       yardline,
-      whoseYardline: getAbbreviation(fixEntities(whoseYardline)),
+      whoseYardline: whoseYardline ? getAbbreviation(fixEntities(whoseYardline)) : '',
       possession,
       final,
     },
