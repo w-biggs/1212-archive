@@ -1,5 +1,5 @@
 <div class="scoreboard-container">
-  <div class="scoreboard">
+  <div class="scoreboard is-collapsed">
     <h2 class="section-header">Scoreboard</h2>
     <% if (typeof scores === 'undefined') { %>
       <div class="scoreboard-games">
@@ -31,14 +31,7 @@
         </div>
       </div>
     <% } else { %>
-      <%
-        let collapseClass = '';
-        if (scores.length > 2) {
-          const collapseAt = Math.min(4, scores.length - 1);
-          collapseClass = `collapse-${collapseAt} is-collapsed`;
-        }
-      %>
-      <div class="scoreboard-games <%= collapseClass %>">
+      <div class="scoreboard-games">
         <% for (score of scores) { %>
           <% const { status, teams, gameID } = score; %>
           <div class="scoreboard-game">
@@ -65,9 +58,9 @@
             </a>
           </div>
         <% } %>
-        <div class="scoreboard-expand">
-          <button data-collapse-text="Show less" aria-expanded="false">Show more</button>
-        </div>
+      </div>
+      <div class="scoreboard-expand">
+        <button data-collapse-text="Show less" aria-expanded="false">Show more</button>
       </div>
     <% }; %>
   </div>

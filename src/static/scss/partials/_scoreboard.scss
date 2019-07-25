@@ -28,46 +28,23 @@
   }
 }
 
+.scoreboard.is-overflowing .scoreboard-expand{
+  display: block;
+}
+
 .scoreboard-games{
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-around;
+}
 
-  @media screen and (max-width: $breakpoint-md){
-    &.collapse-2, &.collapse-3, &.collapse-4{
-      &.is-collapsed .scoreboard-game:nth-of-type(n+3){
-        display: none;
-      }
-      .scoreboard-expand{
-        display: block;
-      }
-    }
-  }
-  @media screen and (max-width: $breakpoint-lg){
-    &.collapse-3, &.collapse-4{
-      &.is-collapsed .scoreboard-game:nth-of-type(n+4){
-        display: none;
-      }
-      .scoreboard-expand{
-        display: block;
-      }
-    }
-  }
-
-  &.collapse-4{
-    &.is-collapsed .scoreboard-game:nth-of-type(n+5){
-      display: none;
-    }
-    .scoreboard-expand{
-      display: block;
-    }
-  }
+.scoreboard.is-collapsed .scoreboard-games{
+  overflow: hidden;
 }
 
 .scoreboard-game{
   border: 1px solid $border-color;
-  display: table;
   margin: 0.5rem;
 }
 
@@ -77,13 +54,13 @@
 
 .scoreboard-team{
   display: flex;
-  width: 15rem;
+  width: 12.5rem;
 }
 
 .scoreboard-team-name{
-  @include ms-respond(font-size,0);
+  @include ms-respond(font-size,-0.5);
   flex: 1;
-  line-height: 2rem;
+  line-height: 1.625rem;
   padding: 0 0.5rem;
   position: relative;
 
@@ -93,14 +70,14 @@
 }
 
 .scoreboard-team-score{
-  @include ms-respond(font-size,1);
+  @include ms-respond(font-size,0);
   border-left: 1px solid $border-color;
   font-family: $mono-font-family;
   padding: 0 0.25rem;
-  flex: 0 0 2.5rem;
-  width: 2.5rem;
+  flex: 0 0 2rem;
+  width: 2rem;
   text-align: center;
-  line-height: 2rem;
+  line-height: 1.625rem;
 
   &.is-final{
     font-weight: bold;
@@ -112,18 +89,20 @@
 }
 
 .scoreboard-status{
+  font-family: $system-font-family;
+  font-weight: 600;
   border-bottom: 1px solid $border-color;
-  line-height: 1;
-  padding: 0.25rem 0.5rem;
-  @include ms-respond(font-size,-1);
+  line-height: 1.125rem;
+  padding: 0 0.5rem;
+  @include ms-respond(font-size,-1.5);
 }
 
 .scoreboard-stream-link{
   display: block;
-  line-height: 1;
+  line-height: 1.125rem;
   @include ms-respond(font-size,-2);
   text-transform: uppercase;
-  padding: 0.25rem 0.5rem;
+  padding: 0 0.5rem;
   text-align: right;
 
   &:hover{
