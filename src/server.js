@@ -2,8 +2,9 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 const ejs = require('ejs');
-const elo = require('./server/elo.json');
+const elo = require('./static/js/elo.json');
 const fetchGames = require('./server/fetchGames');
+const { season, week } = require('./server/games.json');
 
 const app = express();
 
@@ -32,6 +33,8 @@ app.set('view engine', 'ejs');
 const data = {
   env: app.get('env'),
   teams: elo.teams,
+  season,
+  week,
 };
 
 /* Routes */

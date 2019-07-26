@@ -50,6 +50,11 @@ gulp.task('js', () => {
     .pipe(gulp.dest('./app/static/js/'));
 });
 
+gulp.task('json', () => {
+  return gulp.src('./src/static/js/*.json')
+    .pipe(gulp.dest('./app/static/js/'));
+});
+
 gulp.task('serverfiles', () => {
   return gulp.src(['./src/server.js', './src/server/*'], { base: './src/' })
     .pipe(gulp.dest('./app/'));
@@ -114,6 +119,7 @@ gulp.task('build',
       clean('./app/**', done);
     },
     gulp.parallel(
+      'json',
       'js',
       'serverfiles',
       'vendorjs',
@@ -127,6 +133,7 @@ gulp.task('build',
 
 gulp.task('watch', () => {
   gulp.watch('./src/static/scss/**/*.scss', gulp.series('scss', 'ejs'));
+  gulp.watch('./src/static/js/*.json', gulp.series('json'));
   gulp.watch('./src/static/js/**/*.js', gulp.series('js', 'ejs'));
   gulp.watch(['./src/server.js', './src/server/*.js'], gulp.series('serverfiles'));
   gulp.watch('./src/static/images/*', gulp.series('images'));
@@ -141,7 +148,9 @@ gulp.task('serve', () => {
   gulp.watch([
     './app/static/images/*',
     './app/views/**/*.ejs',
-  ]).on('change', path => server.notify.call(server, { path }));
+  ]).on('change', (path) => {
+    server.notify.call(server, { path });
+  });
 
   gulp.watch(['./app/server.js', './app/server/*', '!./app/server/cache/*'])
     .on('change', () => server.start.bind(server)());

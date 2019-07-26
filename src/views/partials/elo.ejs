@@ -28,8 +28,19 @@
     </thead>
     <tbody>
       <% for (team of teams) { %>
+        <% const teamSeason = team.seasons.filter(eloSeason => eloSeason.seasonNo === season); %>
+        <% const teamWeek = teamSeason.length ? teamSeason[0].weeks.filter(eloWeek => eloWeek.weekNo === week) : false; %>
         <tr>
-          <td class="elo-rating" title="<%= team.elo.toFixed(4) %>" data-value="<%= team.elo %>"><%= Math.round(team.elo) %></td>
+          <td class="elo-rating" title="<%= team.elo.toFixed(4) %>" data-value="<%= team.elo %>">
+            <span>
+              <%= Math.round(team.elo) %>
+            </span>
+            <% if (teamWeek.length && teamWeek[0].hasOwnProperty('eloChange')) { %>
+              <span class="elo-change <%= teamWeek[0].eloChange < 0 ? 'is-decrease' : 'is-increase' %>">
+                <%= teamWeek[0].eloChange > 0 ? '+' : '' %><%= Math.round(teamWeek[0].eloChange) %>
+              </span>
+            <% } %>
+          </td>
           <td class="elo-team" data-value="<%= team.name %>">
             <a href="#<%= encodeURI(team.name) %>">
               <img class="elo-team-logo" src="/images/logos/<%= team.abbr %>.svg" alt="<%= `${team.name} logo` %>">
@@ -41,9 +52,9 @@
           </td>
           <td class="elo-conf" title="<%= team.fullConf %> - <%= team.div %>" data-value="<%= team.fullConf %> - <%= team.div %>">
             <%= team.conf %>
-            <if condition="team.div !== 'N/A'">
+            <% if (team.div !== 'N/A') { %>
               <span class="elo-div">- <%= team.div %></span>
-            </if>
+            <% } %>
           </td>
         </tr>
       <% } %>

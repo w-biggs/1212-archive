@@ -54,6 +54,28 @@
   width: 1%;
 }
 
+td.elo-rating{
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.elo-change {
+  background-color: #ccc;
+  @include ms-respond(font-size,-2);
+  border-radius: 1rem;
+  padding: .25em .5em;
+  margin-left: .5em;
+
+  &.is-increase{
+    background-color: rgba(68,171,67,.5);
+  }
+
+  &.is-decrease{
+    background-color: rgba(255,39,0,.5);
+  }
+}
+
 .elo-team{
   vertical-align: middle;
 }

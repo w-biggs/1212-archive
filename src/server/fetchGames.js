@@ -2,8 +2,8 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
-const games = require('./games.json');
-const elo = require('./elo.json');
+const { games } = require('./games.json');
+const elo = require('../static/js/elo.json');
 
 const getAbbreviation = function getTeamAbbreviation(name) {
   const teamInfo = elo.teams.filter(team => team.name === name);
