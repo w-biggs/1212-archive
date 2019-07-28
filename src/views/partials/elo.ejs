@@ -43,7 +43,7 @@
           </td>
           <td class="elo-team" data-value="<%= team.name %>">
             <a href="#<%= encodeURI(team.name) %>">
-              <img class="elo-team-logo" src="/images/logos/<%= team.abbr %>.svg" alt="<%= `${team.name} logo` %>">
+              <div class="elo-team-logo" data-bg="/images/logos/<%= team.abbr %>.svg" aria-hidden="true"></div>
               <span><%= team.name %></span>
             </a>
             <span class="elo-record">
@@ -69,7 +69,9 @@
   <div class="elo-chart" id="elo-chart"></div>
   <a class="elo-lightbox-close" href="#">×</a>
 </div>
-<script src="/js/elo.js" defer></script>
+<script src="/js/vendor/intersectionObserver.js" defer></script>
+<script src="/js/lazy-load.js" defer></script>
+<script src="/js/elo-table.js" defer></script>
 <script src="/js/vendor/highcharts/highcharts.js" defer></script>
 <script src="/js/vendor/highcharts/highcharts-more.js" defer></script>
 <script src="/js/vendor/highcharts/exporting.js" defer></script>

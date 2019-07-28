@@ -99,6 +99,9 @@ td.elo-rating{
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .elo-record{

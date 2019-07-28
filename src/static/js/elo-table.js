@@ -1,3 +1,7 @@
+/**
+ * Elo table functionality.
+ */
+
 const eloExpand = document.getElementsByClassName('elo-expand')[0];
 const eloExpandButton = eloExpand.getElementsByTagName('button')[0];
 
