@@ -114,7 +114,7 @@ const parseMatches = function parseRegexMatches(match, gameID) {
       toGo,
       yardline,
       whoseYardline: whoseYardline ? getAbbreviation(fixEntities(whoseYardline)) : '',
-      possession,
+      possession: fixEntities(possession),
       final,
     },
     gameID,
