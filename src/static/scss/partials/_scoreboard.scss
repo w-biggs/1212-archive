@@ -104,6 +104,9 @@ body.scoreboard-is-collapsed .scoreboard-games{
   text-transform: uppercase;
   padding: 0 0.5rem;
   text-align: right;
+  font-family: $system-font-family;
+  font-weight: 600;
+  color: #006FEE;
 
   &:hover{
     text-decoration: none;
