@@ -3,7 +3,7 @@ const express = require('express');
 const compression = require('compression');
 const ejs = require('ejs');
 const elo = require('./static/js/elo.json');
-const fetchGames = require('./server/fetchGames');
+const { getScores } = require('./server/scores');
 const { season, week } = require('./server/games.json');
 
 const app = express();
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 
 app.post('/reload-scores', (req, res) => {
   const scoreData = {};
-  fetchGames()
+  getScores(path.join(__dirname, 'server/cache/scores.json'), 2, 1)
     .then((response) => {
       console.log(response.message);
       scoreData.scores = response.data;
