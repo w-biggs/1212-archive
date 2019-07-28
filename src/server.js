@@ -4,7 +4,6 @@ const compression = require('compression');
 const ejs = require('ejs');
 const elo = require('./static/js/elo.json');
 const { getScores } = require('./server/scores');
-const { season, week } = require('./server/games.json');
 
 const app = express();
 
@@ -33,18 +32,18 @@ app.set('view engine', 'ejs');
 const data = {
   env: app.get('env'),
   teams: elo.teams,
-  season,
-  week,
+  season: 2,
+  week: 1,
 };
 
 /* Routes */
 app.get('/', (req, res) => {
-  res.render('pages/index', data);
+  res.render('pages/index', { ...data, url: req.url });
 });
 
 app.post('/reload-scores', (req, res) => {
   const scoreData = {};
-  getScores(path.join(__dirname, 'server/cache/scores.json'), 2, 1)
+  getScores(path.join(__dirname, 'server/cache/scores.json'), data.season, data.week)
     .then((response) => {
       console.log(response.message);
       scoreData.scores = response.data;
