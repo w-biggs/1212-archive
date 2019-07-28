@@ -36,10 +36,11 @@ const fetchScoresAndWrite = async function fetchScoresAndWriteToCache(
 /**
  * Sorts the parsed scores by descending time elapsed in the game, but with final games last.
  *
- * @param {Array<Object<string, any>>} scores
- *  - An array of JSON objects containing the parsed scores.
- * @returns {Array<Object<string, any>>}
- *  - An array of JSON objects containing the sorted, parsed scores.
+ * @param {Object<string, any>} scoreA
+ *  - A parsed score.
+ * @param {Object<string, any>} scoreB
+ *  - A parsed score.
+ * @returns {number} - A number that .sort() uses to decide what order to put scores in.
  */
 const sortScores = function sortScoresByTimeElapsed(scoreA, scoreB) {
   if (scoreA.timeElapsed === scoreB.timeElapsed) {
