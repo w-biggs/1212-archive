@@ -3,7 +3,7 @@ const express = require('express');
 const compression = require('compression');
 const ejs = require('ejs');
 const elo = require('./static/js/elo.json');
-const { getScores } = require('./server/scores');
+const { getScores, sortScores } = require('./server/scores');
 
 const app = express();
 
@@ -46,7 +46,7 @@ app.post('/reload-scores', (req, res) => {
   getScores(path.join(__dirname, 'server/cache/scores.json'), data.season, data.week)
     .then((response) => {
       console.log(response.message);
-      scoreData.scores = response.data;
+      scoreData.scores = response.data.sort(sortScores);
     })
     .catch(error => console.error(error))
     .then(() => res.render('partials/scoreboard', scoreData));

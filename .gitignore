@@ -4,3 +4,4 @@ dist
 app
 yarn-error.log
 **/images/logos/*
+.api.json

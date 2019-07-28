@@ -137,25 +137,12 @@ const parseGame = function parseRawGameJSON(response, gameID) {
 
   const match = regex.exec(text);
 
-  return parseMatches(match, gameID);
-};
+  const parsedMatches = parseMatches(match, gameID);
 
-/**
- * Sorts the parsed scores by descending time elapsed in the game, but with final games last.
- *
- * @param {Array<Object<string, any>>} scores
- *  - An array of JSON objects containing the parsed scores.
- * @returns {Array<Object<string, any>>}
- *  - An array of JSON objects containing the sorted, parsed scores.
- */
-const sortScores = function sortScoresByTimeElapsed(scoreA, scoreB) {
-  if (scoreA.timeElapsed === 1680) {
-    return 1;
-  }
-  if (scoreB.timeElapsed === 1680) {
-    return -1;
-  }
-  return scoreB.timeElapsed - scoreA.timeElapsed;
+  return {
+    ...parsedMatches,
+    lastUpdate: response.data.children[0].data.edited, // Time of last update to score
+  };
 };
 
 /**
@@ -167,11 +154,8 @@ const sortScores = function sortScoresByTimeElapsed(scoreA, scoreB) {
  */
 const parseGames = function parseRawGameJsons(games) {
   // Parses all games, then filters out any failed ones
-  const parsedResponses = games.map(game => parseGame(game.json, game.gameID))
+  return games.map(game => parseGame(game.json, game.gameID))
     .filter(game => game);
-
-  // Sort the scores before returning them.
-  return parsedResponses.sort(sortScores);
 };
 
 module.exports = {

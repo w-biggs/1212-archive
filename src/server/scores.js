@@ -34,6 +34,27 @@ const fetchScoresAndWrite = async function fetchScoresAndWriteToCache(
 };
 
 /**
+ * Sorts the parsed scores by descending time elapsed in the game, but with final games last.
+ *
+ * @param {Array<Object<string, any>>} scores
+ *  - An array of JSON objects containing the parsed scores.
+ * @returns {Array<Object<string, any>>}
+ *  - An array of JSON objects containing the sorted, parsed scores.
+ */
+const sortScores = function sortScoresByTimeElapsed(scoreA, scoreB) {
+  if (scoreA.timeElapsed === scoreB.timeElapsed) {
+    return scoreB.lastUpdate - scoreA.lastUpdate;
+  }
+  if (scoreA.timeElapsed === 1680) {
+    return 1;
+  }
+  if (scoreB.timeElapsed === 1680) {
+    return -1;
+  }
+  return scoreB.timeElapsed - scoreA.timeElapsed;
+};
+
+/**
  * Checks whether to use the cache or not, then returns either the cache or anewly fetched
  * scores JSON.
  *
@@ -57,4 +78,5 @@ const getScores = async function getScoresFromJson(cachePath, season, week) {
 
 module.exports = {
   getScores,
+  sortScores,
 };
