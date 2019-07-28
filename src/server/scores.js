@@ -43,7 +43,7 @@ const fetchScoresAndWrite = async function fetchScoresAndWriteToCache(
  */
 const getScores = async function getScoresFromJson(cachePath, season, week) {
   try {
-    const res = await checkCache(cachePath);
+    const res = await checkCache(cachePath, 60);
     if (res.useCache) {
       console.log(`Using cache. ${res.reason}`);
       return readCache(cachePath);
