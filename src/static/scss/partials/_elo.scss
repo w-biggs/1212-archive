@@ -113,6 +113,11 @@ td.elo-rating{
 .elo-conf{
   min-width: 20%;
   white-space: nowrap;
+  display: none;
+
+  @media screen and (min-width: $breakpoint-xs){
+    display: table-cell;
+  }
 }
 
 .elo-div{
