@@ -3,9 +3,6 @@ const eloHistory = require('./elo.json');
 
 window.eloHistory = eloHistory;
 
-/* Apply Highcharts-More
-HCMore(Highcharts); */
-
 /**
  * Plugin to allow plot band Z indexes in between series
  */

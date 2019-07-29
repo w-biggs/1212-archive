@@ -1,48 +1,12 @@
 const { debounce } = require('./vendor/underscore.min');
 
-const checkOverflow = function checkIfScoresAreOverflowingAndShowButton() {
-  const scoreboardGamesContainer = document.getElementsByClassName('scoreboard-games')[0];
-  const scoreboardGames = document.getElementsByClassName('scoreboard-game');
-  const gameCount = scoreboardGames.length;
-
-  const contWidth = scoreboardGamesContainer.getBoundingClientRect().width;
-
-  const gameStyle = getComputedStyle(scoreboardGames[0]);
-  const gameWidth = scoreboardGames[0].getBoundingClientRect().width
-    + parseInt(gameStyle.marginLeft, 10)
-    + parseInt(gameStyle.marginRight, 10);
-
-  if (gameCount > 10) { // More than 10 games
-    return true;
-  }
-  if (gameCount > 8 && (gameWidth * 5) > contWidth) { // overflowing two rows of 4
-    return true;
-  }
-  if (gameCount > 6 && (gameWidth * 4) > contWidth) { // overflowing two rows of 3
-    return true;
-  }
-  if (gameCount > 4 && (gameWidth * 3) > contWidth) { // overflowing two rows of 2
-    return true;
-  }
-  if (gameCount > 2 && (gameWidth * 2) > contWidth) { // overflowing two rows of 1
-    return true;
-  }
-
-  return false;
-};
-
-const checkShowButton = function checkIfExpandScoreboardButtonShouldShow() {
-  const overflow = checkOverflow();
-
-  if (overflow) {
-    document.body.classList.add('scoreboard-is-overflowing');
-  } else {
-    document.body.classList.remove('scoreboard-is-overflowing');
-  }
-};
-
-const reloadScores = function reloadScoresWithPostRequest() {
-  const scoreboardContainer = document.getElementsByClassName('scoreboard-container')[0];
+/**
+ * Fetch the latest scores.
+ *
+ * @param {function} callback - A callback to fire once scores are written.
+ */
+const reloadScores = function reloadScoresWithPostRequest(callback) {
+  const scoreboard = document.getElementsByClassName('scoreboard-games')[0];
 
   const request = new XMLHttpRequest();
   request.open('POST', '/reload-scores');
@@ -50,22 +14,29 @@ const reloadScores = function reloadScoresWithPostRequest() {
     if (request.readyState === 4 && request.status === 200) {
       const placeholderDiv = document.createElement('div');
       placeholderDiv.innerHTML = request.response.trim();
-      scoreboardContainer.parentNode.replaceChild(
+      scoreboard.parentNode.replaceChild(
         placeholderDiv.firstChild,
-        scoreboardContainer,
+        scoreboard,
       );
-      checkShowButton();
+      callback();
     }
   };
   request.send();
 };
 
+/**
+ * Sets the max height property of the scoreboard when collapsed.
+ *
+ * @returns {number} - The max height of the collapsed scoreboard.
+ */
 const setMaxHeight = function setMaxHeightOfCollapsedScoreboard() {
   const scoreboardGame = document.getElementsByClassName('scoreboard-game')[0];
 
+  // The height of a game in the scoreboard.
   const gameHeight = scoreboardGame.getBoundingClientRect().height;
   const gameStyle = getComputedStyle(scoreboardGame);
 
+  // Height + margins, *2 (two rows)
   const maxHeight = (gameHeight
     + parseInt(gameStyle.marginTop, 10)
     + parseInt(gameStyle.marginBottom, 10))
@@ -75,42 +46,92 @@ const setMaxHeight = function setMaxHeightOfCollapsedScoreboard() {
   styleEl.appendChild(document.createTextNode(`body.scoreboard-is-collapsed .scoreboard-games{ max-height: ${maxHeight.toFixed(2)}px }`));
 
   document.getElementsByTagName('head')[0].appendChild(styleEl);
+
+  return maxHeight;
+};
+/**
+ * Check whether the "show more" button should be visible.
+ *
+ * @param {number} maxHeight - The max height of a collapsed scoreboard.
+ */
+const checkShowButton = function checkIfExpandScoreboardButtonShouldShow(maxHeight) {
+  const scoreboard = document.getElementsByClassName('scoreboard-games')[0];
+
+  if (scoreboard.scrollHeight > maxHeight) {
+    document.body.classList.add('scoreboard-is-overflowing');
+  } else {
+    document.body.classList.remove('scoreboard-is-overflowing');
+  }
+};
+
+/**
+ * Expands the scoreboard.
+ *
+ * @param {HTMLElement} buttonElement - The button that was clicked.
+ */
+const expandScoreboard = function expandScoreboard(buttonElement) {
+  const { collapseText } = buttonElement.dataset;
+
+  document.body.classList.remove('scoreboard-is-collapsed');
+  const buttonText = buttonElement.firstChild;
+  buttonText.nodeValue = collapseText;
+  buttonElement.setAttribute('aria-expanded', 'true');
+};
+
+/**
+ * Collapses the scoreboard.
+ *
+ * @param {HTMLElement} buttonElement - The button that was clicked.
+ */
+const collapseScoreboard = function collapseScoreboard(buttonElement) {
+  const { expandText } = buttonElement.dataset;
+
+  document.body.classList.add('scoreboard-is-collapsed');
+  const buttonText = buttonElement.firstChild;
+  buttonText.nodeValue = expandText;
+  buttonElement.setAttribute('aria-expanded', 'false');
 };
 
 const clickListener = function addScoreboardExpandButtonClickListener() {
-  let expandText = '';
-
+  /**
+   * Since the button may be dynamically loaded, you have to attach the listener
+   * to the whole document.
+   */
   document.addEventListener('click', (event) => {
+    // If parent element is the expand button container
     if (event.target.parentNode.classList.contains('scoreboard-expand')) {
-      const scoreboardExpand = document.getElementsByClassName('scoreboard-expand')[0];
-      const scoreboardExpandButton = scoreboardExpand.getElementsByTagName('button')[0];
-      expandText = expandText || scoreboardExpandButton.innerText;
-      const { collapseText } = scoreboardExpandButton.dataset;
-  
-      if (scoreboardExpandButton.getAttribute('aria-expanded') === 'true') {
-        document.body.classList.add('scoreboard-is-collapsed');
-        scoreboardExpandButton.innerText = expandText;
-        scoreboardExpandButton.setAttribute('aria-expanded', 'false');
+      const buttonElement = event.target;
+
+      if (buttonElement.getAttribute('aria-expanded') === 'false') {
+        expandScoreboard(buttonElement);
       } else {
-        document.body.classList.remove('scoreboard-is-collapsed');
-        scoreboardExpandButton.innerText = collapseText;
-        scoreboardExpandButton.setAttribute('aria-expanded', 'true');
+        collapseScoreboard(buttonElement);
       }
     }
   });
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  reloadScores();
-  setInterval(reloadScores, 60000);
+  // Set the max height of the scoreboard to two rows.
+  const maxHeight = setMaxHeight();
 
-  setMaxHeight();
+  // Fetch scores at first load, then reload them every 60 seconds.
+  reloadScores(() => {
+    checkShowButton(maxHeight);
+  });
 
-  checkShowButton();
+  setInterval(() => {
+    reloadScores(() => {
+      checkShowButton(maxHeight);
+    });
+  }, 60000);
 
+  // Listen for clicks of the "show more" button.
   clickListener();
-});
 
-window.addEventListener('resize', () => {
-  debounce(checkShowButton, 300);
+  window.addEventListener('resize', () => {
+    debounce(() => {
+      checkShowButton(maxHeight);
+    }, 300);
+  });
 });

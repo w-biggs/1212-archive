@@ -1,32 +1,53 @@
-const container = document.getElementsByClassName('container')[0];
-const nav = container.getElementsByClassName('nav')[0];
-const navExpand = container.getElementsByClassName('nav-expand')[0];
+/**
+ * Handles the mobile nav functionality.
+ */
 
-const expandText = navExpand.innerText;
-const { collapseText } = navExpand.dataset;
+/**
+ * Open the mobile nav menu.
+ *
+ * @param {HTMLElement} container - The page's container element.
+ * @param {HTMLElement} navExpand - The expand button element.
+ */
+const openNav = function openNavOnMobile(container, navExpand) {
+  const { collapseText } = navExpand.dataset;
 
-const openNav = function openNavOnMobile() {
   container.classList.add('is-open-nav');
-  navExpand.innerText = collapseText.trim();
+  const buttonText = navExpand.firstChild;
+  buttonText.nodeValue = collapseText;
   navExpand.setAttribute('aria-expanded', 'true');
 };
 
-const closeNav = function openNavOnMobile() {
+/**
+ * Close the mobile nav menu.
+ *
+ * @param {HTMLElement} container - The page's container element.
+ * @param {HTMLElement} navExpand - The expand button element.
+ */
+const closeNav = function openNavOnMobile(container, navExpand) {
+  const { expandText } = navExpand.dataset;
+
   container.classList.remove('is-open-nav');
-  navExpand.innerText = expandText.trim();
+  const buttonText = navExpand.firstChild;
+  buttonText.nodeValue = expandText;
   navExpand.setAttribute('aria-expanded', 'false');
 };
 
-navExpand.addEventListener('click', () => {
-  if (navExpand.getAttribute('aria-expanded') === 'true') {
-    closeNav();
-  } else {
-    openNav();
-  }
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementsByClassName('container')[0];
+  const nav = container.getElementsByClassName('nav')[0];
+  const navExpand = container.getElementsByClassName('nav-expand')[0];
 
-[nav, navExpand].forEach(element => element.addEventListener('keydown', (event) => {
-  if (event.keyCode === 27) {
-    closeNav();
-  }
-}));
+  navExpand.addEventListener('click', () => {
+    if (navExpand.getAttribute('aria-expanded') === 'true') {
+      closeNav(container, navExpand);
+    } else {
+      openNav(container, navExpand);
+    }
+  });
+  
+  [nav, navExpand].forEach(element => element.addEventListener('keydown', (event) => {
+    if (event.keyCode === 27) {
+      closeNav(container, navExpand);
+    }
+  }));
+});

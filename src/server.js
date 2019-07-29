@@ -49,7 +49,7 @@ app.post('/reload-scores', (req, res) => {
       scoreData.scores = response.data.sort(sortScores);
     })
     .catch(error => console.error(error))
-    .then(() => res.render('partials/scoreboard', scoreData));
+    .then(() => res.render('partials/scoreboard-games', scoreData));
 });
 
 /* Serve */
