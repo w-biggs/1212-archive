@@ -10,7 +10,8 @@
   "license": "ISC",
   "scripts": {
     "push": "rsync -rvzh --progress --delete ./app server:/srv/1212.one",
-    "pushgames": "rsync -vzh --progress ./app/server/games.json server:/srv/1212.one/app/server/games.json"
+    "pushgames": "rsync -vzh --progress ./app/server/games.json server:/srv/1212.one/app/server/games.json",
+    "build-push": "gulp build && rsync -rvzh --progress --delete ./app server:/srv/1212.one"
   },
   "bugs": {
     "url": "https://github.com/w-biggs/1212/issues"
