@@ -27739,6 +27739,88 @@
                 "q4": 0,
                 "score": 14
               }
+            },
+            {
+              "week": 1,
+              "id": "chi8vo",
+              "gameLength": 1680,
+              "startTime_utc": 1564024604,
+              "endTime_utc": 1564700448,
+              "away": {
+                "name": "Charleston Southern",
+                "passYds": 102,
+                "rushYds": 81,
+                "yds": 183,
+                "ints": 0,
+                "fumbles": 1,
+                "fgm": 0,
+                "fga": 1,
+                "poss": 569,
+                "timeouts": 1,
+                "q1": 0,
+                "q2": 0,
+                "q3": 7,
+                "q4": 0,
+                "score": 7
+              },
+              "home": {
+                "name": "UC Davis",
+                "passYds": 18,
+                "rushYds": 263,
+                "yds": 281,
+                "ints": 0,
+                "fumbles": 2,
+                "fgm": 0,
+                "fga": 1,
+                "poss": 1111,
+                "timeouts": 1,
+                "q1": 0,
+                "q2": 14,
+                "q3": 0,
+                "q4": 14,
+                "score": 28
+              }
+            },
+            {
+              "week": 1,
+              "id": "cipoji",
+              "gameLength": 1680,
+              "startTime_utc": 1564276351,
+              "endTime_utc": 1564705032,
+              "away": {
+                "name": "UT Martin",
+                "passYds": 282,
+                "rushYds": 36,
+                "yds": 318,
+                "ints": 2,
+                "fumbles": 0,
+                "fgm": 0,
+                "fga": 0,
+                "poss": 733,
+                "timeouts": 3,
+                "q1": 7,
+                "q2": 0,
+                "q3": 7,
+                "q4": 7,
+                "score": 21
+              },
+              "home": {
+                "name": "Colgate",
+                "passYds": 60,
+                "rushYds": 214,
+                "yds": 274,
+                "ints": 0,
+                "fumbles": 0,
+                "fgm": 1,
+                "fga": 1,
+                "poss": 947,
+                "timeouts": 3,
+                "q1": 7,
+                "q2": 14,
+                "q3": 10,
+                "q4": 0,
+                "score": 31
+              }
             }
           ]
         }

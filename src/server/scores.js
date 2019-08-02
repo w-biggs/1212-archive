@@ -45,7 +45,7 @@ const sortScores = function sortScoresByTimeElapsed(a, b) {
     lastUpdate: score.endTime_utc,
   }));
   if (scoreA.timeElapsed === scoreB.timeElapsed) {
-    return scoreA.endTime_utc - scoreB.endTime_utc;
+    return scoreB.lastUpdate - scoreA.lastUpdate;
   }
   if (scoreA.timeElapsed === 1680) {
     return 1;
