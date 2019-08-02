@@ -14,9 +14,9 @@
         <% for (let i = 0; i < seasons.length; i += 1) { %>
           <% const season = seasons[i]; %>
           <% if (season.seasonNo === games.season) { %>
-            <% for (let j = 0; j < season.weeks.length; j += 1) { %>
-              <% const weekNo = season.weeks[j]; %>
-              <option value="<%= weekNo %>" <%= weekNo === games.week ? 'selected' : '' %>><%= `Week ${weekNo}` %></option>
+            <% for (let j = 1; j < season.weeks.length; j += 1) { %>
+              <% const week = season.weeks[j]; %>
+              <option value="<%= week.weekNo %>" <%= week.weekNo === games.week ? 'selected' : '' %>><%= week.name ? week.name : `Week ${week.weekNo}` %></option>
             <% } %>
           <% } %>
         <% } %>

@@ -93,15 +93,6 @@ app.get('/scores/:season/:week/:conf?/', (req, res) => {
     return res.redirect(`/scores/${season}/${week}/`);
   }
 
-  // Get list of weeks per season - more clear this way.
-  const seasons = games.seasons.map((mapSeason) => {
-    const weeks = mapSeason.weeks.map(mapWeek => mapWeek.weekNo);
-    return {
-      seasonNo: mapSeason.seasonNo,
-      weeks,
-    };
-  });
-
   // Get the requested games.
   let filteredGames = [];
   return getScores(season, week)
@@ -115,7 +106,7 @@ app.get('/scores/:season/:week/:conf?/', (req, res) => {
     .catch(error => console.error(error))
     .then(() => res.render('pages/scores', {
       ...data,
-      seasons,
+      seasons: elo.seasons,
       confs,
       games: {
         json: filteredGames,
