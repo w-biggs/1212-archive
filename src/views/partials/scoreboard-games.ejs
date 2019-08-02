@@ -40,6 +40,7 @@
           <% [home, away].forEach((team, i) => { %>
             <div class="scoreboard-team">
               <div class="scoreboard-team-name <%= !final && team.name !== status.possession ? 'is-defense' : '' %>">
+                <% if (!team.name) {console.error(team)} %>
                 <%= team.name %>
               </div>
               <div class="scoreboard-team-score
