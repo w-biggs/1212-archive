@@ -90,7 +90,7 @@ app.get('/scores/:season/:week/:conf?/', (req, res) => {
     redirect = true;
   }
   if (redirect) {
-    return res.redirect(`/scores/${season}/${week}`);
+    return res.redirect(`/scores/${season}/${week}/`);
   }
 
   // Get list of weeks per season - more clear this way.
