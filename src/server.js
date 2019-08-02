@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/scores', (req, res) => {
-  res.redirect(`/scores/${data.season}/${data.week}`);
+  res.redirect(`/scores/${data.season}/${data.week}/`);
 });
 
 app.get('/scores/:season/:week/:conf?/', (req, res) => {
@@ -71,7 +71,7 @@ app.get('/scores/:season/:week/:conf?/', (req, res) => {
   if (conf) {
     conf = decodeURI(conf);
     if (!confs.filter(conference => conference.conf === conf).length) {
-      return res.redirect(`/scores/${season}/${week}`);
+      return res.redirect(`/scores/${season}/${week}/`);
     }
   }
 
