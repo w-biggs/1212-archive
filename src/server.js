@@ -4,7 +4,7 @@ const compression = require('compression');
 const ejs = require('ejs');
 const elo = require('./static/js/elo.json');
 const games = require('./static/js/games.json');
-const { getScores, sortScores } = require('./server/scores');
+const { getScores, sortScores, filterConfScores } = require('./server/scores');
 
 const app = express();
 
@@ -37,6 +37,20 @@ const data = {
   week: 1,
 };
 
+// List of conferences.
+const confs = [
+  { conf: 'Big Sky', fullConf: 'Big Sky' },
+  { conf: 'MVC', fullConf: 'Missouri Valley Conference' },
+  { conf: 'Atlantic Sun', fullConf: 'Atlantic Sun' },
+  { conf: 'Southland', fullConf: 'Southland' },
+  { conf: 'Ivy League', fullConf: 'Ivy League' },
+  { conf: 'DIC', fullConf: 'Delta Intercollegiate' },
+  { conf: 'Colonial', fullConf: 'Colonial' },
+  { conf: 'Mid-Atlantic', fullConf: 'Mid-Atlantic' },
+  { conf: 'CFC', fullConf: 'Carolina Football Conference' },
+  { conf: 'America East', fullConf: 'America East' },
+];
+
 /* Routes */
 app.get('/', (req, res) => {
   res.render('pages/index', { ...data, url: req.url });
@@ -46,12 +60,19 @@ app.get('/scores', (req, res) => {
   res.redirect(`/scores/${data.season}/${data.week}`);
 });
 
-app.get('/scores/:season/:week/', (req, res) => {
-  let { season, week } = req.params;
+app.get('/scores/:season/:week/:conf?/', (req, res) => {
+  let { season, week, conf } = req.params;
   // Ensure values are valid integers
   [season, week] = [season, week].map(val => parseInt(val, 10));
   if (Number.isNaN(season) || Number.isNaN(week)) {
     return res.status(404).send('404... how did you get here?');
+  }
+  
+  if (conf) {
+    conf = decodeURI(conf);
+    if (!confs.filter(conference => conference.conf === conf).length) {
+      return res.redirect(`/scores/${season}/${week}`);
+    }
   }
 
   // Redirect to last season/week if requested season/week don't exist.
@@ -85,12 +106,17 @@ app.get('/scores/:season/:week/', (req, res) => {
   let filteredGames = [];
   return getScores(season, week)
     .then((response) => {
-      filteredGames = response.sort(sortScores);
+      filteredGames = response;
+      if (conf) {
+        filteredGames = filterConfScores(filteredGames, conf);
+      }
+      filteredGames = filteredGames.sort(sortScores);
     })
     .catch(error => console.error(error))
     .then(() => res.render('pages/scores', {
       ...data,
       seasons,
+      confs,
       games: {
         json: filteredGames,
         season,

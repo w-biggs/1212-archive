@@ -1,6 +1,7 @@
 const path = require('path');
 const gameIDs = require('./gameIDs.json');
 const gamesJSON = require('../static/js/games.json');
+const eloJSON = require('../static/js/elo.json');
 const { checkCacheAge, readCache, writeCache } = require('./scoresCache');
 const { fetchGames } = require('./fetchGames');
 const { parseGames } = require('./parseGames');
@@ -193,7 +194,27 @@ const getScores = async function getScoresForRequestedDayAndWeek(season, week) {
   }
 };
 
+/**
+ * Filters a list of scores by the teams' conferences.
+ *
+ * @param {Object[]} scores An array of scores to filter.
+ * @param {string} fullConf The full name of the conference to filter by.
+ */
+const filterConfScores = function filterScoresByConference(scores, conf) {
+  return scores.filter((score) => {
+    const teams = [score.home, score.away];
+    let inConf = false;
+    for (let i = 0; i < teams.length; i += 1) {
+      const team = teams[i];
+      const teamInfo = eloJSON.teams.filter(teamJSON => teamJSON.name === team.name)[0];
+      inConf = inConf || (teamInfo.conf === conf);
+    }
+    return inConf;
+  });
+};
+
 module.exports = {
   getScores,
   sortScores,
+  filterConfScores,
 };

@@ -2,14 +2,14 @@
   <div class="scores-container">
     <h2 class="section-header">Scores</h2>
     <div class="scores-nav">
-      <label for="scores-season" class="sr-only">Season</label>
+      <label for="scores-season" class="sr-only">Season:</label>
       <select class="scores-season" id="scores-season">
         <% for (let i = 0; i < seasons.length; i += 1) { %>
           <% const season = seasons[i]; %>
           <option value="<%= season.seasonNo %>" <%= season.seasonNo === games.season ? 'selected' : '' %>><%= `Season ${season.seasonNo}` %></option>
         <% } %>
       </select>
-      <label for="scores-week" class="sr-only">Week</label>
+      <label for="scores-week" class="sr-only">Week:</label>
       <select class="scores-week" id="scores-week">
         <% for (let i = 0; i < seasons.length; i += 1) { %>
           <% const season = seasons[i]; %>
@@ -19,6 +19,14 @@
               <option value="<%= weekNo %>" <%= weekNo === games.week ? 'selected' : '' %>><%= `Week ${weekNo}` %></option>
             <% } %>
           <% } %>
+        <% } %>
+      </select>
+      <label for="scores-conf" class="sr-only">Conference:</label>
+      <select id="scores-conf" class="scores-conf">
+        <option value="" <%= /[0-9]\/?$/.test(url) ? 'selected' : '' %>>All Conferences</option>
+        <% for (let i = 0; i < confs.length; i += 1) { %>
+          <% const conf = confs[i]; %>
+          <option value="<%= encodeURI(conf.conf) %>" <%= url.includes(encodeURI(conf.conf)) ? 'selected' : '' %>><%= conf.conf %></option>
         <% } %>
       </select>
     </div>
