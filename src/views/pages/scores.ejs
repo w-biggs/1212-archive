@@ -1,0 +1,28 @@
+<%- include('../partials/header', {url: url, bodyClass: 'scores'}) %>
+  <div class="scores-container">
+    <h2 class="section-header">Scores</h2>
+    <div class="scores-nav">
+      <label for="scores-season" class="sr-only">Season</label>
+      <select class="scores-season" id="scores-season">
+        <% for (let i = 0; i < seasons.length; i += 1) { %>
+          <% const season = seasons[i]; %>
+          <option value="<%= season.seasonNo %>" <%= season.seasonNo === games.season ? 'selected' : '' %>><%= `Season ${season.seasonNo}` %></option>
+        <% } %>
+      </select>
+      <label for="scores-week" class="sr-only">Week</label>
+      <select class="scores-week" id="scores-week">
+        <% for (let i = 0; i < seasons.length; i += 1) { %>
+          <% const season = seasons[i]; %>
+          <% if (season.seasonNo === games.season) { %>
+            <% for (let j = 0; j < season.weeks.length; j += 1) { %>
+              <% const weekNo = season.weeks[j]; %>
+              <option value="<%= weekNo %>" <%= weekNo === games.week ? 'selected' : '' %>><%= `Week ${weekNo}` %></option>
+            <% } %>
+          <% } %>
+        <% } %>
+      </select>
+    </div>
+    <% include ../partials/scores-games %>
+  </div>
+  <script src="/js/scores.js" defer></script>
+<%- include('../partials/footer') %>

@@ -10,7 +10,7 @@ const path = require('path');
  * Reads the cached scores from the file.
  *
  * @param {string} cachePath - The path to the cached scores file.
- * @returns {Promise<{data: Array<Object>, message: string}, Error>}
+ * @returns {Promise<{Object[], Error>}
  *  - A promise resolving to an object containing scores & age.
  */
 const readCache = function readCachedScores(cachePath) {
@@ -21,10 +21,8 @@ const readCache = function readCachedScores(cachePath) {
         reject(err);
       } else {
         const scores = JSON.parse(data);
-        resolve({
-          data: scores,
-          message: `Got ${scores.length} games from cache.`,
-        });
+        console.log(`Got ${scores.length} games from cache.`);
+        resolve(scores);
       }
     });
   });
@@ -36,7 +34,7 @@ const readCache = function readCachedScores(cachePath) {
  * @param {string} cachePath - The path to the cached scores file.
  * @param {Array<Object<string, any>>} scores
  *  - An array of JSON objects containing the fetched scores.
- * @returns {Promise<{data: Array<Object>, message: string}, Error>}
+ * @returns {Promise<{Object[], Error>}, Error>}
  *  - A promise resolving to an object containing useCache & age.
  */
 const writeCache = function writeScoresToCacheFile(cachePath, scores) {
@@ -57,10 +55,8 @@ const writeCache = function writeScoresToCacheFile(cachePath, scores) {
               reject(writeErr);
             } else {
               // If it successfully wrote the file
-              resolve({
-                data: scores,
-                message: `Wrote ${scores.length} scores to ${cachePath}.`,
-              });
+              console.log(`Wrote ${scores.length} scores to ${cachePath}.`);
+              resolve(scores);
             }
           },
         );
@@ -88,7 +84,7 @@ const parseAge = function parseAgeOfFile(mtimeMs) {
  * @returns {Promise<{useCache: boolean, reason: string}, Error>}
  *  - A promise resolving to an object containing useCache & age.
  */
-const checkCache = function checkAgeOfCachedScores(cachePath, expiryTime) {
+const checkCacheAge = function checkAgeOfCachedScores(cachePath, expiryTime) {
   return new Promise((resolve, reject) => {
     // Check info about the file
     fs.stat(cachePath, (err, stats) => {
@@ -124,7 +120,7 @@ const checkCache = function checkAgeOfCachedScores(cachePath, expiryTime) {
 };
 
 module.exports = {
-  checkCache,
+  checkCacheAge,
   readCache,
   writeCache,
 };

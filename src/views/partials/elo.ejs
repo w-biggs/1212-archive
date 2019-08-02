@@ -27,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-      <% for (team of teams) { %>
+      <% for (const team of teams) { %>
         <% const teamSeason = team.seasons.filter(eloSeason => eloSeason.seasonNo === season); %>
         <% const teamWeek = teamSeason.length ? teamSeason[0].weeks.filter(eloWeek => eloWeek.weekNo === week) : false; %>
         <tr>
@@ -43,7 +43,7 @@
           </td>
           <td class="elo-team" data-value="<%= team.name %>">
             <a href="#<%= encodeURI(team.name) %>">
-              <div class="elo-team-logo" data-bg="/images/logos/<%= team.abbr %>.svg" aria-hidden="true"></div>
+              <div class="elo-team-logo lazy-img" data-bg="/images/logos/<%= team.abbr %>.svg" aria-hidden="true"></div>
               <span><%= team.name %></span>
             </a>
             <span class="elo-record">
@@ -70,7 +70,6 @@
   <a class="elo-lightbox-close" href="#">×</a>
 </div>
 <script src="/js/vendor/intersectionObserver.js" defer></script>
-<script src="/js/lazy-load.js" defer></script>
 <script src="/js/elo-table.js" defer></script>
 <script src="/js/vendor/highcharts/highcharts.js" defer></script>
 <script src="/js/vendor/highcharts/highcharts-more.js" defer></script>

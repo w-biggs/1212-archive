@@ -3,6 +3,7 @@ const express = require('express');
 const compression = require('compression');
 const ejs = require('ejs');
 const elo = require('./static/js/elo.json');
+const games = require('./static/js/games.json');
 const { getScores, sortScores } = require('./server/scores');
 
 const app = express();
@@ -41,12 +42,69 @@ app.get('/', (req, res) => {
   res.render('pages/index', { ...data, url: req.url });
 });
 
+app.get('/scores', (req, res) => {
+  res.redirect(`/scores/${data.season}/${data.week}`);
+});
+
+app.get('/scores/:season/:week/', (req, res) => {
+  let { season, week } = req.params;
+  // Ensure values are valid integers
+  [season, week] = [season, week].map(val => parseInt(val, 10));
+  if (Number.isNaN(season) || Number.isNaN(week)) {
+    return res.status(404).send('404... how did you get here?');
+  }
+
+  // Redirect to last season/week if requested season/week don't exist.
+  let redirect = false;
+  let [gameSeason] = games.seasons.filter(filterSeason => filterSeason.seasonNo === season);
+  if (typeof gameSeason === 'undefined') {
+    season = games.seasons[games.seasons.length - 1].seasonNo;
+    [gameSeason] = games.seasons.filter(filterSeason => filterSeason.seasonNo === season);
+    redirect = true;
+  }
+  let [gameWeek] = gameSeason.weeks.filter(filterWeek => filterWeek.weekNo === week);
+  if (typeof gameWeek === 'undefined') {
+    week = gameSeason.weeks[gameSeason.weeks.length - 1].weekNo;
+    [gameWeek] = gameSeason.weeks.filter(filterWeek => filterWeek.weekNo === week);
+    redirect = true;
+  }
+  if (redirect) {
+    return res.redirect(`/scores/${season}/${week}`);
+  }
+
+  // Get list of weeks per season - more clear this way.
+  const seasons = games.seasons.map((mapSeason) => {
+    const weeks = mapSeason.weeks.map(mapWeek => mapWeek.weekNo);
+    return {
+      seasonNo: mapSeason.seasonNo,
+      weeks,
+    };
+  });
+
+  // Get the requested games.
+  let filteredGames = [];
+  return getScores(season, week)
+    .then((response) => {
+      filteredGames = response.sort(sortScores);
+    })
+    .catch(error => console.error(error))
+    .then(() => res.render('pages/scores', {
+      ...data,
+      seasons,
+      games: {
+        json: filteredGames,
+        season,
+        week,
+      },
+      url: req.url,
+    }));
+});
+
 app.post('/reload-scores', (req, res) => {
   const scoreData = {};
-  getScores(path.join(__dirname, 'server/cache/scores.json'), data.season, data.week)
+  getScores(data.season, data.week)
     .then((response) => {
-      console.log(response.message);
-      scoreData.scores = response.data.sort(sortScores);
+      scoreData.scores = response.sort(sortScores);
     })
     .catch(error => console.error(error))
     .then(() => res.render('partials/scoreboard-games', scoreData));

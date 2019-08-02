@@ -24,6 +24,20 @@
   padding: 0;
 }
 
+.nav-item > a {
+  color: inherit;
+  
+  &:hover{
+    color: $faded;
+    text-decoration: none;
+  }
+}
+
+.nav-item.is-active > a {
+  pointer-events: none;
+  font-weight: bold;
+}
+
 .nav-item:not(:first-of-type){
   margin-left: 2rem;
 }

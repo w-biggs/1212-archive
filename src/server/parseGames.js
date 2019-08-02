@@ -75,8 +75,8 @@ const parseMatches = function parseRegexMatches(match, gameID) {
    * May not know whose yardline it is; if we do, set it and remove it from the array to
    * make the array same for both cases.
    */
-  const whoseYardline = match.length === 12 ? match[6] : '';
-  const normalizedMatch = match.length === 12 ? match.filter((val, index) => index !== 6) : match;
+  const whoseYardline = match.length === 20 ? match[6] : '';
+  const normalizedMatch = match.length === 20 ? match.filter((val, index) => index !== 6) : match;
 
   const [
     fullText,
@@ -87,8 +87,16 @@ const parseMatches = function parseRegexMatches(match, gameID) {
     yardline,
     possession,
     homeName,
+    homeQ1,
+    homeQ2,
+    homeQ3,
+    homeQ4,
     homeScore,
     awayName,
+    awayQ1,
+    awayQ2,
+    awayQ3,
+    awayQ4,
     awayScore,
   ] = normalizedMatch;
   
@@ -97,16 +105,22 @@ const parseMatches = function parseRegexMatches(match, gameID) {
   const timeElapsed = calcTime(time, quarter, final);
 
   return {
-    teams: [
-      {
-        name: fixEntities(homeName), // Fix &amp;s
-        score: homeScore,
-      },
-      {
-        name: fixEntities(awayName),
-        score: awayScore,
-      },
-    ],
+    home: {
+      name: fixEntities(homeName), // Fix &amp;s
+      q1: homeQ1,
+      q2: homeQ2,
+      q3: homeQ3,
+      q4: homeQ4,
+      score: homeScore,
+    },
+    away: {
+      name: fixEntities(awayName),
+      q1: awayQ1,
+      q2: awayQ2,
+      q3: awayQ3,
+      q4: awayQ4,
+      score: awayScore,
+    },
     status: {
       time,
       quarter,
@@ -116,9 +130,8 @@ const parseMatches = function parseRegexMatches(match, gameID) {
       whoseYardline: whoseYardline ? getAbbreviation(fixEntities(whoseYardline)) : '',
       possession: fixEntities(possession),
       final,
+      timeElapsed,
     },
-    gameID,
-    timeElapsed,
   };
 };
 
@@ -130,27 +143,29 @@ const parseMatches = function parseRegexMatches(match, gameID) {
  * @returns {Object<string, any>} - The parsed score.
  */
 const parseGame = function parseRawGameJSON(response, gameID) {
+  const { data } = response.data.children[0];
   // The raw text of the game's Reddit post
-  const text = response.data.children[0].data.selftext;
+  const text = data.selftext;
   // The regex that will grab all the necessary info. Scary!!
-  const regex = /[\s\S]*?Clock.*\n.*\n([0-9]+:[0-9]+)\|([0-9])\|(.+) &amp; ([0-9]+)\|(-?[0-9]+)(?: \[(.+?)\])?.*?\|\[(.+?)\][\s\S]*?Team.*\n.*\n\[(.+?)\].*?\*\*([0-9]+)\*\*\n\[(.+?)\].*?\*\*([0-9]+)\*\*[\s\S]*/gm;
+  const regex = /[\s\S]*?Clock.*\n.*\n([0-9]+:[0-9]+)\|([0-9])\|(.+) &amp; ([0-9]+)\|(-?[0-9]+)(?: \[(.+?)\])?.*?\|\[(.+?)\][\s\S]*?Team.*\n.*\n\[(.+?)\].*?\|([0-9]+)?\|([0-9]+)?\|([0-9]+)?\|([0-9]+)?\|\*\*([0-9]+)\*\*\n\[(.+?)\].*?\|([0-9]+)?\|([0-9]+)?\|([0-9]+)?\|([0-9]+)?\|\*\*([0-9]+)\*\*[\s\S]*/gm;
 
   const match = regex.exec(text);
 
   const parsedMatches = parseMatches(match, gameID);
 
   return {
+    id: gameID,
+    startTime_utc: data.created_utc,
+    endTime_utc: data.edited, // Time of last update to score
     ...parsedMatches,
-    lastUpdate: response.data.children[0].data.edited, // Time of last update to score
   };
 };
 
 /**
- * Parses the raw game JSONs and sorts the scores by time elapsed.
+ * Parses the raw game JSONs.
  *
  * @param {Array<Object<string, any>>} games - The raw game JSONs.
- * @return {Array<Object<string, any>>}
- *  - An array of JSON objects containing the sorted, parsed scores.
+ * @return {Array<Object<string, any>>} - An array of JSON objects containing the parsed scores.
  */
 const parseGames = function parseRawGameJsons(games) {
   // Parses all games, then filters out any failed ones

@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<%- include('../partials/head', {url: url}) %>
-<body class="scoreboard-is-collapsed">
-  <div class="container l-container">
-    <% include ../partials/header %>
-    <% include ../partials/scoreboard %>
-    <% include ../partials/elo %>
-    <% include ../partials/article-listing %>
-  </div>
-</body>
-</html>
+<%- include('../partials/header', {url, bodyClass: 'home scoreboard-is-collapsed'}) %>
+  <% include ../partials/scoreboard %>
+  <% include ../partials/elo %>
+  <% include ../partials/article-listing %>
+<%- include('../partials/footer') %>

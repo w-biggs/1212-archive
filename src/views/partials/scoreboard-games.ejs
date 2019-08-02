@@ -29,17 +29,21 @@
   </div>
 <% } else { %>
   <div class="scoreboard-games">
-    <% for (score of scores) { %>
-      <% const { status, teams, gameID } = score; %>
+    <% for (const score of scores) { %>
+      <%
+        const { id, start, edit, home, away, status } = score; 
+        const teams = [home, away];
+        const final = typeof status === 'undefined' || status.final;
+      %>
       <div class="scoreboard-game">
         <div class="scoreboard-teams">
-          <% teams.forEach((team, i) => { %>
+          <% [home, away].forEach((team, i) => { %>
             <div class="scoreboard-team">
-              <div class="scoreboard-team-name <%= team.name !== status.possession && !status.final ? 'is-defense' : '' %>">
+              <div class="scoreboard-team-name <%= !final && team.name !== status.possession ? 'is-defense' : '' %>">
                 <%= team.name %>
               </div>
               <div class="scoreboard-team-score
-                <%= status.final ? 'is-final' : '' %>
+                <%= final ? 'is-final' : '' %>
                 <%= team.score > teams[(i + 1) % 2].score ? 'is-win' : 'is-loss' %>
               ">
                 <%= team.score %>
@@ -48,9 +52,9 @@
           <% }); %>
         </div>
         <div class="scoreboard-status">
-          <%= status.final ? 'Final' : `${status.time} ${status.quarter}Q - ${status.down} & ${status.toGo} on ${status.whoseYardline} ${status.yardline}` %>
+          <%= final ? 'Final' : `${status.time} ${status.quarter}Q - ${status.down} & ${status.toGo} on ${status.whoseYardline} ${status.yardline}` %>
         </div>
-        <a href="<%= `https://reddit-stream.com/comments/${gameID}` %>" class="scoreboard-stream-link">
+        <a href="<%= `https://reddit-stream.com/comments/${id}` %>" class="scoreboard-stream-link">
           <span>View on reddit-stream &gt;</span>
         </a>
       </div>

@@ -37,25 +37,6 @@ const fetchGameJson = function fetchGameJsonViaHttps(gameID) {
 };
 
 /**
- * Finds and returns the single week of games we're looking for.
- *
- * @param {{
- *   seasons: Array<{
- *     seasonNo: number, weeks: Array<{
- *       weekNo: number, games: Array<string>
- *     }>
- *   }>
- * }} games - The list of gameIDs.
- * @param {number} season - The season to fetch scores for.
- * @param {number} week - The week to fetch scores for.
- * @return {Array<{weekNo: number, games: Array<string>}>} - The week of games.
-*/
-const findWeek = function findWeekInGamesObject(games, season, week) {
-  const seasonObj = games.seasons.filter(gamesSeason => gamesSeason.seasonNo === season)[0];
-  return seasonObj.weeks.filter(gamesWeek => gamesWeek.weekNo === week)[0];
-};
-
-/**
  * Fetch the scores for all games together.
  *
  * @param {{
@@ -65,17 +46,13 @@ const findWeek = function findWeekInGamesObject(games, season, week) {
  *    }>
  *  }>
  * }} games - The list of gameIDs.
- * @param {number} season - The season to fetch scores for.
- * @param {number} week - The week to fetch scores for.
  * @return {Array<Object<string,any>>} - An array of game JSONs.
  */
-const fetchGames = async function fetchAllGamesFromGames(games, season, week) {
+const fetchGames = async function fetchAllGamesFromGames(gameIDs) {
   const requests = [];
 
   try {
-    const weekGames = findWeek(games, season, week);
-
-    weekGames.games.forEach((gameID) => {
+    gameIDs.forEach((gameID) => {
       const request = fetchGameJson(gameID);
       requests.push(request);
     });

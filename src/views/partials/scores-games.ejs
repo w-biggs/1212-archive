@@ -1,0 +1,87 @@
+<div class="scores-games">
+  <% for (let i = 0; i < games.json.length; i += 1) { %>
+    <%
+      const {id, home, away, status} = games.json[i];
+      const homeTeam = teams.filter(team => team.name === home.name)[0];
+      const awayTeam = teams.filter(team => team.name === away.name)[0];
+      const gameTeams = [
+        {short: homeTeam.short, abbr: homeTeam.abbr, ...home},
+        {short: awayTeam.short, abbr: awayTeam.abbr, ...away},
+      ];
+      const final = typeof status === 'undefined' || status.final;
+      // Catch any oddities
+      [homeTeam, awayTeam].forEach((team, i) => {
+        if (!team) {
+          console.log(`No match for ${['home','away'][i]} team!`);  
+        }
+      });
+    %>
+    <table class="scores-game <%= final ? 'is-final' : '-' %>">
+      <tbody>
+        <tr>
+          <td class="scores-status">
+            <%= final ? 'FINAL' : `${status.time} ${status.quarter}Q - ${status.down} & ${status.toGo} on ${status.whoseYardline} ${status.yardline}` %>
+          </td>
+          <th class="scores-q">
+            1
+          </th>
+          <th class="scores-q">
+            2
+          </th>
+          <th class="scores-q">
+            3
+          </th>
+          <th class="scores-q">
+            4
+          </th>
+          <th class="scores-score">
+            T
+          </th>
+        </tr>
+        <% gameTeams.forEach((team) => { %>
+          <tr>
+            <td class="scores-team">
+              <div class="scores-team-logo lazy-img" data-bg="/images/logos/<%= team.abbr %>.svg" aria-hidden="true"></div>
+              <span class="scores-team-name">
+                <%= team.short ? team.short : team.name %>
+              </span>
+              <span class="scores-team-record">
+                0-0
+              </span>
+            </td>
+            <td class="scores-q">
+              <%= team.q1 %>
+            </td>
+            <td class="scores-q">
+              <%= (!final && status.quarter < 2) ? '-' : team.q2 %>
+            </td>
+            <td class="scores-q">
+              <%= (!final && status.quarter < 3) ? '-' : team.q3 %>
+            </td>
+            <td class="scores-q">
+              <%= (!final && status.quarter < 4) ? '-' : team.q4 %>
+            </td>
+            <td class="scores-score">
+              <%= team.score %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6">
+            <% if (final) { %>
+              <a href="<%= `https://www.reddit.com/r/FakeCollegeFootball/comments/${id}` %>" class="scores-link">
+                <span>View on reddit &gt;</span>
+              </div>
+            <% } else { %>
+              <a href="<%= `https://reddit-stream.com/comments/${id}` %>" class="scores-link">
+                <span>View on reddit-stream &gt;</span>
+              </div>
+            <% } %>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  <% } %>
+</div>

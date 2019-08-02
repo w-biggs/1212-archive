@@ -337,6 +337,7 @@
     },
     {
       "name": "Sacramento State",
+      "short": "Sac State",
       "elo": 1666.0737684539686,
       "abbr": "CSUS",
       "conf": "Big Sky",
@@ -1223,6 +1224,7 @@
     },
     {
       "name": "Bethune-Cookman",
+      "short": "Bethune-Cook.",
       "elo": 1596.7311540243015,
       "abbr": "B-CU",
       "conf": "Atlantic Sun",
@@ -2842,6 +2844,7 @@
     },
     {
       "name": "Eastern Kentucky",
+      "short": "EKU",
       "elo": 1571.3078259316032,
       "abbr": "EKU",
       "conf": "DIC",
@@ -3074,6 +3077,7 @@
     },
     {
       "name": "Jacksonville State",
+      "short": "Jacksonville St.",
       "elo": 1564.1818930340512,
       "abbr": "JSU",
       "conf": "Atlantic Sun",
@@ -3358,6 +3362,7 @@
     },
     {
       "name": "Mississippi Valley State",
+      "short": "Miss. Valley St.",
       "elo": 1559.9729490120217,
       "abbr": "MVSU",
       "conf": "DIC",
@@ -4288,6 +4293,7 @@
     },
     {
       "name": "Northern Colorado",
+      "short": "N. Colorado",
       "elo": 1554.5491593028996,
       "abbr": "UNCO",
       "conf": "MVC",
@@ -6277,6 +6283,7 @@
     },
     {
       "name": "Southeast Missouri",
+      "short": "SE Missouri",
       "elo": 1541.917429347137,
       "abbr": "SEMO",
       "conf": "DIC",
@@ -8835,6 +8842,7 @@
     },
     {
       "name": "Prairie View A&M",
+      "short": "PVAMU",
       "elo": 1521.7786985632106,
       "abbr": "PVAMU",
       "conf": "Southland",
@@ -9431,6 +9439,7 @@
     },
     {
       "name": "Sam Houston State",
+      "short": "SHSU",
       "elo": 1517.446350474111,
       "abbr": "SHSU",
       "conf": "Southland",
@@ -11129,6 +11138,7 @@
     },
     {
       "name": "Eastern Washington",
+      "short": "E. Washington",
       "elo": 1507.1903388568708,
       "abbr": "EWU",
       "conf": "Big Sky",
@@ -12208,6 +12218,7 @@
     },
     {
       "name": "Arkansas-Pine Bluff",
+      "short": "Ark.-Pine Bluff",
       "elo": 1505.7042516965778,
       "abbr": "UAPB",
       "conf": "DIC",
@@ -13134,6 +13145,7 @@
     },
     {
       "name": "East Tennessee State",
+      "short": "ETSU",
       "elo": 1502.281769025716,
       "abbr": "ETSU",
       "conf": "Atlantic Sun",
@@ -14501,6 +14513,7 @@
     },
     {
       "name": "Charleston Southern",
+      "short": "CSU",
       "elo": 1493.1320660650047,
       "abbr": "CSU",
       "conf": "CFC",
@@ -15605,6 +15618,7 @@
     },
     {
       "name": "North Dakota State",
+      "short": "NDSU",
       "elo": 1486.811381927379,
       "abbr": "NDSU",
       "conf": "MVC",
@@ -16898,6 +16912,7 @@
     },
     {
       "name": "Central Connecticut",
+      "short": "Central CT",
       "elo": 1482.3110482961686,
       "abbr": "CCSU",
       "conf": "America East",
@@ -18770,6 +18785,7 @@
     },
     {
       "name": "South Carolina State",
+      "short": "SC State",
       "elo": 1475.0896732919307,
       "abbr": "SCSU",
       "conf": "CFC",
@@ -18917,6 +18933,7 @@
     },
     {
       "name": "North Carolina A&T",
+      "short": "NCAT",
       "elo": 1471.7413334116902,
       "abbr": "NCAT",
       "conf": "CFC",
@@ -20824,6 +20841,7 @@
     },
     {
       "name": "Northwestern State",
+      "short": "NSULA",
       "elo": 1462.4205497324604,
       "abbr": "NSULA",
       "conf": "Southland",
@@ -20954,6 +20972,7 @@
     },
     {
       "name": "North Carolina Central",
+      "short": "NC Central",
       "elo": 1461.9103506128272,
       "abbr": "NCCU",
       "conf": "CFC",
@@ -22888,6 +22907,7 @@
     },
     {
       "name": "South Dakota State",
+      "short": "SDSU",
       "elo": 1449.0450968884425,
       "abbr": "SDSU",
       "conf": "MVC",
@@ -23811,6 +23831,7 @@
     },
     {
       "name": "Youngstown State",
+      "short": "Youngstown St.",
       "elo": 1444.804486874966,
       "abbr": "YSU",
       "conf": "Colonial",
@@ -24589,6 +24610,7 @@
     },
     {
       "name": "Southeastern Louisiana",
+      "short": "SE Louisiana",
       "elo": 1440.4430259485546,
       "abbr": "SLU",
       "conf": "Southland",
@@ -25418,6 +25440,7 @@
     },
     {
       "name": "Stephen F. Austin",
+      "short": "SFA",
       "elo": 1433.231124653489,
       "abbr": "SFASU",
       "conf": "Southland",
