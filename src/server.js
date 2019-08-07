@@ -34,7 +34,7 @@ const data = {
   env: app.get('env'),
   teams: elo.teams,
   season: 2,
-  week: 1,
+  week: 2,
 };
 
 // List of conferences.
