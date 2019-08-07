@@ -34,9 +34,13 @@
 .scores-game{
   border: 1px solid $border-color;
   margin: 0.5rem;
+  width: 80%;
 
-  tfoot{
-    border-top: 1px solid $border-color;
+  caption{
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    padding: 0;
   }
 
   th{
@@ -48,6 +52,10 @@
   &.is-final .scores-status{
     font-weight: bold;
   }
+
+  @media screen and (min-width: $breakpoint-xs) {
+    width: auto;
+  }
 }
 
 .scores-status{
@@ -56,7 +64,7 @@
 }
 
 .scores-team{
-  width: 8rem;
+  width: auto;
   position: relative;
   padding: 0 0.5rem;
 
@@ -66,8 +74,9 @@
 }
 
 .scores-team-logo{
-  height: 1rem;
-  width: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: block;
   position: absolute;
   top: 50%;
   left: 0.5rem; // padding
@@ -75,26 +84,15 @@
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  display: none;
-
-  @media screen and (min-width: $breakpoint-xs) {
-    height: 1.5rem;
-    width: 1.5rem;
-    display: block;
-  }
 }
 
 .scores-team-name{
-  @include ms-respond(font-size,-0.25);
+  @include ms-respond(font-size,0);
+  margin-left: 2rem; // image size
   line-height: 2rem;
 
   &.is-defense{
     color: $faded;
-  }
-
-  @media screen and (min-width: $breakpoint-xs) {
-    @include ms-respond(font-size,0);
-    margin-left: 2rem; // image size
   }
 }
 
@@ -104,12 +102,7 @@
   @include ms-respond(font-size,-1);
   font-family: $mono-font-family;
   color: $faded;
-  display: none;
-
-  @media screen and (min-width: $breakpoint-xs) {
-    width: 12.5rem;
-    display: inline;
-  }
+  display: inline;
 }
 
 .scores-q{
