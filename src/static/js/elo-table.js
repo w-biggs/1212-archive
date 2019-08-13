@@ -25,8 +25,11 @@ const sortRows = function sortRowsByColumn(rowA, rowB, columnClass, isAscending)
   const cellA = rowA.getElementsByClassName(columnClass)[0];
   const cellB = rowB.getElementsByClassName(columnClass)[0];
   
-  const valA = cellA.dataset.value;
-  const valB = cellB.dataset.value;
+  // Check if it's a number - if it is, sort it as a number.
+  const valA = Number.isNaN(parseFloat(cellA.dataset.value))
+    ? cellA.dataset.value : parseFloat(cellA.dataset.value);
+  const valB = Number.isNaN(parseFloat(cellB.dataset.value))
+    ? cellB.dataset.value : parseFloat(cellB.dataset.value);
 
   if (valA > valB) {
     return isAscending ? -1 : 1;

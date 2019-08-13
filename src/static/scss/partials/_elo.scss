@@ -15,7 +15,7 @@
     font-weight: 400;
     text-transform: uppercase;
     @include ms-respond(font-size,-1);
-    padding: .25rem .5rem;
+    padding: .25rem 1rem .25rem .5rem;
     position: relative;
     vertical-align: middle;
     cursor: pointer;
@@ -50,7 +50,7 @@
   }
 }
 
-.elo-rating{
+.elo-rating, .elo-pn{
   width: 1%;
 }
 
@@ -60,12 +60,20 @@ td.elo-rating{
   align-items: center;
 }
 
-.elo-change {
+.elo-change{
+  display: none;
+  width: 1%;
+
+  @media screen and (min-width: $breakpoint-xs){
+    display: table-cell;
+  }
+}
+
+.elo-change-value {
   background-color: #ccc;
   @include ms-respond(font-size,-2);
   border-radius: 1rem;
   padding: .25em .5em;
-  margin-left: .5em;
 
   &.is-increase{
     background-color: rgba(68,171,67,.5);

@@ -1,10 +1,24 @@
 <div class="elo">
-  <h2 class="section-header">Elo Ratings</h2>
+  <h2 class="section-header">Elo & P-N Ratings</h2>
   <table class="elo-table is-collapsed">
     <thead>
       <tr>
         <th class="elo-rating">
           <span>Elo</span>
+          <div class="sorter">
+            <span class="asc">▲</span>
+            <span class="desc">▼</span>
+          </div>
+        </th>
+        <th class="elo-change">
+          <span>±</span>
+          <div class="sorter">
+            <span class="asc">▲</span>
+            <span class="desc">▼</span>
+          </div>
+        </th>
+        <th title="Park-Newman" class="elo-pn">
+          <span>P-N</span>
           <div class="sorter">
             <span class="asc">▲</span>
             <span class="desc">▼</span>
@@ -30,16 +44,24 @@
       <% for (const team of teams) { %>
         <% const teamSeason = team.seasons.filter(eloSeason => eloSeason.seasonNo === season); %>
         <% const teamWeek = teamSeason.length ? teamSeason[0].weeks.filter(eloWeek => eloWeek.weekNo === week) : false; %>
+        <% const eloChange = (teamWeek.length && teamWeek[0].hasOwnProperty('eloChange')) ? teamWeek[0].eloChange : 0; %>
+        <% const pnTeam = pn.filter(pnRow => pnRow.team === team.name)[0]; %>
+        <% const pnScore = pnTeam ? pnTeam.score : 0; %>
         <tr>
           <td class="elo-rating" title="<%= team.elo.toFixed(4) %>" data-value="<%= team.elo %>">
             <span>
               <%= Math.round(team.elo) %>
             </span>
+          </td>
+          <td class="elo-change" title="<%= eloChange.toFixed(4) %>" data-value="<%= eloChange %>">
             <% if (teamWeek.length && teamWeek[0].hasOwnProperty('eloChange')) { %>
-              <span class="elo-change <%= teamWeek[0].eloChange < 0 ? 'is-decrease' : 'is-increase' %>">
+              <span class="elo-change-value <%= teamWeek[0].eloChange < 0 ? 'is-decrease' : 'is-increase' %>">
                 <%= teamWeek[0].eloChange > 0 ? '+' : '' %><%= Math.round(teamWeek[0].eloChange) %>
               </span>
             <% } %>
+          </td>
+          <td class="elo-pn" title="<%= pnScore %>" data-value="<%= pnScore %>">
+            <span><%= pnScore.toFixed(2) %></span>
           </td>
           <td class="elo-team" data-value="<%= team.name %>">
             <a href="#<%= encodeURI(team.name) %>">
