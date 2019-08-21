@@ -74,6 +74,7 @@ td.elo-rating{
   @include ms-respond(font-size,-2);
   border-radius: 1rem;
   padding: .25em .5em;
+  display: block;
 
   &.is-increase{
     background-color: rgba(68,171,67,.5);
