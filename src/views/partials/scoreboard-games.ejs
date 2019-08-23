@@ -45,7 +45,7 @@
               </div>
               <div class="scoreboard-team-score
                 <%= final ? 'is-final' : '' %>
-                <%= team.score > teams[(i + 1) % 2].score ? 'is-win' : 'is-loss' %>
+                <%= parseInt(team.score, 10) > parseInt(teams[(i + 1) % 2].score, 10) ? 'is-win' : 'is-loss' %>
               ">
                 <%= team.score %>
               </div>
