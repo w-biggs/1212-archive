@@ -131,6 +131,15 @@ gulp.task('build',
     'ejs',
   ));
 
+gulp.task('build-updates',
+  gulp.series(
+    gulp.parallel(
+      'json',
+      'serverfiles',
+    ),
+    'ejs',
+  ));
+
 gulp.task('watch', () => {
   gulp.watch('./src/static/scss/**/*.scss', gulp.series('scss', 'ejs'));
   gulp.watch('./src/static/js/*.json', gulp.series('json'));
