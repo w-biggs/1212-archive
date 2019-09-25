@@ -36,7 +36,7 @@ const data = {
   teams: elo.teams,
   pn,
   season: 2,
-  week: 3,
+  week: 5,
 };
 
 // List of conferences.

@@ -1,514 +1,514 @@
 [
   {
-    "team": "Western Illinois",
-    "score": 3.92
-  },
-  {
-    "team": "Florida A&M",
-    "score": 3.8109
-  },
-  {
-    "team": "Southern Illinois",
-    "score": 3.768
-  },
-  {
-    "team": "Villanova",
-    "score": 3.488
-  },
-  {
     "team": "Bryant",
-    "score": 3.4
-  },
-  {
-    "team": "South Dakota State",
-    "score": 3.4
-  },
-  {
-    "team": "Butler",
-    "score": 3.288
-  },
-  {
-    "team": "San Diego",
-    "score": 3.2496
-  },
-  {
-    "team": "Houston Baptist",
-    "score": 3.248
-  },
-  {
-    "team": "Incarnate Word",
-    "score": 3.2
-  },
-  {
-    "team": "Bethune-Cookman",
-    "score": 3
-  },
-  {
-    "team": "Abilene Christian",
-    "score": 2.76
-  },
-  {
-    "team": "Southeast Missouri",
-    "score": 2.688
-  },
-  {
-    "team": "VMI",
-    "score": 2.688
-  },
-  {
-    "team": "Drake",
-    "score": 2.5991
-  },
-  {
-    "team": "Jackson State",
-    "score": 2.4
-  },
-  {
-    "team": "Dayton",
-    "score": 2.288
-  },
-  {
-    "team": "Stetson",
-    "score": 2.2496
-  },
-  {
-    "team": "Long Island",
-    "score": 2.248
-  },
-  {
-    "team": "Davidson",
-    "score": 2.24
-  },
-  {
-    "team": "Robert Morris",
-    "score": 2.2
-  },
-  {
-    "team": "Stony Brook",
-    "score": 2.2
+    "score": 6.9085
   },
   {
     "team": "Missouri State",
-    "score": 2
-  },
-  {
-    "team": "Northern Arizona",
-    "score": 2
-  },
-  {
-    "team": "St. Francis",
-    "score": 2
-  },
-  {
-    "team": "Mississippi Valley State",
-    "score": 1.9955
-  },
-  {
-    "team": "Jacksonville State",
-    "score": 1.8067
+    "score": 6.6561
   },
   {
     "team": "Penn",
-    "score": 1.728
-  },
-  {
-    "team": "Harvard",
-    "score": 1.6979
+    "score": 6.3574
   },
   {
     "team": "Montana State",
-    "score": 1.6336
+    "score": 6.2391
   },
   {
-    "team": "Monmouth",
-    "score": 1.6
-  },
-  {
-    "team": "Presbyterian",
-    "score": 1.6
-  },
-  {
-    "team": "Wagner",
-    "score": 1.6
-  },
-  {
-    "team": "Columbia",
-    "score": 1.5396
-  },
-  {
-    "team": "Southern Utah",
-    "score": 1.44
-  },
-  {
-    "team": "Campbell",
-    "score": 1.392
-  },
-  {
-    "team": "Austin Peay",
-    "score": 1.2896
-  },
-  {
-    "team": "Samford",
-    "score": 1.2896
-  },
-  {
-    "team": "Yale",
-    "score": 1.288
-  },
-  {
-    "team": "Prairie View A&M",
-    "score": 1.2
-  },
-  {
-    "team": "Eastern Kentucky",
-    "score": 1
-  },
-  {
-    "team": "Indiana State",
-    "score": 1
-  },
-  {
-    "team": "Maine",
-    "score": 1
-  },
-  {
-    "team": "Marist",
-    "score": 1
-  },
-  {
-    "team": "The Citadel",
-    "score": 1
-  },
-  {
-    "team": "Dartmouth",
-    "score": 0.952
-  },
-  {
-    "team": "Mercer",
-    "score": 0.9504
-  },
-  {
-    "team": "Delaware",
-    "score": 0.8
-  },
-  {
-    "team": "Gardner-Webb",
-    "score": 0.8
-  },
-  {
-    "team": "Holy Cross",
-    "score": 0.8
-  },
-  {
-    "team": "North Carolina Central",
-    "score": 0.44
-  },
-  {
-    "team": "Tennessee State",
-    "score": 0.44
-  },
-  {
-    "team": "Grambling State",
-    "score": 0.248
+    "team": "Drake",
+    "score": 5.7375
   },
   {
     "team": "UC Davis",
-    "score": 0.24
+    "score": 5.5898
   },
   {
-    "team": "Eastern Washington",
-    "score": 0.2
+    "team": "Villanova",
+    "score": 5.4614
   },
   {
-    "team": "Lafayette",
-    "score": 0.2
+    "team": "Southern Illinois",
+    "score": 5.3167
   },
   {
-    "team": "Tennessee Tech",
-    "score": 0.2
-  },
-  {
-    "team": "Alcorn State",
-    "score": 0
-  },
-  {
-    "team": "Charleston Southern",
-    "score": 0
+    "team": "Butler",
+    "score": 5.2576
   },
   {
     "team": "Delaware State",
-    "score": 0
+    "score": 5.068
   },
   {
-    "team": "Duquesne",
-    "score": 0
+    "team": "Bethune-Cookman",
+    "score": 4.9871
   },
   {
-    "team": "Lehigh",
-    "score": 0
+    "team": "San Diego",
+    "score": 4.4772
   },
   {
-    "team": "North Carolina A&T",
-    "score": 0
+    "team": "Jackson State",
+    "score": 4.4716
   },
   {
-    "team": "Rhode Island",
-    "score": 0
+    "team": "VMI",
+    "score": 4.4264
   },
   {
-    "team": "Sacramento State",
-    "score": 0
+    "team": "Maine",
+    "score": 4.3542
   },
   {
-    "team": "South Carolina State",
-    "score": 0
+    "team": "Dartmouth",
+    "score": 4.348
   },
   {
-    "team": "Youngstown State",
-    "score": 0
+    "team": "Long Island",
+    "score": 4.1724
   },
   {
-    "team": "Northern Iowa",
-    "score": -0.04
+    "team": "Incarnate Word",
+    "score": 3.8927
   },
   {
-    "team": "Sam Houston State",
-    "score": -0.2
+    "team": "Stony Brook",
+    "score": 3.8907
   },
   {
-    "team": "Towson",
-    "score": -0.2
+    "team": "Dayton",
+    "score": 3.7038
   },
   {
-    "team": "Northwestern State",
-    "score": -0.2499
+    "team": "South Dakota State",
+    "score": 3.7013
   },
   {
-    "team": "Western Carolina",
-    "score": -0.28
+    "team": "Southern Utah",
+    "score": 3.5627
   },
   {
-    "team": "Northern Colorado",
-    "score": -0.288
+    "team": "Jacksonville State",
+    "score": 3.4446
+  },
+  {
+    "team": "Mercer",
+    "score": 3.3993
+  },
+  {
+    "team": "St. Francis",
+    "score": 3.3803
+  },
+  {
+    "team": "Mississippi Valley State",
+    "score": 3.3591
+  },
+  {
+    "team": "Houston Baptist",
+    "score": 3.1045
   },
   {
     "team": "Texas Southern",
-    "score": -0.2896
+    "score": 2.839
   },
   {
-    "team": "Bucknell",
-    "score": -0.2979
+    "team": "Western Illinois",
+    "score": 2.8291
   },
   {
-    "team": "Valparaiso",
-    "score": -0.488
+    "team": "Abilene Christian",
+    "score": 2.8232
   },
   {
-    "team": "Lamar",
-    "score": -0.76
+    "team": "The Citadel",
+    "score": 2.7978
   },
   {
-    "team": "Arkansas-Pine Bluff",
-    "score": -0.992
+    "team": "Prairie View A&M",
+    "score": 2.7903
+  },
+  {
+    "team": "Charleston Southern",
+    "score": 2.6858
+  },
+  {
+    "team": "Marist",
+    "score": 2.5225
+  },
+  {
+    "team": "Yale",
+    "score": 2.3868
+  },
+  {
+    "team": "Tennessee State",
+    "score": 2.3465
+  },
+  {
+    "team": "Northern Iowa",
+    "score": 2.3427
+  },
+  {
+    "team": "Southeast Missouri",
+    "score": 2.3069
+  },
+  {
+    "team": "Austin Peay",
+    "score": 2.2465
+  },
+  {
+    "team": "Northwestern State",
+    "score": 2.1948
+  },
+  {
+    "team": "Stetson",
+    "score": 2.1793
   },
   {
     "team": "Dixie State",
-    "score": -0.992
+    "score": 2.1714
   },
   {
-    "team": "Furman",
-    "score": -1
+    "team": "Columbia",
+    "score": 2.1177
   },
   {
-    "team": "Illinois State",
-    "score": -1
+    "team": "Holy Cross",
+    "score": 2.1142
   },
   {
-    "team": "Merrimack",
-    "score": -1
+    "team": "Robert Morris",
+    "score": 1.958
   },
   {
-    "team": "Stephen F. Austin",
-    "score": -1
+    "team": "Lamar",
+    "score": 1.9264
   },
   {
-    "team": "Cal Poly",
-    "score": -1.2
+    "team": "Lehigh",
+    "score": 1.7721
   },
   {
-    "team": "Cornell",
-    "score": -1.2
-  },
-  {
-    "team": "Eastern Illinois",
-    "score": -1.2
-  },
-  {
-    "team": "Southeastern Louisiana",
-    "score": -1.2
-  },
-  {
-    "team": "Murray State",
-    "score": -1.208
-  },
-  {
-    "team": "North Alabama",
-    "score": -1.208
-  },
-  {
-    "team": "Alabama State",
-    "score": -1.24
-  },
-  {
-    "team": "North Dakota",
-    "score": -1.24
-  },
-  {
-    "team": "Southern",
-    "score": -1.24
-  },
-  {
-    "team": "Weber State",
-    "score": -1.28
-  },
-  {
-    "team": "Colgate",
-    "score": -1.4
-  },
-  {
-    "team": "Nicholls State",
-    "score": -1.4
-  },
-  {
-    "team": "Fordham",
-    "score": -1.44
-  },
-  {
-    "team": "Richmond",
-    "score": -1.448
-  },
-  {
-    "team": "Princeton",
-    "score": -1.4896
-  },
-  {
-    "team": "Savannah State",
-    "score": -1.4896
-  },
-  {
-    "team": "Morehead State",
-    "score": -1.496
-  },
-  {
-    "team": "Idaho State",
-    "score": -1.4976
-  },
-  {
-    "team": "Brown",
-    "score": -1.8355
-  },
-  {
-    "team": "Central Arkansas",
-    "score": -2
-  },
-  {
-    "team": "Georgetown",
-    "score": -2
-  },
-  {
-    "team": "Morgan State",
-    "score": -2
-  },
-  {
-    "team": "Sacred Heart",
-    "score": -2
-  },
-  {
-    "team": "South Dakota",
-    "score": -2
-  },
-  {
-    "team": "Howard",
-    "score": -2.2
-  },
-  {
-    "team": "Idaho",
-    "score": -2.2
-  },
-  {
-    "team": "Jacksonville",
-    "score": -2.2
-  },
-  {
-    "team": "James Madison",
-    "score": -2.24
+    "team": "Campbell",
+    "score": 1.6864
   },
   {
     "team": "Portland State",
-    "score": -2.2499
+    "score": 1.282
+  },
+  {
+    "team": "Florida A&M",
+    "score": 1.2771
+  },
+  {
+    "team": "Towson",
+    "score": 1.1611
   },
   {
     "team": "Alabama A&M",
-    "score": -2.44
+    "score": 1.0321
+  },
+  {
+    "team": "Alcorn State",
+    "score": 0.9598
+  },
+  {
+    "team": "North Carolina Central",
+    "score": 0.8045
+  },
+  {
+    "team": "Wagner",
+    "score": 0.5823
+  },
+  {
+    "team": "South Carolina State",
+    "score": 0.5435
+  },
+  {
+    "team": "Davidson",
+    "score": 0.292
+  },
+  {
+    "team": "Monmouth",
+    "score": 0.2182
+  },
+  {
+    "team": "Samford",
+    "score": 0.1948
+  },
+  {
+    "team": "Nicholls State",
+    "score": 0.0352
+  },
+  {
+    "team": "Lafayette",
+    "score": -0.0661
+  },
+  {
+    "team": "Tennessee Tech",
+    "score": -0.18
+  },
+  {
+    "team": "Indiana State",
+    "score": -0.263
+  },
+  {
+    "team": "Weber State",
+    "score": -0.2955
+  },
+  {
+    "team": "Cornell",
+    "score": -0.3341
+  },
+  {
+    "team": "Presbyterian",
+    "score": -0.338
+  },
+  {
+    "team": "Furman",
+    "score": -0.3516
+  },
+  {
+    "team": "Murray State",
+    "score": -0.3684
+  },
+  {
+    "team": "North Carolina A&T",
+    "score": -0.4245
+  },
+  {
+    "team": "Cal Poly",
+    "score": -0.5251
+  },
+  {
+    "team": "Eastern Kentucky",
+    "score": -0.5886
+  },
+  {
+    "team": "Bucknell",
+    "score": -0.6076
+  },
+  {
+    "team": "Sacramento State",
+    "score": -0.6198
+  },
+  {
+    "team": "Valparaiso",
+    "score": -0.7464
+  },
+  {
+    "team": "Delaware",
+    "score": -0.7521
+  },
+  {
+    "team": "Youngstown State",
+    "score": -0.764
   },
   {
     "team": "McNeese State",
-    "score": -2.44
+    "score": -0.8361
   },
   {
-    "team": "Norfolk State",
-    "score": -2.44
+    "team": "Harvard",
+    "score": -1.0147
   },
   {
-    "team": "North Dakota State",
-    "score": -2.44
+    "team": "Illinois State",
+    "score": -1.1339
+  },
+  {
+    "team": "Sam Houston State",
+    "score": -1.2124
+  },
+  {
+    "team": "Morehead State",
+    "score": -1.243
+  },
+  {
+    "team": "Northern Arizona",
+    "score": -1.3126
+  },
+  {
+    "team": "Grambling State",
+    "score": -1.4351
+  },
+  {
+    "team": "Savannah State",
+    "score": -1.4746
+  },
+  {
+    "team": "Sacred Heart",
+    "score": -1.5459
+  },
+  {
+    "team": "Western Carolina",
+    "score": -1.5479
+  },
+  {
+    "team": "Duquesne",
+    "score": -2.0234
+  },
+  {
+    "team": "Gardner-Webb",
+    "score": -2.0439
+  },
+  {
+    "team": "Merrimack",
+    "score": -2.2596
+  },
+  {
+    "team": "Northern Colorado",
+    "score": -2.3217
+  },
+  {
+    "team": "Eastern Washington",
+    "score": -2.3434
+  },
+  {
+    "team": "Alabama State",
+    "score": -2.4136
   },
   {
     "team": "Elon",
-    "score": -2.48
+    "score": -2.6195
   },
   {
-    "team": "East Tennessee State",
-    "score": -2.49
+    "team": "Central Arkansas",
+    "score": -2.7679
   },
   {
-    "team": "UT Martin",
-    "score": -2.68
+    "team": "North Dakota",
+    "score": -2.7731
   },
   {
-    "team": "New Hampshire",
-    "score": -2.8647
-  },
-  {
-    "team": "Albany",
-    "score": -3
-  },
-  {
-    "team": "Chattanooga",
-    "score": -3.2
-  },
-  {
-    "team": "Central Connecticut",
-    "score": -3.24
-  },
-  {
-    "team": "Wofford",
-    "score": -3.656
+    "team": "Eastern Illinois",
+    "score": -2.7811
   },
   {
     "team": "William & Mary",
-    "score": -3.728
+    "score": -2.7912
+  },
+  {
+    "team": "North Dakota State",
+    "score": -2.8442
+  },
+  {
+    "team": "Stephen F. Austin",
+    "score": -2.9011
+  },
+  {
+    "team": "Fordham",
+    "score": -2.9059
+  },
+  {
+    "team": "James Madison",
+    "score": -2.9176
+  },
+  {
+    "team": "Southeastern Louisiana",
+    "score": -2.9218
+  },
+  {
+    "team": "Brown",
+    "score": -3.0809
+  },
+  {
+    "team": "Rhode Island",
+    "score": -3.2745
   },
   {
     "team": "Kennesaw State",
-    "score": -3.7379
+    "score": -3.4112
+  },
+  {
+    "team": "Morgan State",
+    "score": -3.5122
+  },
+  {
+    "team": "Arkansas-Pine Bluff",
+    "score": -3.7561
+  },
+  {
+    "team": "Georgetown",
+    "score": -3.7695
+  },
+  {
+    "team": "Albany",
+    "score": -3.8946
+  },
+  {
+    "team": "Chattanooga",
+    "score": -4.0093
+  },
+  {
+    "team": "South Dakota",
+    "score": -4.0748
+  },
+  {
+    "team": "Norfolk State",
+    "score": -4.0796
+  },
+  {
+    "team": "North Alabama",
+    "score": -4.2853
+  },
+  {
+    "team": "Colgate",
+    "score": -4.3257
+  },
+  {
+    "team": "Southern",
+    "score": -4.5102
   },
   {
     "team": "Hampton",
-    "score": -3.7396
+    "score": -4.5534
+  },
+  {
+    "team": "Princeton",
+    "score": -4.5938
+  },
+  {
+    "team": "Idaho State",
+    "score": -4.6153
+  },
+  {
+    "team": "Richmond",
+    "score": -4.756
+  },
+  {
+    "team": "East Tennessee State",
+    "score": -4.8209
+  },
+  {
+    "team": "Wofford",
+    "score": -4.8793
+  },
+  {
+    "team": "Howard",
+    "score": -5.1346
   },
   {
     "team": "Montana",
-    "score": -4.2483
+    "score": -5.2274
+  },
+  {
+    "team": "Idaho",
+    "score": -5.6199
+  },
+  {
+    "team": "Jacksonville",
+    "score": -5.8552
+  },
+  {
+    "team": "Central Connecticut",
+    "score": -6.2944
+  },
+  {
+    "team": "New Hampshire",
+    "score": -6.7115
+  },
+  {
+    "team": "UT Martin",
+    "score": -8.0324
   }
 ]

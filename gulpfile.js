@@ -135,6 +135,7 @@ gulp.task('build-updates',
   gulp.series(
     gulp.parallel(
       'json',
+      'js',
       'serverfiles',
     ),
     'ejs',
