@@ -69,11 +69,11 @@
       </tbody>
       <caption>
         <% if (final) { %>
-          <a href="<%= `https://redd.it/${id}` %>" class="scores-link">
+          <a href="<%= `https://redd.it/${id}` %>" class="scores-link" target="_blank" rel="noopener noreferrer">
             <span>View on reddit &gt;</span>
           </div>
         <% } else { %>
-          <a href="<%= `https://reddit-stream.com/comments/${id}` %>" class="scores-link">
+          <a href="<%= `https://reddit-stream.com/comments/${id}` %>" class="scores-link" target="_blank" rel="noopener noreferrer">
             <span>View on reddit-stream &gt;</span>
           </div>
         <% } %>

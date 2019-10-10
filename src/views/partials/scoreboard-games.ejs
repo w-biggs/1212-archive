@@ -55,8 +55,20 @@
         <div class="scoreboard-status">
           <%= final ? 'Final' : `${status.time} ${status.quarter}Q - ${status.down} & ${status.toGo} on ${status.whoseYardline} ${status.yardline}` %>
         </div>
-        <a href="<%= `https://reddit-stream.com/comments/${id}` %>" class="scoreboard-stream-link">
-          <span>View on reddit-stream &gt;</span>
+        <a href="<%= `https://reddit-stream.com/comments/${id}` %>" class="scoreboard-stream-link" target="_blank" rel="noopener noreferrer">
+          <%
+            const currentTimestamp = Math.floor(Date.now() / 1000);
+            const timeDiff = currentTimestamp - score.endTime_utc;
+            let timeString = `${timeDiff} sec${timeDiff > 1 ? 's' : ''}`;
+            if (timeDiff > 86400) {
+              timeString = `${Math.round(timeDiff / 86400)} day${Math.round(timeDiff / 86400) > 1 ? 's' : ''}`;
+            } else if (timeDiff > 3600) {
+              timeString = `${Math.round(timeDiff / 3600)} hour${Math.round(timeDiff / 3600) > 1 ? 's' : ''}`;
+            } else if (timeDiff > 60) {
+              timeString = `${Math.round(timeDiff / 60)} min${Math.round(timeDiff / 60) > 1 ? 's' : ''}`;
+            }
+          %>
+          <span><%= final ? 'Finished' : 'Last play' %> <%= timeString %> ago &gt;</span>
         </a>
       </div>
     <% } %>

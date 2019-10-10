@@ -133,6 +133,9 @@ gulp.task('build',
 
 gulp.task('build-updates',
   gulp.series(
+    (done) => {
+      clean('./app/server/cache/**', done);
+    },
     gulp.parallel(
       'json',
       'js',
