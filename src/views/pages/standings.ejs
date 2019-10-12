@@ -1,0 +1,107 @@
+<%- include('../partials/header', {url: url, bodyClass: 'standings'}) %>
+  <div class="standings-container page-container">
+    <h2 class="section-header">Standings</h2>
+    <% for (let i = 0; i < stats.confs.length; i += 1) { %>
+      <% const conf = stats.confs[i]; %>
+      <div class="standings-conf">
+        <h3 class="standings-conf-name"><%= conf.name %></h3>
+        <div class="standings-table-container">
+          <table class="standings-table">
+            <thead>
+              <tr>
+                <th colspan="2"></th>
+                <th colspan="3">
+                  <span>Conference</span>
+                </th>
+                <% if (conf.divs.length > 1) { %>
+                  <th colspan="3">
+                    <span>Division</span>
+                  </th>
+                <% } %>
+                <th colspan="4">
+                  <span>Overall</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let j = 0; j < conf.divs.length; j += 1) {
+                const div = conf.divs[j];
+                %>
+                <tr class="standings-subhead">
+                  <th></th>
+                  <th><%= div.name %></th>
+                  <th>W-L</th>
+                  <th>PF</th>
+                  <th>PA</th>
+                  <% if (conf.divs.length > 1) { %>
+                    <th>W-L</th>
+                    <th>PF</th>
+                    <th>PA</th>
+                  <% } %>
+                  <th>W-L</th>
+                  <th>PF</th>
+                  <th>PA</th>
+                  <th>STRK</th>
+                </tr>
+                <% for (let k = 0; k < div.teams.length; k += 1) {
+                  const team = div.teams[k];
+                  const abbr = teams.filter(eloTeam => eloTeam.name === team.name)[0].abbr;
+                  let streak = '--';
+                  switch (team.stats.streak_type) {
+                    case -1:
+                      streak = `L${team.stats.streak}`
+                      break;
+                    case 0:
+                      streak = `T${team.stats.streak}`
+                      break;
+                    case 1:
+                      streak = `W${team.stats.streak}`
+                      break;
+                    default:
+                      break;
+                  }
+                  %>
+                  <tr>
+                    <td><%= k + 1 %></td>
+                    <td>
+                      <span class="standings-team">
+                        <div class="standings-team-logo lazy-img" data-bg="/images/logos/<%= abbr %>.svg" aria-hidden="true"></div>
+                        <span class="standings-team-full"><%= team.name %></span>
+                        <span class="standings-team-abbr"><%= abbr %></span>
+                      </span>
+                    </td>
+                    <td><%= team.stats.conf_wins %>-<%= team.stats.conf_losses %></td>
+                    <td><%= team.stats.conf_pf %></td>
+                    <td><%= team.stats.conf_pa %></td>
+                    <% if (conf.divs.length > 1) { %>
+                      <td><%= team.stats.div_wins %>-<%= team.stats.div_losses %></td>
+                      <td><%= team.stats.div_pf %></td>
+                      <td><%= team.stats.div_pa %></td>
+                    <% } %>
+                    <td><%= team.stats.wins %>-<%= team.stats.losses %></td>
+                    <td><%= team.stats.pf %></td>
+                    <td><%= team.stats.pa %></td>
+                    <td><%= streak %></td>
+                  </tr>
+                <% } %>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <% } %>
+    <div class="standings-errata">
+      <p>Tiebreakers are decided as follows:</p>
+      <ol>
+        <li>Conference wins</li>
+        <li>Conference games over .500</li>
+        <li>Head-to-head</li>
+        <li>Division wins</li>
+        <li>Division games over .500</li>
+        <li>Record in common games</li>
+        <li>Record vs. each conference/divisional opponent in descending order until there is a discrepancy</li>
+      </ol>
+      <p>However, the 7th tiebreaker is currently not possible to calculate automatically without running into infinite loop issues, so this has been replaced here by conference point differential per game and division point differential per game. By the end of the season, though, that tiebreaker shound rarely (or never) be reached, so this won't really matter.</p>
+    </div>
+  </div>
+<%- include('../partials/footer') %>

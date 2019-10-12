@@ -6,9 +6,6 @@ $footer-height: 3rem;
   display: grid;
   padding: .5rem;
   margin: 0 auto;
-}
-
-.container {
   grid-template-columns: 1fr;
   grid-template-rows: $header-height auto auto auto $footer-height;
   grid-template-areas: 
@@ -26,6 +23,11 @@ body.home .container {
     "listing"
     "elo"
     "footer";
+}
+
+.page-container {
+  grid-area: body;
+  padding: $pad 0;
 }
 
 @media screen and (min-width: $breakpoint-md){

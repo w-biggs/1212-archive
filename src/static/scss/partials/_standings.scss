@@ -1,0 +1,118 @@
+.standings-container {
+  overflow-x: hidden;
+}
+
+.standings-conf {
+  max-width: 100%;
+}
+
+.standings-table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.standings-conf:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.standings-table {
+  width: 100%;
+  max-width: 100%;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  overflow-x: scroll;
+
+  th {
+    text-transform: uppercase;
+    @include ms-respond(font-size,-1);
+    position: relative;
+    vertical-align: middle;
+    background-clip: padding-box;
+
+    & > span {
+      vertical-align: baseline;
+    }
+  }
+
+  th, td {
+    padding: .25rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  tbody > tr {
+    th:nth-child(2), td:nth-child(2),
+    th:nth-child(5), td:nth-child(5),
+    th:nth-last-child(5), td:nth-last-child(5) {
+      border-right: 1px solid $border-color;
+    }
+
+    th:nth-child(1), td:nth-child(1) {
+      width: 2%;
+      min-width: 1.5rem;
+    }
+
+    th:nth-child(2), td:nth-child(2) {
+      text-align: left;
+      width: 15%;
+      min-width: 6rem;
+      @media screen and (min-width: $breakpoint-xs){
+        min-width: 16rem;
+      }
+    }
+
+    th:nth-child(n+3), td:nth-child(n+3) {
+      min-width: 5%;
+      min-width: 2.5rem;
+    }
+  }
+}
+
+.standings-subhead {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.standings-team {
+  padding-left: 1.5rem; // image size
+  position: relative;
+}
+
+.standings-team-logo {
+  height: 1.25rem;
+  width: 1.25rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.standings-team-full {
+  display: none;
+  @media screen and (min-width: $breakpoint-xs){
+    display: inline;
+  }
+}
+.standings-team-abbr {
+  display: inline;
+  @media screen and (min-width: $breakpoint-xs){
+    display: none;
+  }
+}
+
+.standings-errata {
+  @include ms-respond(font-size,-1);
+  margin-top: 1em;
+
+  p {
+    margin: .5em 0;
+  }
+
+  ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 const ejs = require('ejs');
+const stats = require('./static/js/stats.json');
 const elo = require('./static/js/elo.json');
 const pn = require('./static/js/pn.json');
 const games = require('./static/js/games.json');
@@ -60,6 +61,10 @@ app.get('/', (req, res) => {
 
 app.get('/scores', (req, res) => {
   res.redirect(`/scores/${data.season}/${data.week}/`);
+});
+
+app.get('/standings', (req, res) => {
+  res.render('pages/standings', { ...data, url: req.url, stats });
 });
 
 app.get('/scores/:season/:week/:conf?/', (req, res) => {

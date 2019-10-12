@@ -325,13 +325,13 @@
     },
     {
       "name": "Stony Brook",
-      "elo": 1638.2534107956242,
+      "elo": 1658.0168897725416,
       "abbr": "SBU",
       "conf": "America East",
       "fullConf": "America East",
       "div": "Tri-State",
       "color": "#990000",
-      "wins": 4,
+      "wins": 5,
       "losses": 1,
       "ties": 0,
       "seasons": [
@@ -673,6 +673,24 @@
                 "oppScore": 45,
                 "oppName": "Marist",
                 "id": "d5x3m1"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1638.2534107956242,
+              "oppElo": 1490.6984349117179,
+              "mins": 10.9,
+              "winProb": 0.9990638307465008,
+              "movMultiplier": 3.3047120232975584,
+              "expectedWinProb": 0.6987541724074182,
+              "eloChange": 19.763478976917465,
+              "elo": 1658.0168897725416,
+              "gameInfo": {
+                "result": "win",
+                "score": 33,
+                "oppScore": 0,
+                "oppName": "Merrimack",
+                "id": "dc9pmq"
               }
             }
           ]
@@ -1702,13 +1720,13 @@
     },
     {
       "name": "Dayton",
-      "elo": 1602.6325982169315,
+      "elo": 1620.7101930972199,
       "abbr": "UD",
       "conf": "MVC",
       "fullConf": "Missouri Valley Conference",
       "div": "Metro",
       "color": "#CE1141",
-      "wins": 4,
+      "wins": 5,
       "losses": 1,
       "ties": 0,
       "seasons": [
@@ -2033,6 +2051,24 @@
                 "oppScore": 35,
                 "oppName": "Dixie State",
                 "id": "d5x6e1"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1602.6325982169315,
+              "oppElo": 1474.0171373681494,
+              "mins": 28,
+              "winProb": 1,
+              "movMultiplier": 2.781809990991393,
+              "expectedWinProb": 0.6750749523002872,
+              "eloChange": 18.077594880288316,
+              "elo": 1620.7101930972199,
+              "gameInfo": {
+                "result": "win",
+                "score": 45,
+                "oppScore": 27,
+                "oppName": "Illinois State",
+                "id": "dc9jh3"
               }
             }
           ]
@@ -9194,6 +9230,414 @@
       ]
     },
     {
+      "name": "Princeton",
+      "elo": 1545.4590251204154,
+      "abbr": "PRIN",
+      "conf": "Ivy League",
+      "fullConf": "Ivy League",
+      "div": "N/A",
+      "color": "#FF671F",
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "seasons": [
+        {
+          "seasonNo": 1,
+          "weeks": [
+            {
+              "weekNo": 1,
+              "prevElo": 1500,
+              "oppElo": 1500,
+              "M": 28,
+              "%": 1,
+              "x": 2.1972245773362196,
+              "E": 0.5,
+              "±": 21.972245773362197,
+              "elo": 1521.9722457733621,
+              "gameInfo": {
+                "result": "win",
+                "score": 25,
+                "oppScore": 17,
+                "oppName": "Sacred Heart"
+              }
+            },
+            {
+              "weekNo": 2,
+              "prevElo": 1521.9722457733621,
+              "oppElo": 1478.5557418736018,
+              "M": 11.15,
+              "%": 0.8986645427497871,
+              "x": 2.6556417107873176,
+              "E": 0.5608978724356727,
+              "±": -17.871741919125615,
+              "elo": 1539.8439876924879,
+              "gameInfo": {
+                "result": "win",
+                "score": 14,
+                "oppScore": 0,
+                "oppName": "Yale"
+              }
+            },
+            {
+              "weekNo": 3,
+              "prevElo": 1539.8439876924879,
+              "oppElo": 1538.155197324719,
+              "M": 28,
+              "%": 0,
+              "x": 2.3997373879738184,
+              "E": 0.5023780316796581,
+              "±": 24.111506910367417,
+              "elo": 1515.7324807821205,
+              "gameInfo": {
+                "result": "loss",
+                "score": 38,
+                "oppScore": 48,
+                "oppName": "Montana State"
+              }
+            },
+            {
+              "weekNo": 4,
+              "prevElo": 1515.7324807821205,
+              "oppElo": 1520.5380659209206,
+              "M": 26.866666666666667,
+              "%": 0.9999999999999983,
+              "x": 3.2652289633765648,
+              "E": 0.49323340917727604,
+              "±": 33.0941580206765,
+              "elo": 1548.826638802797,
+              "gameInfo": {
+                "result": "win",
+                "score": 52,
+                "oppScore": 27,
+                "oppName": "Alabama A&M"
+              }
+            },
+            {
+              "weekNo": 5,
+              "prevElo": 1548.826638802797,
+              "oppElo": 1558.0993884356026,
+              "M": 28,
+              "%": 1,
+              "x": 2.0882432493268372,
+              "E": 0.486945042413803,
+              "±": 21.427671034260854,
+              "elo": 1570.254309837058,
+              "gameInfo": {
+                "result": "win",
+                "score": 42,
+                "oppScore": 35,
+                "oppName": "Harvard"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1570.254309837058,
+              "oppElo": 1521.0342831837909,
+              "M": 28,
+              "%": 0,
+              "x": 3.693552807010733,
+              "E": 0.5689613942485519,
+              "±": 42.02977909614958,
+              "elo": 1528.2245307409084,
+              "gameInfo": {
+                "result": "loss",
+                "score": 7,
+                "oppScore": 43,
+                "oppName": "Dartmouth"
+              }
+            },
+            {
+              "weekNo": 7,
+              "prevElo": 1528.2245307409084,
+              "oppElo": 1502.1218146274828,
+              "M": 28,
+              "%": 0,
+              "x": 3.4077280839717754,
+              "E": 0.5367042269369282,
+              "±": 36.578841338386624,
+              "elo": 1491.6456894025218,
+              "gameInfo": {
+                "result": "loss",
+                "score": 13,
+                "oppScore": 41,
+                "oppName": "Yale"
+              }
+            },
+            {
+              "weekNo": 8,
+              "prevElo": 1491.6456894025218,
+              "oppElo": 1557.5206550857736,
+              "M": 28,
+              "%": 1,
+              "x": 2.7205182600804676,
+              "E": 0.4080682233611066,
+              "±": 32.207224141359646,
+              "elo": 1523.8529135438814,
+              "gameInfo": {
+                "result": "win",
+                "score": 34,
+                "oppScore": 21,
+                "oppName": "Brown"
+              }
+            },
+            {
+              "weekNo": 9,
+              "prevElo": 1523.8529135438814,
+              "oppElo": 1496.9464070132585,
+              "M": 28,
+              "%": 1,
+              "x": 2.0543167745388815,
+              "E": 0.5378311302445553,
+              "±": 18.98882523616571,
+              "elo": 1542.841738780047,
+              "gameInfo": {
+                "result": "win",
+                "score": 35,
+                "oppScore": 28,
+                "oppName": "Cornell"
+              }
+            },
+            {
+              "weekNo": 10,
+              "prevElo": 1542.841738780047,
+              "oppElo": 1544.6033345082478,
+              "M": 28,
+              "%": 1,
+              "x": 1.6107276628751073,
+              "E": 0.49751945040469825,
+              "±": 16.187186425796796,
+              "elo": 1559.028925205844,
+              "gameInfo": {
+                "result": "win",
+                "score": 21,
+                "oppScore": 17,
+                "oppName": "Columbia"
+              }
+            },
+            {
+              "weekNo": 11,
+              "prevElo": 1559.028925205844,
+              "oppElo": 1524.5421872695533,
+              "M": 28,
+              "%": 1,
+              "x": 3.0871014617947607,
+              "E": 0.5484423406371619,
+              "±": -27.880086206072765,
+              "elo": 1586.9090114119167,
+              "gameInfo": {
+                "result": "win",
+                "score": 42,
+                "oppScore": 20,
+                "oppName": "Murray State"
+              }
+            },
+            {
+              "weekNo": 12,
+              "prevElo": 1586.9090114119167,
+              "oppElo": 1575.8995567033983,
+              "M": 28,
+              "%": 1,
+              "x": 2.069087213513856,
+              "E": 0.5154989037557369,
+              "±": -20.049500463449018,
+              "elo": 1606.9585118753657,
+              "gameInfo": {
+                "result": "win",
+                "score": 28,
+                "oppScore": 21,
+                "oppName": "Brown"
+              }
+            },
+            {
+              "weekNo": 13,
+              "prevElo": 1606.9585118753657,
+              "oppElo": 1618.2746644862684,
+              "M": 28,
+              "%": 1,
+              "x": 0.6967309595906127,
+              "E": 0.4840695591422324,
+              "±": 7.189294222816806,
+              "elo": 1614.1478060981826,
+              "gameInfo": {
+                "result": "win",
+                "score": 42,
+                "oppScore": 41,
+                "oppName": "Yale"
+              }
+            },
+            {
+              "weekNo": 15,
+              "prevElo": 1614.1478060981826,
+              "oppElo": 1629.1960201461798,
+              "M": 28,
+              "%": 1,
+              "x": 2.212357316632281,
+              "E": 0.4788200341482113,
+              "±": 23.060726214687346,
+              "elo": 1637.20853231287,
+              "gameInfo": {
+                "result": "win",
+                "score": 43,
+                "oppScore": 35,
+                "oppName": "Bethune-Cookman"
+              }
+            },
+            {
+              "weekNo": 16,
+              "prevElo": 1637.20853231287,
+              "oppElo": 1648.1936682808175,
+              "M": 28,
+              "%": 1,
+              "x": 3.2350291133547784,
+              "E": 0.4845353145386416,
+              "±": 33.35086528747516,
+              "elo": 1670.5593976003452,
+              "gameInfo": {
+                "result": "win",
+                "score": 52,
+                "oppScore": 28,
+                "oppName": "Incarnate Word"
+              }
+            },
+            {
+              "weekNo": 17,
+              "prevElo": 1670.5593976003452,
+              "oppElo": 1702.262101205579,
+              "M": 28,
+              "%": 0,
+              "x": 1.3666012007499218,
+              "E": 0.45545128567617477,
+              "±": 12.44840547776312,
+              "elo": 1658.110992122582,
+              "gameInfo": {
+                "result": "loss",
+                "score": 35,
+                "oppScore": 38,
+                "oppName": "Cal Poly"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNo": 2,
+          "weeks": [
+            {
+              "weekNo": 0,
+              "elo": 1605.4073280817213
+            },
+            {
+              "weekNo": 1,
+              "prevElo": 1605.4073280817213,
+              "oppElo": 1500,
+              "mins": 14,
+              "winProb": 0.001015360827487377,
+              "movMultiplier": 3.8206423896580297,
+              "expectedWinProb": 0.6450734324695235,
+              "eloChange": -49.16947464115837,
+              "elo": 1556.237853440563,
+              "gameInfo": {
+                "result": "loss",
+                "score": 21,
+                "oppScore": 58,
+                "oppName": "North Alabama",
+                "id": "cj48yv"
+              }
+            },
+            {
+              "weekNo": 2,
+              "prevElo": 1556.237853440563,
+              "oppElo": 1564.1818930340512,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 2.071959845747682,
+              "expectedWinProb": 0.48881518106048993,
+              "eloChange": -20.25610854298436,
+              "elo": 1535.9817448975787,
+              "gameInfo": {
+                "result": "loss",
+                "score": 21,
+                "oppScore": 28,
+                "oppName": "Jacksonville State",
+                "id": "cn5ip3"
+              }
+            },
+            {
+              "weekNo": 3,
+              "prevElo": 1535.9817448975787,
+              "oppElo": 1499.8689030900805,
+              "mins": 28,
+              "winProb": 1,
+              "movMultiplier": 2.2653987356435006,
+              "expectedWinProb": 0.5507144074407101,
+              "eloChange": 20.35622026653313,
+              "elo": 1556.337965164112,
+              "gameInfo": {
+                "result": "win",
+                "score": 44,
+                "oppScore": 35,
+                "oppName": "Brown",
+                "id": "cti12y"
+              }
+            },
+            {
+              "weekNo": 4,
+              "prevElo": 1556.337965164112,
+              "oppElo": 1526.6682803560311,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 0.7026229079314283,
+              "expectedWinProb": 0.5417026974636612,
+              "eloChange": -7.612254490524328,
+              "elo": 1548.7257106735876,
+              "gameInfo": {
+                "result": "loss",
+                "score": 31,
+                "oppScore": 32,
+                "oppName": "Dartmouth",
+                "id": "czka11"
+              }
+            },
+            {
+              "weekNo": 5,
+              "prevElo": 1548.7257106735876,
+              "oppElo": 1511.0070926639112,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 1.410476739922005,
+              "expectedWinProb": 0.5529564411730571,
+              "eloChange": -15.59864396929295,
+              "elo": 1533.1270667042947,
+              "gameInfo": {
+                "result": "loss",
+                "score": 28,
+                "oppScore": 31,
+                "oppName": "Mississippi Valley State",
+                "id": "d5x417"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1533.1270667042947,
+              "oppElo": 1396.587302866055,
+              "mins": 28,
+              "winProb": 1,
+              "movMultiplier": 1.957925759491741,
+              "expectedWinProb": 0.6850759443677311,
+              "eloChange": 12.331958416120585,
+              "elo": 1545.4590251204154,
+              "gameInfo": {
+                "result": "win",
+                "score": 31,
+                "oppScore": 24,
+                "oppName": "William & Mary",
+                "id": "dc9mcp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Tennessee Tech",
       "elo": 1542.6137253385007,
       "abbr": "TTU",
@@ -11457,634 +11901,6 @@
                 "oppScore": 8,
                 "oppName": "Merrimack",
                 "id": "d5x4yo"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Princeton",
-      "elo": 1533.1270667042947,
-      "abbr": "PRIN",
-      "conf": "Ivy League",
-      "fullConf": "Ivy League",
-      "div": "N/A",
-      "color": "#FF671F",
-      "wins": 1,
-      "losses": 4,
-      "ties": 0,
-      "seasons": [
-        {
-          "seasonNo": 1,
-          "weeks": [
-            {
-              "weekNo": 1,
-              "prevElo": 1500,
-              "oppElo": 1500,
-              "M": 28,
-              "%": 1,
-              "x": 2.1972245773362196,
-              "E": 0.5,
-              "±": 21.972245773362197,
-              "elo": 1521.9722457733621,
-              "gameInfo": {
-                "result": "win",
-                "score": 25,
-                "oppScore": 17,
-                "oppName": "Sacred Heart"
-              }
-            },
-            {
-              "weekNo": 2,
-              "prevElo": 1521.9722457733621,
-              "oppElo": 1478.5557418736018,
-              "M": 11.15,
-              "%": 0.8986645427497871,
-              "x": 2.6556417107873176,
-              "E": 0.5608978724356727,
-              "±": -17.871741919125615,
-              "elo": 1539.8439876924879,
-              "gameInfo": {
-                "result": "win",
-                "score": 14,
-                "oppScore": 0,
-                "oppName": "Yale"
-              }
-            },
-            {
-              "weekNo": 3,
-              "prevElo": 1539.8439876924879,
-              "oppElo": 1538.155197324719,
-              "M": 28,
-              "%": 0,
-              "x": 2.3997373879738184,
-              "E": 0.5023780316796581,
-              "±": 24.111506910367417,
-              "elo": 1515.7324807821205,
-              "gameInfo": {
-                "result": "loss",
-                "score": 38,
-                "oppScore": 48,
-                "oppName": "Montana State"
-              }
-            },
-            {
-              "weekNo": 4,
-              "prevElo": 1515.7324807821205,
-              "oppElo": 1520.5380659209206,
-              "M": 26.866666666666667,
-              "%": 0.9999999999999983,
-              "x": 3.2652289633765648,
-              "E": 0.49323340917727604,
-              "±": 33.0941580206765,
-              "elo": 1548.826638802797,
-              "gameInfo": {
-                "result": "win",
-                "score": 52,
-                "oppScore": 27,
-                "oppName": "Alabama A&M"
-              }
-            },
-            {
-              "weekNo": 5,
-              "prevElo": 1548.826638802797,
-              "oppElo": 1558.0993884356026,
-              "M": 28,
-              "%": 1,
-              "x": 2.0882432493268372,
-              "E": 0.486945042413803,
-              "±": 21.427671034260854,
-              "elo": 1570.254309837058,
-              "gameInfo": {
-                "result": "win",
-                "score": 42,
-                "oppScore": 35,
-                "oppName": "Harvard"
-              }
-            },
-            {
-              "weekNo": 6,
-              "prevElo": 1570.254309837058,
-              "oppElo": 1521.0342831837909,
-              "M": 28,
-              "%": 0,
-              "x": 3.693552807010733,
-              "E": 0.5689613942485519,
-              "±": 42.02977909614958,
-              "elo": 1528.2245307409084,
-              "gameInfo": {
-                "result": "loss",
-                "score": 7,
-                "oppScore": 43,
-                "oppName": "Dartmouth"
-              }
-            },
-            {
-              "weekNo": 7,
-              "prevElo": 1528.2245307409084,
-              "oppElo": 1502.1218146274828,
-              "M": 28,
-              "%": 0,
-              "x": 3.4077280839717754,
-              "E": 0.5367042269369282,
-              "±": 36.578841338386624,
-              "elo": 1491.6456894025218,
-              "gameInfo": {
-                "result": "loss",
-                "score": 13,
-                "oppScore": 41,
-                "oppName": "Yale"
-              }
-            },
-            {
-              "weekNo": 8,
-              "prevElo": 1491.6456894025218,
-              "oppElo": 1557.5206550857736,
-              "M": 28,
-              "%": 1,
-              "x": 2.7205182600804676,
-              "E": 0.4080682233611066,
-              "±": 32.207224141359646,
-              "elo": 1523.8529135438814,
-              "gameInfo": {
-                "result": "win",
-                "score": 34,
-                "oppScore": 21,
-                "oppName": "Brown"
-              }
-            },
-            {
-              "weekNo": 9,
-              "prevElo": 1523.8529135438814,
-              "oppElo": 1496.9464070132585,
-              "M": 28,
-              "%": 1,
-              "x": 2.0543167745388815,
-              "E": 0.5378311302445553,
-              "±": 18.98882523616571,
-              "elo": 1542.841738780047,
-              "gameInfo": {
-                "result": "win",
-                "score": 35,
-                "oppScore": 28,
-                "oppName": "Cornell"
-              }
-            },
-            {
-              "weekNo": 10,
-              "prevElo": 1542.841738780047,
-              "oppElo": 1544.6033345082478,
-              "M": 28,
-              "%": 1,
-              "x": 1.6107276628751073,
-              "E": 0.49751945040469825,
-              "±": 16.187186425796796,
-              "elo": 1559.028925205844,
-              "gameInfo": {
-                "result": "win",
-                "score": 21,
-                "oppScore": 17,
-                "oppName": "Columbia"
-              }
-            },
-            {
-              "weekNo": 11,
-              "prevElo": 1559.028925205844,
-              "oppElo": 1524.5421872695533,
-              "M": 28,
-              "%": 1,
-              "x": 3.0871014617947607,
-              "E": 0.5484423406371619,
-              "±": -27.880086206072765,
-              "elo": 1586.9090114119167,
-              "gameInfo": {
-                "result": "win",
-                "score": 42,
-                "oppScore": 20,
-                "oppName": "Murray State"
-              }
-            },
-            {
-              "weekNo": 12,
-              "prevElo": 1586.9090114119167,
-              "oppElo": 1575.8995567033983,
-              "M": 28,
-              "%": 1,
-              "x": 2.069087213513856,
-              "E": 0.5154989037557369,
-              "±": -20.049500463449018,
-              "elo": 1606.9585118753657,
-              "gameInfo": {
-                "result": "win",
-                "score": 28,
-                "oppScore": 21,
-                "oppName": "Brown"
-              }
-            },
-            {
-              "weekNo": 13,
-              "prevElo": 1606.9585118753657,
-              "oppElo": 1618.2746644862684,
-              "M": 28,
-              "%": 1,
-              "x": 0.6967309595906127,
-              "E": 0.4840695591422324,
-              "±": 7.189294222816806,
-              "elo": 1614.1478060981826,
-              "gameInfo": {
-                "result": "win",
-                "score": 42,
-                "oppScore": 41,
-                "oppName": "Yale"
-              }
-            },
-            {
-              "weekNo": 15,
-              "prevElo": 1614.1478060981826,
-              "oppElo": 1629.1960201461798,
-              "M": 28,
-              "%": 1,
-              "x": 2.212357316632281,
-              "E": 0.4788200341482113,
-              "±": 23.060726214687346,
-              "elo": 1637.20853231287,
-              "gameInfo": {
-                "result": "win",
-                "score": 43,
-                "oppScore": 35,
-                "oppName": "Bethune-Cookman"
-              }
-            },
-            {
-              "weekNo": 16,
-              "prevElo": 1637.20853231287,
-              "oppElo": 1648.1936682808175,
-              "M": 28,
-              "%": 1,
-              "x": 3.2350291133547784,
-              "E": 0.4845353145386416,
-              "±": 33.35086528747516,
-              "elo": 1670.5593976003452,
-              "gameInfo": {
-                "result": "win",
-                "score": 52,
-                "oppScore": 28,
-                "oppName": "Incarnate Word"
-              }
-            },
-            {
-              "weekNo": 17,
-              "prevElo": 1670.5593976003452,
-              "oppElo": 1702.262101205579,
-              "M": 28,
-              "%": 0,
-              "x": 1.3666012007499218,
-              "E": 0.45545128567617477,
-              "±": 12.44840547776312,
-              "elo": 1658.110992122582,
-              "gameInfo": {
-                "result": "loss",
-                "score": 35,
-                "oppScore": 38,
-                "oppName": "Cal Poly"
-              }
-            }
-          ]
-        },
-        {
-          "seasonNo": 2,
-          "weeks": [
-            {
-              "weekNo": 0,
-              "elo": 1605.4073280817213
-            },
-            {
-              "weekNo": 1,
-              "prevElo": 1605.4073280817213,
-              "oppElo": 1500,
-              "mins": 14,
-              "winProb": 0.001015360827487377,
-              "movMultiplier": 3.8206423896580297,
-              "expectedWinProb": 0.6450734324695235,
-              "eloChange": -49.16947464115837,
-              "elo": 1556.237853440563,
-              "gameInfo": {
-                "result": "loss",
-                "score": 21,
-                "oppScore": 58,
-                "oppName": "North Alabama",
-                "id": "cj48yv"
-              }
-            },
-            {
-              "weekNo": 2,
-              "prevElo": 1556.237853440563,
-              "oppElo": 1564.1818930340512,
-              "mins": 28,
-              "winProb": 0,
-              "movMultiplier": 2.071959845747682,
-              "expectedWinProb": 0.48881518106048993,
-              "eloChange": -20.25610854298436,
-              "elo": 1535.9817448975787,
-              "gameInfo": {
-                "result": "loss",
-                "score": 21,
-                "oppScore": 28,
-                "oppName": "Jacksonville State",
-                "id": "cn5ip3"
-              }
-            },
-            {
-              "weekNo": 3,
-              "prevElo": 1535.9817448975787,
-              "oppElo": 1499.8689030900805,
-              "mins": 28,
-              "winProb": 1,
-              "movMultiplier": 2.2653987356435006,
-              "expectedWinProb": 0.5507144074407101,
-              "eloChange": 20.35622026653313,
-              "elo": 1556.337965164112,
-              "gameInfo": {
-                "result": "win",
-                "score": 44,
-                "oppScore": 35,
-                "oppName": "Brown",
-                "id": "cti12y"
-              }
-            },
-            {
-              "weekNo": 4,
-              "prevElo": 1556.337965164112,
-              "oppElo": 1526.6682803560311,
-              "mins": 28,
-              "winProb": 0,
-              "movMultiplier": 0.7026229079314283,
-              "expectedWinProb": 0.5417026974636612,
-              "eloChange": -7.612254490524328,
-              "elo": 1548.7257106735876,
-              "gameInfo": {
-                "result": "loss",
-                "score": 31,
-                "oppScore": 32,
-                "oppName": "Dartmouth",
-                "id": "czka11"
-              }
-            },
-            {
-              "weekNo": 5,
-              "prevElo": 1548.7257106735876,
-              "oppElo": 1511.0070926639112,
-              "mins": 28,
-              "winProb": 0,
-              "movMultiplier": 1.410476739922005,
-              "expectedWinProb": 0.5529564411730571,
-              "eloChange": -15.59864396929295,
-              "elo": 1533.1270667042947,
-              "gameInfo": {
-                "result": "loss",
-                "score": 28,
-                "oppScore": 31,
-                "oppName": "Mississippi Valley State",
-                "id": "d5x417"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Prairie View A&M",
-      "short": "PVAMU",
-      "elo": 1531.334664691703,
-      "abbr": "PVAMU",
-      "conf": "Southland",
-      "fullConf": "Southland",
-      "div": "Texas",
-      "color": "#330066",
-      "wins": 3,
-      "losses": 2,
-      "ties": 0,
-      "seasons": [
-        {
-          "seasonNo": 1,
-          "weeks": [
-            {
-              "weekNo": 2,
-              "prevElo": 1500,
-              "oppElo": 1500,
-              "M": 28,
-              "%": 1,
-              "x": 2.0794415416798357,
-              "E": 0.5,
-              "±": 20.79441541679836,
-              "elo": 1520.7944154167983,
-              "gameInfo": {
-                "result": "win",
-                "score": 35,
-                "oppScore": 28,
-                "oppName": "Arkansas-Pine Bluff"
-              }
-            },
-            {
-              "weekNo": 3,
-              "prevElo": 1520.7944154167983,
-              "oppElo": 1538.9434170321645,
-              "M": 4.666666666666667,
-              "%": 0.9213651210636026,
-              "x": 3.1167542615985213,
-              "E": 0.4744612139148601,
-              "±": 25.156389039478267,
-              "elo": 1545.9508044562765,
-              "gameInfo": {
-                "result": "win",
-                "score": 21,
-                "oppScore": 0,
-                "oppName": "Northern Colorado"
-              }
-            },
-            {
-              "weekNo": 4,
-              "prevElo": 1545.9508044562765,
-              "oppElo": 1494.4300494683932,
-              "M": 0.9833333333333333,
-              "%": 0.7372538499480863,
-              "x": 2.0318584146119756,
-              "E": 0.5721503222147492,
-              "±": 2.6058681596659743,
-              "elo": 1548.5566726159425,
-              "gameInfo": {
-                "result": "win",
-                "score": 7,
-                "oppScore": 0,
-                "oppName": "James Madison"
-              }
-            },
-            {
-              "weekNo": 5,
-              "prevElo": 1548.5566726159425,
-              "oppElo": 1500.2493869876757,
-              "M": 1.5,
-              "%": 0.9308501774031404,
-              "x": 2.979107618343129,
-              "E": 0.5676950294611246,
-              "±": 11.41671269318943,
-              "elo": 1559.973385309132,
-              "gameInfo": {
-                "result": "win",
-                "score": 20,
-                "oppScore": 0,
-                "oppName": "Southern"
-              }
-            },
-            {
-              "weekNo": 6,
-              "prevElo": 1559.973385309132,
-              "oppElo": 1476.664087840357,
-              "M": 7.866666666666666,
-              "%": 0.39006307443725313,
-              "x": 2.161284776384637,
-              "E": 0.6156418823052994,
-              "±": -9.559904685249116,
-              "elo": 1550.4134806238828,
-              "gameInfo": {
-                "result": "loss",
-                "score": 0,
-                "oppScore": 7,
-                "oppName": "Sam Houston State"
-              }
-            },
-            {
-              "weekNo": 7,
-              "prevElo": 1550.4134806238828,
-              "oppElo": 1518.2014232240226,
-              "M": 6.266666666666667,
-              "%": 0.3414530491513328,
-              "x": 2.1103408233779812,
-              "E": 0.5452614049592639,
-              "±": -8.227295226841647,
-              "elo": 1542.1861853970413,
-              "gameInfo": {
-                "result": "loss",
-                "score": 7,
-                "oppScore": 14,
-                "oppName": "Houston Baptist"
-              }
-            },
-            {
-              "weekNo": 12,
-              "prevElo": 1542.1861853970413,
-              "oppElo": 1449.0299107148885,
-              "M": 7.483333333333333,
-              "%": 0.4043552313776483,
-              "x": 2.1713862004669893,
-              "E": 0.6288507767465802,
-              "±": 9.518137552225406,
-              "elo": 1532.6680478448159,
-              "gameInfo": {
-                "result": "loss",
-                "score": 7,
-                "oppScore": 14,
-                "oppName": "Texas Southern"
-              }
-            }
-          ]
-        },
-        {
-          "seasonNo": 2,
-          "weeks": [
-            {
-              "weekNo": 0,
-              "elo": 1521.7786985632106
-            },
-            {
-              "weekNo": 1,
-              "prevElo": 1521.7786985632106,
-              "oppElo": 1541.917429347137,
-              "mins": 18.116666666666667,
-              "winProb": 0.24566024652789586,
-              "movMultiplier": 1.9282589274995783,
-              "expectedWinProb": 0.4716658003602404,
-              "eloChange": -8.714937100807347,
-              "elo": 1513.0637614624031,
-              "gameInfo": {
-                "result": "loss",
-                "score": 7,
-                "oppScore": 13,
-                "oppName": "Southeast Missouri",
-                "id": "cl94w4"
-              }
-            },
-            {
-              "weekNo": 2,
-              "prevElo": 1513.0637614624031,
-              "oppElo": 1461.2548514866066,
-              "mins": 28,
-              "winProb": 1,
-              "movMultiplier": 1.7505352318479326,
-              "expectedWinProb": 0.5725493924423595,
-              "eloChange": 14.965346968089078,
-              "elo": 1528.0291084304922,
-              "gameInfo": {
-                "result": "win",
-                "score": 14,
-                "oppScore": 9,
-                "oppName": "Wofford",
-                "id": "cn5kxt"
-              }
-            },
-            {
-              "weekNo": 3,
-              "prevElo": 1528.0291084304922,
-              "oppElo": 1508.3568624781599,
-              "mins": 28,
-              "winProb": 1,
-              "movMultiplier": 3.0636475316519918,
-              "expectedWinProb": 0.5276789451474462,
-              "eloChange": 28.94050467692583,
-              "elo": 1556.9696131074181,
-              "gameInfo": {
-                "result": "win",
-                "score": 42,
-                "oppScore": 21,
-                "oppName": "Nicholls State",
-                "id": "cti09j"
-              }
-            },
-            {
-              "weekNo": 4,
-              "prevElo": 1556.9696131074181,
-              "oppElo": 1505.3953357590128,
-              "mins": 21.033333333333335,
-              "winProb": 0.9150169302684429,
-              "movMultiplier": 2.3429693851224047,
-              "expectedWinProb": 0.5722244517404473,
-              "eloChange": 16.062624001010633,
-              "elo": 1573.0322371084287,
-              "gameInfo": {
-                "result": "win",
-                "score": 24,
-                "oppScore": 14,
-                "oppName": "Sam Houston State",
-                "id": "czkcf8"
-              }
-            },
-            {
-              "weekNo": 5,
-              "prevElo": 1573.0322371084287,
-              "oppElo": 1544.2094136359872,
-              "mins": 28,
-              "winProb": 0,
-              "movMultiplier": 3.8571967170770436,
-              "expectedWinProb": 0.5405165392799035,
-              "eloChange": -41.69757241672577,
-              "elo": 1531.334664691703,
-              "gameInfo": {
-                "result": "loss",
-                "score": 0,
-                "oppScore": 44,
-                "oppName": "Southern Utah",
-                "id": "d5x281"
               }
             }
           ]
@@ -16153,6 +15969,261 @@
       ]
     },
     {
+      "name": "Texas Southern",
+      "elo": 1514.2711769105729,
+      "abbr": "TSU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Texas",
+      "color": "#6F263D",
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "seasons": [
+        {
+          "seasonNo": 1,
+          "weeks": [
+            {
+              "weekNo": 3,
+              "prevElo": 1500,
+              "oppElo": 1533.322045101752,
+              "M": 8.95,
+              "%": 0.8387927245478203,
+              "x": 2.749698186089981,
+              "E": 0.453186001832087,
+              "±": -20.964518022382325,
+              "elo": 1520.9645180223824,
+              "gameInfo": {
+                "result": "win",
+                "score": 14,
+                "oppScore": 0,
+                "oppName": "St. Francis"
+              }
+            },
+            {
+              "weekNo": 4,
+              "prevElo": 1520.9645180223824,
+              "oppElo": 1461.54885667015,
+              "M": 28,
+              "%": 0,
+              "x": 1.4247733851918136,
+              "E": 0.583056042028275,
+              "±": -16.614454615143313,
+              "elo": 1504.350063407239,
+              "gameInfo": {
+                "result": "loss",
+                "score": 41,
+                "oppScore": 44,
+                "oppName": "Stetson"
+              }
+            },
+            {
+              "weekNo": 5,
+              "prevElo": 1504.350063407239,
+              "oppElo": 1550.250477395351,
+              "M": 28,
+              "%": 0,
+              "x": 2.5851218019252302,
+              "E": 0.43564764109291143,
+              "±": 22.524044298931663,
+              "elo": 1481.8260191083075,
+              "gameInfo": {
+                "result": "loss",
+                "score": 51,
+                "oppScore": 64,
+                "oppName": "McNeese State"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1481.8260191083075,
+              "oppElo": 1424.2639399931434,
+              "M": 21.033333333333335,
+              "%": 0.21302633828465756,
+              "x": 2.13531106180488,
+              "E": 0.5805009842077761,
+              "±": 15.693041577354721,
+              "elo": 1466.1329775309528,
+              "gameInfo": {
+                "result": "loss",
+                "score": 35,
+                "oppScore": 42,
+                "oppName": "Lamar"
+              }
+            },
+            {
+              "weekNo": 7,
+              "prevElo": 1466.1329775309528,
+              "oppElo": 1481.6181421323954,
+              "M": 6.083333333333333,
+              "%": 0.1442532985038495,
+              "x": 2.6891222462763054,
+              "E": 0.47820564126642257,
+              "±": -17.103066816064292,
+              "elo": 1449.0299107148885,
+              "gameInfo": {
+                "result": "loss",
+                "score": 7,
+                "oppScore": 21,
+                "oppName": "Abilene Christian"
+              }
+            },
+            {
+              "weekNo": 12,
+              "prevElo": 1449.0299107148885,
+              "oppElo": 1542.1861853970413,
+              "M": 7.483333333333333,
+              "%": 0.5956447686223517,
+              "x": 2.1713862004669893,
+              "E": 0.3711492232534198,
+              "±": 9.518137552225406,
+              "elo": 1458.548048267114,
+              "gameInfo": {
+                "result": "win",
+                "score": 14,
+                "oppScore": 7,
+                "oppName": "Prairie View A&M"
+              }
+            },
+            {
+              "weekNo": 13,
+              "prevElo": 1458.548048267114,
+              "oppElo": 1473.3928110834556,
+              "M": 28,
+              "%": 0,
+              "x": 2.8709993468281936,
+              "E": 0.47910612265494956,
+              "±": 27.510267304074972,
+              "elo": 1431.037780963039,
+              "gameInfo": {
+                "result": "loss",
+                "score": 13,
+                "oppScore": 30,
+                "oppName": "Morehead State"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNo": 2,
+          "weeks": [
+            {
+              "weekNo": 0,
+              "elo": 1454.0251873086927
+            },
+            {
+              "weekNo": 1,
+              "prevElo": 1454.0251873086927,
+              "oppElo": 1428.5628955576208,
+              "mins": 8.283333333333333,
+              "winProb": 0.9909599431768452,
+              "movMultiplier": 3.3946977568974948,
+              "expectedWinProb": 0.5358061493206807,
+              "eloChange": 30.410984947913253,
+              "elo": 1484.436172256606,
+              "gameInfo": {
+                "result": "win",
+                "score": 30,
+                "oppScore": 0,
+                "oppName": "Bucknell",
+                "id": "ch9dfa"
+              }
+            },
+            {
+              "weekNo": 2,
+              "prevElo": 1484.436172256606,
+              "oppElo": 1443.891318349885,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 3.357717856898853,
+              "expectedWinProb": 0.5568983668258611,
+              "eloChange": -37.39815181538003,
+              "elo": 1447.0380204412259,
+              "gameInfo": {
+                "result": "loss",
+                "score": 35,
+                "oppScore": 61,
+                "oppName": "Murray State",
+                "id": "cn5jxw"
+              }
+            },
+            {
+              "weekNo": 3,
+              "prevElo": 1447.0380204412259,
+              "oppElo": 1459.9549873988647,
+              "mins": 12.083333333333334,
+              "winProb": 0.9427809705836799,
+              "movMultiplier": 3.0134251431006955,
+              "expectedWinProb": 0.48181745908793827,
+              "eloChange": 27.715550467571845,
+              "elo": 1474.7535709087977,
+              "gameInfo": {
+                "result": "win",
+                "score": 33,
+                "oppScore": 14,
+                "oppName": "Southern",
+                "id": "cti0l9"
+              }
+            },
+            {
+              "weekNo": 4,
+              "prevElo": 1474.7535709087977,
+              "oppElo": 1615.3150103148903,
+              "mins": 28,
+              "winProb": 1,
+              "movMultiplier": 2.892880883373748,
+              "expectedWinProb": 0.30989928591938765,
+              "eloChange": 39.92758326732752,
+              "elo": 1514.6811541761251,
+              "gameInfo": {
+                "result": "win",
+                "score": 47,
+                "oppScore": 33,
+                "oppName": "Incarnate Word",
+                "id": "d1zunm"
+              }
+            },
+            {
+              "weekNo": 5,
+              "prevElo": 1514.6811541761251,
+              "oppElo": 1443.3827128758437,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 2.727449557889186,
+              "expectedWinProb": 0.5993481160393938,
+              "eloChange": -32.69383508226722,
+              "elo": 1481.9873190938579,
+              "gameInfo": {
+                "result": "loss",
+                "score": 38,
+                "oppScore": 51,
+                "oppName": "Colgate",
+                "id": "d5x61x"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1481.9873190938579,
+              "oppElo": 1531.334664691703,
+              "mins": 28,
+              "winProb": 1,
+              "movMultiplier": 2.836206570336729,
+              "expectedWinProb": 0.4308620155815714,
+              "eloChange": 32.283857816715,
+              "elo": 1514.2711769105729,
+              "gameInfo": {
+                "result": "win",
+                "score": 35,
+                "oppScore": 20,
+                "oppName": "Prairie View A&M",
+                "id": "dc9nro"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Florida A&M",
       "elo": 1514.0192360521478,
       "abbr": "FAMU",
@@ -19142,6 +19213,262 @@
       ]
     },
     {
+      "name": "Prairie View A&M",
+      "short": "PVAMU",
+      "elo": 1499.050806874988,
+      "abbr": "PVAMU",
+      "conf": "Southland",
+      "fullConf": "Southland",
+      "div": "Texas",
+      "color": "#330066",
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "seasons": [
+        {
+          "seasonNo": 1,
+          "weeks": [
+            {
+              "weekNo": 2,
+              "prevElo": 1500,
+              "oppElo": 1500,
+              "M": 28,
+              "%": 1,
+              "x": 2.0794415416798357,
+              "E": 0.5,
+              "±": 20.79441541679836,
+              "elo": 1520.7944154167983,
+              "gameInfo": {
+                "result": "win",
+                "score": 35,
+                "oppScore": 28,
+                "oppName": "Arkansas-Pine Bluff"
+              }
+            },
+            {
+              "weekNo": 3,
+              "prevElo": 1520.7944154167983,
+              "oppElo": 1538.9434170321645,
+              "M": 4.666666666666667,
+              "%": 0.9213651210636026,
+              "x": 3.1167542615985213,
+              "E": 0.4744612139148601,
+              "±": 25.156389039478267,
+              "elo": 1545.9508044562765,
+              "gameInfo": {
+                "result": "win",
+                "score": 21,
+                "oppScore": 0,
+                "oppName": "Northern Colorado"
+              }
+            },
+            {
+              "weekNo": 4,
+              "prevElo": 1545.9508044562765,
+              "oppElo": 1494.4300494683932,
+              "M": 0.9833333333333333,
+              "%": 0.7372538499480863,
+              "x": 2.0318584146119756,
+              "E": 0.5721503222147492,
+              "±": 2.6058681596659743,
+              "elo": 1548.5566726159425,
+              "gameInfo": {
+                "result": "win",
+                "score": 7,
+                "oppScore": 0,
+                "oppName": "James Madison"
+              }
+            },
+            {
+              "weekNo": 5,
+              "prevElo": 1548.5566726159425,
+              "oppElo": 1500.2493869876757,
+              "M": 1.5,
+              "%": 0.9308501774031404,
+              "x": 2.979107618343129,
+              "E": 0.5676950294611246,
+              "±": 11.41671269318943,
+              "elo": 1559.973385309132,
+              "gameInfo": {
+                "result": "win",
+                "score": 20,
+                "oppScore": 0,
+                "oppName": "Southern"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1559.973385309132,
+              "oppElo": 1476.664087840357,
+              "M": 7.866666666666666,
+              "%": 0.39006307443725313,
+              "x": 2.161284776384637,
+              "E": 0.6156418823052994,
+              "±": -9.559904685249116,
+              "elo": 1550.4134806238828,
+              "gameInfo": {
+                "result": "loss",
+                "score": 0,
+                "oppScore": 7,
+                "oppName": "Sam Houston State"
+              }
+            },
+            {
+              "weekNo": 7,
+              "prevElo": 1550.4134806238828,
+              "oppElo": 1518.2014232240226,
+              "M": 6.266666666666667,
+              "%": 0.3414530491513328,
+              "x": 2.1103408233779812,
+              "E": 0.5452614049592639,
+              "±": -8.227295226841647,
+              "elo": 1542.1861853970413,
+              "gameInfo": {
+                "result": "loss",
+                "score": 7,
+                "oppScore": 14,
+                "oppName": "Houston Baptist"
+              }
+            },
+            {
+              "weekNo": 12,
+              "prevElo": 1542.1861853970413,
+              "oppElo": 1449.0299107148885,
+              "M": 7.483333333333333,
+              "%": 0.4043552313776483,
+              "x": 2.1713862004669893,
+              "E": 0.6288507767465802,
+              "±": 9.518137552225406,
+              "elo": 1532.6680478448159,
+              "gameInfo": {
+                "result": "loss",
+                "score": 7,
+                "oppScore": 14,
+                "oppName": "Texas Southern"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNo": 2,
+          "weeks": [
+            {
+              "weekNo": 0,
+              "elo": 1521.7786985632106
+            },
+            {
+              "weekNo": 1,
+              "prevElo": 1521.7786985632106,
+              "oppElo": 1541.917429347137,
+              "mins": 18.116666666666667,
+              "winProb": 0.24566024652789586,
+              "movMultiplier": 1.9282589274995783,
+              "expectedWinProb": 0.4716658003602404,
+              "eloChange": -8.714937100807347,
+              "elo": 1513.0637614624031,
+              "gameInfo": {
+                "result": "loss",
+                "score": 7,
+                "oppScore": 13,
+                "oppName": "Southeast Missouri",
+                "id": "cl94w4"
+              }
+            },
+            {
+              "weekNo": 2,
+              "prevElo": 1513.0637614624031,
+              "oppElo": 1461.2548514866066,
+              "mins": 28,
+              "winProb": 1,
+              "movMultiplier": 1.7505352318479326,
+              "expectedWinProb": 0.5725493924423595,
+              "eloChange": 14.965346968089078,
+              "elo": 1528.0291084304922,
+              "gameInfo": {
+                "result": "win",
+                "score": 14,
+                "oppScore": 9,
+                "oppName": "Wofford",
+                "id": "cn5kxt"
+              }
+            },
+            {
+              "weekNo": 3,
+              "prevElo": 1528.0291084304922,
+              "oppElo": 1508.3568624781599,
+              "mins": 28,
+              "winProb": 1,
+              "movMultiplier": 3.0636475316519918,
+              "expectedWinProb": 0.5276789451474462,
+              "eloChange": 28.94050467692583,
+              "elo": 1556.9696131074181,
+              "gameInfo": {
+                "result": "win",
+                "score": 42,
+                "oppScore": 21,
+                "oppName": "Nicholls State",
+                "id": "cti09j"
+              }
+            },
+            {
+              "weekNo": 4,
+              "prevElo": 1556.9696131074181,
+              "oppElo": 1505.3953357590128,
+              "mins": 21.033333333333335,
+              "winProb": 0.9150169302684429,
+              "movMultiplier": 2.3429693851224047,
+              "expectedWinProb": 0.5722244517404473,
+              "eloChange": 16.062624001010633,
+              "elo": 1573.0322371084287,
+              "gameInfo": {
+                "result": "win",
+                "score": 24,
+                "oppScore": 14,
+                "oppName": "Sam Houston State",
+                "id": "czkcf8"
+              }
+            },
+            {
+              "weekNo": 5,
+              "prevElo": 1573.0322371084287,
+              "oppElo": 1544.2094136359872,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 3.8571967170770436,
+              "expectedWinProb": 0.5405165392799035,
+              "eloChange": -41.69757241672577,
+              "elo": 1531.334664691703,
+              "gameInfo": {
+                "result": "loss",
+                "score": 0,
+                "oppScore": 44,
+                "oppName": "Southern Utah",
+                "id": "d5x281"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1531.334664691703,
+              "oppElo": 1481.9873190938579,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 2.836206570336729,
+              "expectedWinProb": 0.5691379844184286,
+              "eloChange": -32.283857816715,
+              "elo": 1499.050806874988,
+              "gameInfo": {
+                "result": "loss",
+                "score": 20,
+                "oppScore": 35,
+                "oppName": "Texas Southern",
+                "id": "dc9nro"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Mercer",
       "elo": 1498.854207055504,
       "abbr": "MERC",
@@ -20914,83 +21241,6 @@
                 "oppScore": 21,
                 "oppName": "Monmouth",
                 "id": "dc9oz6"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Merrimack",
-      "elo": 1490.6984349117179,
-      "abbr": "MU",
-      "conf": "America East",
-      "fullConf": "America East",
-      "div": "New England",
-      "color": "#06345b",
-      "wins": 1,
-      "losses": 2,
-      "ties": 0,
-      "seasons": [
-        {
-          "seasonNo": 2,
-          "weeks": [
-            {
-              "weekNo": 0,
-              "elo": 1500
-            },
-            {
-              "weekNo": 2,
-              "prevElo": 1500,
-              "oppElo": 1478.774328977186,
-              "mins": 2.7333333333333334,
-              "winProb": 0.3443463065523109,
-              "movMultiplier": 2.0996995103404035,
-              "expectedWinProb": 0.5298606850056635,
-              "eloChange": -5.804266612213023,
-              "elo": 1494.195733387787,
-              "gameInfo": {
-                "result": "loss",
-                "score": 0,
-                "oppScore": 7,
-                "oppName": "Jackson State",
-                "id": "cn5ibv"
-              }
-            },
-            {
-              "weekNo": 3,
-              "prevElo": 1494.195733387787,
-              "oppElo": 1561.1452830156868,
-              "mins": 1.4,
-              "winProb": 0.22487192440885806,
-              "movMultiplier": 2.1323342069668576,
-              "expectedWinProb": 0.4065960722281511,
-              "eloChange": -3.9014330749762056,
-              "elo": 1490.2943003128107,
-              "gameInfo": {
-                "result": "loss",
-                "score": 8,
-                "oppScore": 16,
-                "oppName": "Long Island",
-                "id": "cti1tt"
-              }
-            },
-            {
-              "weekNo": 5,
-              "prevElo": 1490.2943003128107,
-              "oppElo": 1534.5798090166722,
-              "mins": 4.25,
-              "winProb": 0.4703326861785513,
-              "movMultiplier": 0.7073867172062329,
-              "expectedWinProb": 0.4378930216765553,
-              "eloChange": 0.4041345989072185,
-              "elo": 1490.6984349117179,
-              "gameInfo": {
-                "result": "win",
-                "score": 8,
-                "oppScore": 7,
-                "oppName": "Eastern Kentucky",
-                "id": "d5x4yo"
               }
             }
           ]
@@ -23319,243 +23569,6 @@
       ]
     },
     {
-      "name": "Texas Southern",
-      "elo": 1481.9873190938579,
-      "abbr": "TSU",
-      "conf": "Southland",
-      "fullConf": "Southland",
-      "div": "Texas",
-      "color": "#6F263D",
-      "wins": 3,
-      "losses": 2,
-      "ties": 0,
-      "seasons": [
-        {
-          "seasonNo": 1,
-          "weeks": [
-            {
-              "weekNo": 3,
-              "prevElo": 1500,
-              "oppElo": 1533.322045101752,
-              "M": 8.95,
-              "%": 0.8387927245478203,
-              "x": 2.749698186089981,
-              "E": 0.453186001832087,
-              "±": -20.964518022382325,
-              "elo": 1520.9645180223824,
-              "gameInfo": {
-                "result": "win",
-                "score": 14,
-                "oppScore": 0,
-                "oppName": "St. Francis"
-              }
-            },
-            {
-              "weekNo": 4,
-              "prevElo": 1520.9645180223824,
-              "oppElo": 1461.54885667015,
-              "M": 28,
-              "%": 0,
-              "x": 1.4247733851918136,
-              "E": 0.583056042028275,
-              "±": -16.614454615143313,
-              "elo": 1504.350063407239,
-              "gameInfo": {
-                "result": "loss",
-                "score": 41,
-                "oppScore": 44,
-                "oppName": "Stetson"
-              }
-            },
-            {
-              "weekNo": 5,
-              "prevElo": 1504.350063407239,
-              "oppElo": 1550.250477395351,
-              "M": 28,
-              "%": 0,
-              "x": 2.5851218019252302,
-              "E": 0.43564764109291143,
-              "±": 22.524044298931663,
-              "elo": 1481.8260191083075,
-              "gameInfo": {
-                "result": "loss",
-                "score": 51,
-                "oppScore": 64,
-                "oppName": "McNeese State"
-              }
-            },
-            {
-              "weekNo": 6,
-              "prevElo": 1481.8260191083075,
-              "oppElo": 1424.2639399931434,
-              "M": 21.033333333333335,
-              "%": 0.21302633828465756,
-              "x": 2.13531106180488,
-              "E": 0.5805009842077761,
-              "±": 15.693041577354721,
-              "elo": 1466.1329775309528,
-              "gameInfo": {
-                "result": "loss",
-                "score": 35,
-                "oppScore": 42,
-                "oppName": "Lamar"
-              }
-            },
-            {
-              "weekNo": 7,
-              "prevElo": 1466.1329775309528,
-              "oppElo": 1481.6181421323954,
-              "M": 6.083333333333333,
-              "%": 0.1442532985038495,
-              "x": 2.6891222462763054,
-              "E": 0.47820564126642257,
-              "±": -17.103066816064292,
-              "elo": 1449.0299107148885,
-              "gameInfo": {
-                "result": "loss",
-                "score": 7,
-                "oppScore": 21,
-                "oppName": "Abilene Christian"
-              }
-            },
-            {
-              "weekNo": 12,
-              "prevElo": 1449.0299107148885,
-              "oppElo": 1542.1861853970413,
-              "M": 7.483333333333333,
-              "%": 0.5956447686223517,
-              "x": 2.1713862004669893,
-              "E": 0.3711492232534198,
-              "±": 9.518137552225406,
-              "elo": 1458.548048267114,
-              "gameInfo": {
-                "result": "win",
-                "score": 14,
-                "oppScore": 7,
-                "oppName": "Prairie View A&M"
-              }
-            },
-            {
-              "weekNo": 13,
-              "prevElo": 1458.548048267114,
-              "oppElo": 1473.3928110834556,
-              "M": 28,
-              "%": 0,
-              "x": 2.8709993468281936,
-              "E": 0.47910612265494956,
-              "±": 27.510267304074972,
-              "elo": 1431.037780963039,
-              "gameInfo": {
-                "result": "loss",
-                "score": 13,
-                "oppScore": 30,
-                "oppName": "Morehead State"
-              }
-            }
-          ]
-        },
-        {
-          "seasonNo": 2,
-          "weeks": [
-            {
-              "weekNo": 0,
-              "elo": 1454.0251873086927
-            },
-            {
-              "weekNo": 1,
-              "prevElo": 1454.0251873086927,
-              "oppElo": 1428.5628955576208,
-              "mins": 8.283333333333333,
-              "winProb": 0.9909599431768452,
-              "movMultiplier": 3.3946977568974948,
-              "expectedWinProb": 0.5358061493206807,
-              "eloChange": 30.410984947913253,
-              "elo": 1484.436172256606,
-              "gameInfo": {
-                "result": "win",
-                "score": 30,
-                "oppScore": 0,
-                "oppName": "Bucknell",
-                "id": "ch9dfa"
-              }
-            },
-            {
-              "weekNo": 2,
-              "prevElo": 1484.436172256606,
-              "oppElo": 1443.891318349885,
-              "mins": 28,
-              "winProb": 0,
-              "movMultiplier": 3.357717856898853,
-              "expectedWinProb": 0.5568983668258611,
-              "eloChange": -37.39815181538003,
-              "elo": 1447.0380204412259,
-              "gameInfo": {
-                "result": "loss",
-                "score": 35,
-                "oppScore": 61,
-                "oppName": "Murray State",
-                "id": "cn5jxw"
-              }
-            },
-            {
-              "weekNo": 3,
-              "prevElo": 1447.0380204412259,
-              "oppElo": 1459.9549873988647,
-              "mins": 12.083333333333334,
-              "winProb": 0.9427809705836799,
-              "movMultiplier": 3.0134251431006955,
-              "expectedWinProb": 0.48181745908793827,
-              "eloChange": 27.715550467571845,
-              "elo": 1474.7535709087977,
-              "gameInfo": {
-                "result": "win",
-                "score": 33,
-                "oppScore": 14,
-                "oppName": "Southern",
-                "id": "cti0l9"
-              }
-            },
-            {
-              "weekNo": 4,
-              "prevElo": 1474.7535709087977,
-              "oppElo": 1615.3150103148903,
-              "mins": 28,
-              "winProb": 1,
-              "movMultiplier": 2.892880883373748,
-              "expectedWinProb": 0.30989928591938765,
-              "eloChange": 39.92758326732752,
-              "elo": 1514.6811541761251,
-              "gameInfo": {
-                "result": "win",
-                "score": 47,
-                "oppScore": 33,
-                "oppName": "Incarnate Word",
-                "id": "d1zunm"
-              }
-            },
-            {
-              "weekNo": 5,
-              "prevElo": 1514.6811541761251,
-              "oppElo": 1443.3827128758437,
-              "mins": 28,
-              "winProb": 0,
-              "movMultiplier": 2.727449557889186,
-              "expectedWinProb": 0.5993481160393938,
-              "eloChange": -32.69383508226722,
-              "elo": 1481.9873190938579,
-              "gameInfo": {
-                "result": "loss",
-                "score": 38,
-                "oppScore": 51,
-                "oppName": "Colgate",
-                "id": "d5x61x"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Sacred Heart",
       "elo": 1478.2472251901688,
       "abbr": "SHU",
@@ -24692,275 +24705,6 @@
       ]
     },
     {
-      "name": "Illinois State",
-      "elo": 1474.0171373681494,
-      "abbr": "ILSU",
-      "conf": "MVC",
-      "fullConf": "Missouri Valley Conference",
-      "div": "Metro",
-      "color": "#CE1126",
-      "wins": 1,
-      "losses": 2,
-      "ties": 0,
-      "seasons": [
-        {
-          "seasonNo": 1,
-          "weeks": [
-            {
-              "weekNo": 2,
-              "prevElo": 1500,
-              "oppElo": 1523.0258509299404,
-              "M": 28,
-              "%": 0,
-              "x": 2.0579029208238455,
-              "E": 0.46761214039431515,
-              "±": -19.246007790603027,
-              "elo": 1480.753992209397,
-              "gameInfo": {
-                "result": "loss",
-                "score": 31,
-                "oppScore": 38,
-                "oppName": "Cal Poly"
-              }
-            },
-            {
-              "weekNo": 3,
-              "prevElo": 1480.753992209397,
-              "oppElo": 1467.4283897657226,
-              "M": 28,
-              "%": 1,
-              "x": 2.8729699147522436,
-              "E": 0.5187573382270736,
-              "±": 27.65191377937814,
-              "elo": 1508.4059059887752,
-              "gameInfo": {
-                "result": "win",
-                "score": 41,
-                "oppScore": 24,
-                "oppName": "Stony Brook"
-              }
-            },
-            {
-              "weekNo": 4,
-              "prevElo": 1508.4059059887752,
-              "oppElo": 1456.926094020918,
-              "M": 28,
-              "%": 1,
-              "x": 2.0318953638305817,
-              "E": 0.572093613604541,
-              "±": -17.38922005340861,
-              "elo": 1525.7951260421837,
-              "gameInfo": {
-                "result": "win",
-                "score": 42,
-                "oppScore": 35,
-                "oppName": "North Dakota"
-              }
-            },
-            {
-              "weekNo": 5,
-              "prevElo": 1525.7951260421837,
-              "oppElo": 1533.543335336768,
-              "M": 14.566666666666666,
-              "%": 0.734929245084431,
-              "x": 2.0867910388266044,
-              "E": 0.4890908309337023,
-              "±": -10.253228821776476,
-              "elo": 1536.0483548639602,
-              "gameInfo": {
-                "result": "win",
-                "score": 14,
-                "oppScore": 7,
-                "oppName": "Dayton"
-              }
-            },
-            {
-              "weekNo": 6,
-              "prevElo": 1536.0483548639602,
-              "oppElo": 1509.9817512994375,
-              "M": 28,
-              "%": 0,
-              "x": 2.223570454396464,
-              "E": 0.5366535906486294,
-              "±": -23.865741368241338,
-              "elo": 1512.182613495719,
-              "gameInfo": {
-                "result": "loss",
-                "score": 38,
-                "oppScore": 46,
-                "oppName": "Butler"
-              }
-            },
-            {
-              "weekNo": 7,
-              "prevElo": 1512.182613495719,
-              "oppElo": 1502.0791263245017,
-              "M": 24.75,
-              "%": 0.999999469909765,
-              "x": 3.2807699491439246,
-              "E": 0.5142240644805652,
-              "±": -31.874238947024466,
-              "elo": 1544.0568524427433,
-              "gameInfo": {
-                "result": "win",
-                "score": 47,
-                "oppScore": 21,
-                "oppName": "North Dakota State"
-              }
-            },
-            {
-              "weekNo": 8,
-              "prevElo": 1544.0568524427433,
-              "oppElo": 1493.2047785611578,
-              "M": 28,
-              "%": 0,
-              "x": 2.4546330832072054,
-              "E": 0.5712239718453133,
-              "±": -28.042905184250543,
-              "elo": 1516.0139472584929,
-              "gameInfo": {
-                "result": "loss",
-                "score": 28,
-                "oppScore": 38,
-                "oppName": "Indiana State"
-              }
-            },
-            {
-              "weekNo": 9,
-              "prevElo": 1516.0139472584929,
-              "oppElo": 1536.1196265228152,
-              "M": 28,
-              "%": 0,
-              "x": 2.4624028849586725,
-              "E": 0.4717122241395294,
-              "±": -23.230910831828982,
-              "elo": 1492.7830364266638,
-              "gameInfo": {
-                "result": "loss",
-                "score": 17,
-                "oppScore": 28,
-                "oppName": "Southern Illinois"
-              }
-            },
-            {
-              "weekNo": 10,
-              "prevElo": 1492.7830364266638,
-              "oppElo": 1530.5999940747663,
-              "M": 28,
-              "%": 1,
-              "x": 2.1158113360834925,
-              "E": 0.4469063082597957,
-              "±": 23.404838058003858,
-              "elo": 1516.1878744846676,
-              "gameInfo": {
-                "result": "win",
-                "score": 48,
-                "oppScore": 41,
-                "oppName": "Valparaiso"
-              }
-            },
-            {
-              "weekNo": 11,
-              "prevElo": 1516.1878744846676,
-              "oppElo": 1432.6511423210086,
-              "M": 11.65,
-              "%": 0.35901787746953384,
-              "x": 2.1615170275893445,
-              "E": 0.6159485539228143,
-              "±": 11.074412461793493,
-              "elo": 1505.113462022874,
-              "gameInfo": {
-                "result": "loss",
-                "score": 21,
-                "oppScore": 28,
-                "oppName": "Eastern Illinois"
-              }
-            },
-            {
-              "weekNo": 12,
-              "prevElo": 1505.113462022874,
-              "oppElo": 1491.3083827233386,
-              "M": 8.416666666666666,
-              "%": 0.0906014684780404,
-              "x": 2.9630321124754375,
-              "E": 0.5194317330503173,
-              "±": 25.03486122622604,
-              "elo": 1480.078600796648,
-              "gameInfo": {
-                "result": "loss",
-                "score": 7,
-                "oppScore": 25,
-                "oppName": "Western Illinois"
-              }
-            }
-          ]
-        },
-        {
-          "seasonNo": 2,
-          "weeks": [
-            {
-              "weekNo": 0,
-              "elo": 1486.7190671977653
-            },
-            {
-              "weekNo": 3,
-              "prevElo": 1486.7190671977653,
-              "oppElo": 1581.8963664505047,
-              "mins": 28,
-              "winProb": 0,
-              "movMultiplier": 4.176043141345853,
-              "expectedWinProb": 0.36845628811299225,
-              "eloChange": -30.77378709720026,
-              "elo": 1455.945280100565,
-              "gameInfo": {
-                "result": "loss",
-                "score": 23,
-                "oppScore": 100,
-                "oppName": "Butler",
-                "id": "ctn98p"
-              }
-            },
-            {
-              "weekNo": 4,
-              "prevElo": 1455.945280100565,
-              "oppElo": 1420.5799836963365,
-              "mins": 28,
-              "winProb": 0,
-              "movMultiplier": 3.0446758480175986,
-              "expectedWinProb": 0.5496701046751514,
-              "eloChange": -33.47134584163478,
-              "elo": 1422.4739342589303,
-              "gameInfo": {
-                "result": "loss",
-                "score": 10,
-                "oppScore": 29,
-                "oppName": "Valparaiso",
-                "id": "czk81m"
-              }
-            },
-            {
-              "weekNo": 5,
-              "prevElo": 1422.4739342589303,
-              "oppElo": 1566.8355022088606,
-              "mins": 28,
-              "winProb": 1,
-              "movMultiplier": 3.709124555798188,
-              "expectedWinProb": 0.30518371203461403,
-              "eloChange": 51.54320310921916,
-              "elo": 1474.0171373681494,
-              "gameInfo": {
-                "result": "win",
-                "score": 44,
-                "oppScore": 13,
-                "oppName": "Columbia",
-                "id": "d5x63q"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Rhode Island",
       "elo": 1473.1485038400992,
       "abbr": "URI",
@@ -25496,6 +25240,101 @@
                 "oppScore": 42,
                 "oppName": "VMI",
                 "id": "dc9qhs"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Merrimack",
+      "elo": 1470.9349559348004,
+      "abbr": "MU",
+      "conf": "America East",
+      "fullConf": "America East",
+      "div": "New England",
+      "color": "#06345b",
+      "wins": 1,
+      "losses": 3,
+      "ties": 0,
+      "seasons": [
+        {
+          "seasonNo": 2,
+          "weeks": [
+            {
+              "weekNo": 0,
+              "elo": 1500
+            },
+            {
+              "weekNo": 2,
+              "prevElo": 1500,
+              "oppElo": 1478.774328977186,
+              "mins": 2.7333333333333334,
+              "winProb": 0.3443463065523109,
+              "movMultiplier": 2.0996995103404035,
+              "expectedWinProb": 0.5298606850056635,
+              "eloChange": -5.804266612213023,
+              "elo": 1494.195733387787,
+              "gameInfo": {
+                "result": "loss",
+                "score": 0,
+                "oppScore": 7,
+                "oppName": "Jackson State",
+                "id": "cn5ibv"
+              }
+            },
+            {
+              "weekNo": 3,
+              "prevElo": 1494.195733387787,
+              "oppElo": 1561.1452830156868,
+              "mins": 1.4,
+              "winProb": 0.22487192440885806,
+              "movMultiplier": 2.1323342069668576,
+              "expectedWinProb": 0.4065960722281511,
+              "eloChange": -3.9014330749762056,
+              "elo": 1490.2943003128107,
+              "gameInfo": {
+                "result": "loss",
+                "score": 8,
+                "oppScore": 16,
+                "oppName": "Long Island",
+                "id": "cti1tt"
+              }
+            },
+            {
+              "weekNo": 5,
+              "prevElo": 1490.2943003128107,
+              "oppElo": 1534.5798090166722,
+              "mins": 4.25,
+              "winProb": 0.4703326861785513,
+              "movMultiplier": 0.7073867172062329,
+              "expectedWinProb": 0.4378930216765553,
+              "eloChange": 0.4041345989072185,
+              "elo": 1490.6984349117179,
+              "gameInfo": {
+                "result": "win",
+                "score": 8,
+                "oppScore": 7,
+                "oppName": "Eastern Kentucky",
+                "id": "d5x4yo"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1490.6984349117179,
+              "oppElo": 1638.2534107956242,
+              "mins": 10.9,
+              "winProb": 0.0009361692534991528,
+              "movMultiplier": 3.3047120232975584,
+              "expectedWinProb": 0.3012458275925818,
+              "eloChange": -19.763478976917465,
+              "elo": 1470.9349559348004,
+              "gameInfo": {
+                "result": "loss",
+                "score": 0,
+                "oppScore": 33,
+                "oppName": "Stony Brook",
+                "id": "dc9pmq"
               }
             }
           ]
@@ -27924,6 +27763,293 @@
                 "oppScore": 21,
                 "oppName": "Nicholls State",
                 "id": "d5x1g5"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Illinois State",
+      "elo": 1455.939542487861,
+      "abbr": "ILSU",
+      "conf": "MVC",
+      "fullConf": "Missouri Valley Conference",
+      "div": "Metro",
+      "color": "#CE1126",
+      "wins": 1,
+      "losses": 3,
+      "ties": 0,
+      "seasons": [
+        {
+          "seasonNo": 1,
+          "weeks": [
+            {
+              "weekNo": 2,
+              "prevElo": 1500,
+              "oppElo": 1523.0258509299404,
+              "M": 28,
+              "%": 0,
+              "x": 2.0579029208238455,
+              "E": 0.46761214039431515,
+              "±": -19.246007790603027,
+              "elo": 1480.753992209397,
+              "gameInfo": {
+                "result": "loss",
+                "score": 31,
+                "oppScore": 38,
+                "oppName": "Cal Poly"
+              }
+            },
+            {
+              "weekNo": 3,
+              "prevElo": 1480.753992209397,
+              "oppElo": 1467.4283897657226,
+              "M": 28,
+              "%": 1,
+              "x": 2.8729699147522436,
+              "E": 0.5187573382270736,
+              "±": 27.65191377937814,
+              "elo": 1508.4059059887752,
+              "gameInfo": {
+                "result": "win",
+                "score": 41,
+                "oppScore": 24,
+                "oppName": "Stony Brook"
+              }
+            },
+            {
+              "weekNo": 4,
+              "prevElo": 1508.4059059887752,
+              "oppElo": 1456.926094020918,
+              "M": 28,
+              "%": 1,
+              "x": 2.0318953638305817,
+              "E": 0.572093613604541,
+              "±": -17.38922005340861,
+              "elo": 1525.7951260421837,
+              "gameInfo": {
+                "result": "win",
+                "score": 42,
+                "oppScore": 35,
+                "oppName": "North Dakota"
+              }
+            },
+            {
+              "weekNo": 5,
+              "prevElo": 1525.7951260421837,
+              "oppElo": 1533.543335336768,
+              "M": 14.566666666666666,
+              "%": 0.734929245084431,
+              "x": 2.0867910388266044,
+              "E": 0.4890908309337023,
+              "±": -10.253228821776476,
+              "elo": 1536.0483548639602,
+              "gameInfo": {
+                "result": "win",
+                "score": 14,
+                "oppScore": 7,
+                "oppName": "Dayton"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1536.0483548639602,
+              "oppElo": 1509.9817512994375,
+              "M": 28,
+              "%": 0,
+              "x": 2.223570454396464,
+              "E": 0.5366535906486294,
+              "±": -23.865741368241338,
+              "elo": 1512.182613495719,
+              "gameInfo": {
+                "result": "loss",
+                "score": 38,
+                "oppScore": 46,
+                "oppName": "Butler"
+              }
+            },
+            {
+              "weekNo": 7,
+              "prevElo": 1512.182613495719,
+              "oppElo": 1502.0791263245017,
+              "M": 24.75,
+              "%": 0.999999469909765,
+              "x": 3.2807699491439246,
+              "E": 0.5142240644805652,
+              "±": -31.874238947024466,
+              "elo": 1544.0568524427433,
+              "gameInfo": {
+                "result": "win",
+                "score": 47,
+                "oppScore": 21,
+                "oppName": "North Dakota State"
+              }
+            },
+            {
+              "weekNo": 8,
+              "prevElo": 1544.0568524427433,
+              "oppElo": 1493.2047785611578,
+              "M": 28,
+              "%": 0,
+              "x": 2.4546330832072054,
+              "E": 0.5712239718453133,
+              "±": -28.042905184250543,
+              "elo": 1516.0139472584929,
+              "gameInfo": {
+                "result": "loss",
+                "score": 28,
+                "oppScore": 38,
+                "oppName": "Indiana State"
+              }
+            },
+            {
+              "weekNo": 9,
+              "prevElo": 1516.0139472584929,
+              "oppElo": 1536.1196265228152,
+              "M": 28,
+              "%": 0,
+              "x": 2.4624028849586725,
+              "E": 0.4717122241395294,
+              "±": -23.230910831828982,
+              "elo": 1492.7830364266638,
+              "gameInfo": {
+                "result": "loss",
+                "score": 17,
+                "oppScore": 28,
+                "oppName": "Southern Illinois"
+              }
+            },
+            {
+              "weekNo": 10,
+              "prevElo": 1492.7830364266638,
+              "oppElo": 1530.5999940747663,
+              "M": 28,
+              "%": 1,
+              "x": 2.1158113360834925,
+              "E": 0.4469063082597957,
+              "±": 23.404838058003858,
+              "elo": 1516.1878744846676,
+              "gameInfo": {
+                "result": "win",
+                "score": 48,
+                "oppScore": 41,
+                "oppName": "Valparaiso"
+              }
+            },
+            {
+              "weekNo": 11,
+              "prevElo": 1516.1878744846676,
+              "oppElo": 1432.6511423210086,
+              "M": 11.65,
+              "%": 0.35901787746953384,
+              "x": 2.1615170275893445,
+              "E": 0.6159485539228143,
+              "±": 11.074412461793493,
+              "elo": 1505.113462022874,
+              "gameInfo": {
+                "result": "loss",
+                "score": 21,
+                "oppScore": 28,
+                "oppName": "Eastern Illinois"
+              }
+            },
+            {
+              "weekNo": 12,
+              "prevElo": 1505.113462022874,
+              "oppElo": 1491.3083827233386,
+              "M": 8.416666666666666,
+              "%": 0.0906014684780404,
+              "x": 2.9630321124754375,
+              "E": 0.5194317330503173,
+              "±": 25.03486122622604,
+              "elo": 1480.078600796648,
+              "gameInfo": {
+                "result": "loss",
+                "score": 7,
+                "oppScore": 25,
+                "oppName": "Western Illinois"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNo": 2,
+          "weeks": [
+            {
+              "weekNo": 0,
+              "elo": 1486.7190671977653
+            },
+            {
+              "weekNo": 3,
+              "prevElo": 1486.7190671977653,
+              "oppElo": 1581.8963664505047,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 4.176043141345853,
+              "expectedWinProb": 0.36845628811299225,
+              "eloChange": -30.77378709720026,
+              "elo": 1455.945280100565,
+              "gameInfo": {
+                "result": "loss",
+                "score": 23,
+                "oppScore": 100,
+                "oppName": "Butler",
+                "id": "ctn98p"
+              }
+            },
+            {
+              "weekNo": 4,
+              "prevElo": 1455.945280100565,
+              "oppElo": 1420.5799836963365,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 3.0446758480175986,
+              "expectedWinProb": 0.5496701046751514,
+              "eloChange": -33.47134584163478,
+              "elo": 1422.4739342589303,
+              "gameInfo": {
+                "result": "loss",
+                "score": 10,
+                "oppScore": 29,
+                "oppName": "Valparaiso",
+                "id": "czk81m"
+              }
+            },
+            {
+              "weekNo": 5,
+              "prevElo": 1422.4739342589303,
+              "oppElo": 1566.8355022088606,
+              "mins": 28,
+              "winProb": 1,
+              "movMultiplier": 3.709124555798188,
+              "expectedWinProb": 0.30518371203461403,
+              "eloChange": 51.54320310921916,
+              "elo": 1474.0171373681494,
+              "gameInfo": {
+                "result": "win",
+                "score": 44,
+                "oppScore": 13,
+                "oppName": "Columbia",
+                "id": "d5x63q"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1474.0171373681494,
+              "oppElo": 1602.6325982169315,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 2.781809990991393,
+              "expectedWinProb": 0.32492504769971275,
+              "eloChange": -18.077594880288316,
+              "elo": 1455.939542487861,
+              "gameInfo": {
+                "result": "loss",
+                "score": 27,
+                "oppScore": 45,
+                "oppName": "Dayton",
+                "id": "dc9jh3"
               }
             }
           ]
@@ -35735,14 +35861,14 @@
     },
     {
       "name": "William & Mary",
-      "elo": 1396.587302866055,
+      "elo": 1384.2553444499345,
       "abbr": "WM",
       "conf": "Colonial",
       "fullConf": "Colonial",
       "div": "South",
       "color": "#115740",
       "wins": 1,
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
       "seasons": [
         {
@@ -35998,6 +36124,24 @@
                 "oppScore": 35,
                 "oppName": "North Dakota",
                 "id": "d5x1wn"
+              }
+            },
+            {
+              "weekNo": 6,
+              "prevElo": 1396.587302866055,
+              "oppElo": 1533.1270667042947,
+              "mins": 28,
+              "winProb": 0,
+              "movMultiplier": 1.957925759491741,
+              "expectedWinProb": 0.3149240556322689,
+              "eloChange": -12.331958416120585,
+              "elo": 1384.2553444499345,
+              "gameInfo": {
+                "result": "loss",
+                "score": 24,
+                "oppScore": 31,
+                "oppName": "Princeton",
+                "id": "dc9mcp"
               }
             }
           ]
