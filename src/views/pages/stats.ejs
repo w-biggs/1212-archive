@@ -5,13 +5,16 @@
       <table class="stats-table">
         <thead>
           <tr class="stats-top-header">
-            <th></th>
+            <th colspan="2"></th>
             <th colspan="2">Record</th>
             <th colspan="9">Combined</th>
             <th colspan="14">Offense</th>
             <th colspan="14">Defense</th>
           </tr>
           <tr class="stats-sortable">
+            <th class="rank nosort">
+              <span>#</span>
+            </th>
             <th class="team-name">
               <span>Team Name</span>
             </th>
@@ -169,7 +172,8 @@
                 const adjOppYG = adjOppYds / team.stats.games;
                 %>
                 <tr>
-                  <td class="team-name"data-value="<%= team.name %>"><%= team.name %></td>
+                  <td class="rank"></td>
+                  <td class="team-name" data-value="<%= team.name %>"><%= team.name %></td>
                   <td class="wins" data-value="<%= team.stats.wins %>"><%= team.stats.wins %></td>
                   <td class="losses" data-value="<%= team.stats.losses %>"><%= team.stats.losses %></td>
                   <td class="pd" data-value="<%= team.stats.pf - team.stats.pa %>"><%= team.stats.pf - team.stats.pa %></td>

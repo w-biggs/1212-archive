@@ -52,19 +52,16 @@
   }
 
   tr {
-    th:nth-child(1), td:nth-child(1),
-    th:nth-child(3), td:nth-child(3),
-    th:nth-child(12), td:nth-child(12),
-    th:nth-child(26), td:nth-child(26) {
+    .team-name, .losses, .timeg, .ayg {
       border-right: 1px solid $border-color;
     }
 
-    th:nth-child(1), td:nth-child(1) {
+    .team-name {
       text-align: left;
       width: 15%;
     }
 
-    th:nth-child(n+2), td:nth-child(n+2) {
+    th:nth-child(n+3), td:nth-child(n+3) {
       min-width: 2rem;
     }
   }
@@ -78,7 +75,7 @@
 .stats-sortable > th {
   transition: background-color 0.15s;
 
-  &:hover{
+  &:not(.nosort):hover{
     background-color: #ccc;
     cursor: pointer;
   }

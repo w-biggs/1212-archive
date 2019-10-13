@@ -60,6 +60,7 @@ const sortTable = function sortStatsTable(statsTable, columnClass, isAscending) 
   // Re-add the rows in the sorted order.
   for (let i = 0; i < rows.length; i += 1) {
     const row = rows[i];
+    row.getElementsByClassName('rank')[0].textContent = i + 1;
     tbody.appendChild(row);
   }
 };
@@ -108,7 +109,7 @@ const sortListener = function statsTableSingleColSortListener(headerCell, header
  * Add listeners to all column headers.
  */
 const sortListeners = function statsTableSortListener(statsTable) {
-  const statsHeaderCells = statsTable.getElementsByTagName('th');
+  const statsHeaderCells = statsTable.querySelectorAll('.stats-sortable > th:not(.nosort)');
 
   for (let i = 0; i < statsHeaderCells.length; i += 1) {
     const statsHeaderCell = statsHeaderCells[i];
