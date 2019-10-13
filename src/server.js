@@ -67,6 +67,10 @@ app.get('/standings', (req, res) => {
   res.render('pages/standings', { ...data, url: req.url, stats });
 });
 
+app.get('/stats', (req, res) => {
+  res.render('pages/stats', { ...data, url: req.url, stats });
+});
+
 app.get('/scores/:season/:week/:conf?/', (req, res) => {
   let { season, week, conf } = req.params;
   // Ensure values are valid integers

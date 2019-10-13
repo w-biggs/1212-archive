@@ -1,0 +1,222 @@
+<%- include('../partials/header', {url: url, bodyClass: 'stats'}) %>
+  <div class="stats-container page-container">
+    <h2 class="section-header">Statistics</h2>
+    <div class="stats-table-container">
+      <table class="stats-table">
+        <thead>
+          <tr class="stats-top-header">
+            <th></th>
+            <th colspan="2">Record</th>
+            <th colspan="9">Combined</th>
+            <th colspan="14">Offense</th>
+            <th colspan="14">Defense</th>
+          </tr>
+          <tr class="stats-sortable">
+            <th class="team-name">
+              <span>Team Name</span>
+            </th>
+            <th title="Wins" class="wins">
+              <span>W</span>
+            </th>
+            <th title="Losses" class="losses">
+              <span>L</span>
+            </th>
+            <th title="Point Differential" class="pd">
+              <span>P&Delta;</span>
+            </th>
+            <th title="Adjusted Point Differential Per Game" class="apdg">
+              <span>aP&Delta;/G</span>
+            </th>
+            <th title="Yardage Differential" class="yd">
+              <span>Y&Delta;</span>
+            </th>
+            <th title="Adjusted Yardage Differential Per Game" class="aydg">
+              <span>aY&Delta;/G</span>
+            </th>
+            <th title="Turnover Differential" class="tod">
+              <span>TO&Delta;</span>
+            </th>
+            <th title="Expected Wins" class="xw">
+              <span>xW</span>
+            </th>
+            <th title="Expected Losses" class="xl">
+              <span>xL</span>
+            </th>
+            <th title="Wins Over Expected" class="xd">
+              <span>x&Delta;</span>
+            </th>
+            <th title="Time Played Per Game" class="timeg">
+              <span>Time/G</span>
+            </th>
+            <th title="Pass Yards" class="pyds">
+              <span>PYds</span>
+            </th>
+            <th title="Rush Yards" class="ryds">
+              <span>RYds</span>
+            </th>
+            <th title="Total Yards" class="yds">
+              <span>Yds</span>
+            </th>
+            <th title="Interceptions" class="int">
+              <span>INT</span>
+            </th>
+            <th title="Fumbles" class="fum">
+              <span>FUM</span>
+            </th>
+            <th title="Turnovers" class="to">
+              <span>TO</span>
+            </th>
+            <th title="Field Goal Attempts" class="fga">
+              <span>FGA</span>
+            </th>
+            <th title="Field Goals Made" class="fgm">
+              <span>FGM</span>
+            </th>
+            <th title="Points For" class="pf">
+              <span>PF</span>
+            </th>
+            <th title="Adjust Points For Per Game" class="apfg">
+              <span>aPF/G</span>
+            </th>
+            <th title="Time of Possession Per 28 Minutes" class="top28">
+              <span>ToP/28</span>
+            </th>
+            <th title="Adjusted Pass Yards Per Game" class="apyg">
+              <span>aPY/G</span>
+            </th>
+            <th title="Adjusted Rush Yards Per Game" class="aryg">
+              <span>aRY/G</span>
+            </th>
+            <th title="Adjusted Total Yards Per Game" class="ayg">
+              <span>aY/G</span>
+            </th>
+            <th title="Pass Yards" class="opp-pyds">
+              <span>PYds</span>
+            </th>
+            <th title="Rush Yards" class="opp-ryds">
+              <span>RYds</span>
+            </th>
+            <th title="Total Yards" class="opp-yds">
+              <span>Yds</span>
+            </th>
+            <th title="Interceptions" class="opp-int">
+              <span>INT</span>
+            </th>
+            <th title="Fumbles" class="opp-fum">
+              <span>FUM</span>
+            </th>
+            <th title="Turnovers" class="opp-to">
+              <span>TO</span>
+            </th>
+            <th title="Field Goal Attempts" class="opp-fga">
+              <span>FGA</span>
+            </th>
+            <th title="Field Goals Made" class="opp-fgm">
+              <span>FGM</span>
+            </th>
+            <th title="Points Allowed" class="pa">
+              <span>PA</span>
+            </th>
+            <th title="Adjusted Points Allowed Per Game" class="apag">
+              <span>aPA/G</span>
+            </th>
+            <th title="Time of Possession Per 28 Minutes" class="opp-top28">
+              <span>ToP/28</span>
+            </th>
+            <th title="Adjusted Pass Yards Per Game" class="opp-apyg">
+              <span>aPY/G</span>
+            </th>
+            <th title="Adjusted Rush Yards Per Game" class="opp-aryg">
+              <span>aRY/G</span>
+            </th>
+            <th title="Adjusted Total Yards Per Game" class="opp-ayg">
+              <span>aY/G</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i < stats.confs.length; i += 1) {
+            const conf = stats.confs[i];
+            for (let j = 0; j < conf.divs.length; j += 1) {
+              const div = conf.divs[j];
+              for (let k = 0; k < div.teams.length; k += 1) {
+                const team = div.teams[k];
+                const adj = (team.stats.games * 1680) / team.stats.gameTime;
+                const aPF = team.stats.pf * adj / team.stats.games;
+                const aPA = team.stats.pa * adj / team.stats.games;
+                const aPDG = (aPF - aPA);
+                const yds = team.stats.passYds + team.stats.rushYds;
+                const oppYds = team.stats.opp_passYds + team.stats.opp_rushYds;
+                const yD = yds - oppYds;
+                const adjYds = yds * adj;
+                const adjOppYds = oppYds * adj;
+                const adjYDG = (adjYds - adjOppYds) / team.stats.games;
+                const to = team.stats.ints + team.stats.fumbles;
+                const oppTo = team.stats.opp_ints + team.stats.opp_fumbles;
+                const toD = oppTo - to;
+                const xWExp = 1.5 * Math.log10((team.stats.pf + team.stats.pa) / 16);
+                const xW = (Math.pow(team.stats.pf, xWExp) / (Math.pow(team.stats.pf, xWExp) + Math.pow(team.stats.pa, xWExp)))
+                  * team.stats.games;
+                const xL = team.stats.games - xW;
+                const timeG = team.stats.gameTime / team.stats.games;
+                const top28 = (team.stats.poss / team.stats.gameTime) * 28;
+                const oppTop28 = 28 - top28;
+                const adjPYG = team.stats.passYds * adj / team.stats.games;
+                const adjRYG = team.stats.rushYds * adj / team.stats.games;
+                const adjYG = adjYds / team.stats.games;
+                const adjOppPYG = team.stats.opp_passYds * adj / team.stats.games;
+                const adjOppRYG = team.stats.opp_rushYds * adj / team.stats.games;
+                const adjOppYG = adjOppYds / team.stats.games;
+                %>
+                <tr>
+                  <td class="team-name"data-value="<%= team.name %>"><%= team.name %></td>
+                  <td class="wins" data-value="<%= team.stats.wins %>"><%= team.stats.wins %></td>
+                  <td class="losses" data-value="<%= team.stats.losses %>"><%= team.stats.losses %></td>
+                  <td class="pd" data-value="<%= team.stats.pf - team.stats.pa %>"><%= team.stats.pf - team.stats.pa %></td>
+                  <td class="apdg" title="<%= aPDG.toFixed(1) %>" data-value="<%= aPDG %>"><%= Math.round(aPDG) %></td>
+                  <td class="yd" data-value="<%= yD %>"><%= yD %></td>
+                  <td class="aydg" title="<%= adjYDG.toFixed(1) %>" data-value="<%= adjYDG %>"><%= Math.round(adjYDG) %></td>
+                  <td class="tod" data-value="<%= toD %>"><%= toD %></td>
+                  <td class="xw" title="<%= xW.toFixed(2) %>" data-value="<%= xW %>"><%= xW.toFixed(1) %></td>
+                  <td class="xl" title="<%= xL.toFixed(2) %>" data-value="<%= xL %>"><%= xL.toFixed(1) %></td>
+                  <td class="xd" title="<%= (team.stats.wins - xW).toFixed(2) %>" data-value="<%= team.stats.wins - xW %>"><%= (team.stats.wins - xW).toFixed(1) %></td>
+                  <td class="timeg" title="<%= timeG.toFixed(1) %>" data-value="<%= timeG %>"><%= Math.round(timeG) %></td>
+                  <td class="pyds" data-value="<%= team.stats.passYds %>"><%= team.stats.passYds %></td>
+                  <td class="ryds" data-value="<%= team.stats.rushYds %>"><%= team.stats.rushYds %></td>
+                  <td class="yds" data-value="<%= yds %>"><%= yds %></td>
+                  <td class="int" data-value="<%= team.stats.ints %>"><%= team.stats.ints %></td>
+                  <td class="fum" data-value="<%= team.stats.fumbles %>"><%= team.stats.fumbles %></td>
+                  <td class="to" data-value="<%= to %>"><%= to %></td>
+                  <td class="fga" data-value="<%= team.stats.fga %>"><%= team.stats.fga %></td>
+                  <td class="fgm" data-value="<%= team.stats.fgm %>"><%= team.stats.fgm %></td>
+                  <td class="pf" data-value="<%= team.stats.pf %>"><%= team.stats.pf %></td>
+                  <td class="apfg" title="<%= aPF.toFixed(2) %>" data-value="<%= aPF %>"><%= aPF.toFixed(1) %></td>
+                  <td class="top28" title="<%= top28.toFixed(3) %>" data-value="<%= top28 %>"><%= top28.toFixed(2) %></td>
+                  <td class="apyg" title="<%= adjPYG.toFixed(1) %>" data-value="<%= adjPYG %>"><%= Math.round(adjPYG) %></td>
+                  <td class="aryg" title="<%= adjRYG.toFixed(1) %>" data-value="<%= adjRYG %>"><%= Math.round(adjRYG) %></td>
+                  <td class="ayg" title="<%= adjYG.toFixed(1) %>" data-value="<%= adjYG %>"><%= Math.round(adjYG) %></td>
+                  <td class="opp-pyds" data-value="<%= team.stats.opp_passYds %>"><%= team.stats.opp_passYds %></td>
+                  <td class="opp-ryds" data-value="<%= team.stats.opp_rushYds %>"><%= team.stats.opp_rushYds %></td>
+                  <td class="opp-yds" data-value="<%= oppYds %>"><%= oppYds %></td>
+                  <td class="opp-int" data-value="<%= team.stats.opp_ints %>"><%= team.stats.opp_ints %></td>
+                  <td class="opp-fum" data-value="<%= team.stats.opp_fumbles %>"><%= team.stats.opp_fumbles %></td>
+                  <td class="opp-to" data-value="<%= oppTo %>"><%= oppTo %></td>
+                  <td class="opp-fga" data-value="<%= team.stats.opp_fga %>"><%= team.stats.opp_fga %></td>
+                  <td class="opp-fgm" data-value="<%= team.stats.opp_fgm %>"><%= team.stats.opp_fgm %></td>
+                  <td class="pa" data-value="<%= team.stats.pa %>"><%= team.stats.pa %></td>
+                  <td class="apag" title="<%= aPA.toFixed(2) %>" data-value="<%= aPA %>"><%= aPA.toFixed(1) %></td>
+                  <td class="opp-top28" title="<%= oppTop28.toFixed(3) %>" data-value="<%= oppTop28 %>"><%= oppTop28.toFixed(2) %></td>
+                  <td class="opp-apyg" title="<%= adjOppPYG.toFixed(1) %>" data-value="<%= adjOppPYG %>"><%= Math.round(adjOppPYG) %></td>
+                  <td class="opp-aryg" title="<%= adjOppRYG.toFixed(1) %>" data-value="<%= adjOppRYG %>"><%= Math.round(adjOppRYG) %></td>
+                  <td class="opp-ayg" title="<%= adjOppYG.toFixed(1) %>" data-value="<%= adjOppYG %>"><%= Math.round(adjOppYG) %></td>
+                </tr>
+                <%
+              }
+            }
+          } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<script src="/js/stats-table.js" defer></script>
+<%- include('../partials/footer') %>
