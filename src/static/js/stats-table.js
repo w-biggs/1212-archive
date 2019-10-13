@@ -61,6 +61,11 @@ const sortTable = function sortStatsTable(statsTable, columnClass, isAscending) 
   for (let i = 0; i < rows.length; i += 1) {
     const row = rows[i];
     row.getElementsByClassName('rank')[0].textContent = i + 1;
+    const rowCols = row.getElementsByTagName('td');
+    for (let j = 0; j < rowCols.length; j += 1) {
+      rowCols[j].classList.remove('sorting');
+    }
+    row.getElementsByClassName(columnClass)[0].classList.add('sorting');
     tbody.appendChild(row);
   }
 };
