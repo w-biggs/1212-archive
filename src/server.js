@@ -5,6 +5,7 @@ const ejs = require('ejs');
 const stats = require('./static/js/stats.json');
 const elo = require('./static/js/elo.json');
 const pn = require('./static/js/pn.json');
+const wPn = require('./static/js/wpn.json');
 const games = require('./static/js/games.json');
 const { getScores, sortScores, filterConfScores } = require('./server/scores');
 
@@ -36,8 +37,9 @@ const data = {
   env: app.get('env'),
   teams: elo.teams,
   pn,
+  wPn,
   season: 2,
-  week: 6,
+  week: 7,
 };
 
 // List of conferences.

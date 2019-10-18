@@ -17,15 +17,22 @@
             <span class="desc">▼</span>
           </div>
         </th>
-        <th title="Park-Newman" class="elo-pn">
+        <!--<th title="Park-Newman" class="elo-pn">
           <span>P-N</span>
+          <div class="sorter">
+            <span class="asc">▲</span>
+            <span class="desc">▼</span>
+          </div>
+        </th>-->
+        <th title="Weighted Park-Newman" class="elo-wpn elo-no-upper">
+          <span>wP-N</span>
           <div class="sorter">
             <span class="asc">▲</span>
             <span class="desc">▼</span>
           </div>
         </th>
         <th class="elo-team">
-          <span>Team</span>
+          <span>TEAM</span>
           <div class="sorter">
             <span class="asc">▲</span>
             <span class="desc">▼</span>
@@ -47,6 +54,8 @@
         <% const eloChange = (teamWeek.length && teamWeek[0].hasOwnProperty('eloChange')) ? teamWeek[0].eloChange : 0; %>
         <% const pnTeam = pn.filter(pnRow => pnRow.team === team.name)[0]; %>
         <% const pnScore = pnTeam ? pnTeam.score : 0; %>
+        <% const wPnTeam = wPn.filter(wPnRow => wPnRow.team === team.name)[0]; %>
+        <% const wPnScore = wPnTeam ? wPnTeam.score : 0; %>
         <tr>
           <td class="elo-rating" title="<%= team.elo.toFixed(4) %>" data-value="<%= team.elo %>">
             <span>
@@ -60,8 +69,11 @@
               </span>
             <% } %>
           </td>
-          <td class="elo-pn" title="<%= pnScore %>" data-value="<%= pnScore %>">
+          <!--<td class="elo-pn" title="<%= pnScore %>" data-value="<%= pnScore %>">
             <span><%= pnScore.toFixed(2) %></span>
+          </td>-->
+          <td class="elo-wpn" title="<%= wPnScore %>" data-value="<%= wPnScore %>">
+            <span><%= wPnScore.toFixed(2) %></span>
           </td>
           <td class="elo-team" data-value="<%= team.name %>">
             <a href="#<%= encodeURI(team.name) %>">

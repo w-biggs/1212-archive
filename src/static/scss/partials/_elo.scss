@@ -13,7 +13,6 @@
 
   th{
     font-weight: 400;
-    text-transform: uppercase;
     @include ms-respond(font-size,-1);
     padding: .25rem 1rem .25rem .5rem;
     position: relative;
@@ -21,6 +20,10 @@
     cursor: pointer;
     transition: background-color 0.15s;
     background-clip: padding-box;
+
+    &:not(.elo-no-upper) {
+      text-transform: uppercase;
+    }
 
     &:hover{
       background-color: #ccc;
@@ -50,7 +53,7 @@
   }
 }
 
-.elo-rating, .elo-pn{
+.elo-rating, .elo-pn, .elo-wpn{
   width: 1%;
 }
 
