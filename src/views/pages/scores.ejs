@@ -2,17 +2,43 @@
   <div class="scores-container page-container">
     <h2 class="section-header">Scores</h2>
     <div class="scores-nav">
+      <%
+      const seasonsList = [];
+      for (let i = 0; i < seasons.length; i += 1) {
+        const sLObj = {
+          seasonNo: seasons[i].seasonNo,
+          weeks: []
+        };
+        for (let j = 0; j < seasons[i].weeks.length; j += 1) {
+          const sLWeek = seasons[i].weeks[j];
+          sLObj.weeks.push({
+            weekNo: sLWeek.weekNo,
+            name: sLWeek.weekName
+          });
+        }
+        if (seasons[i].seasonNo === season) {
+          const givenWeek = sLObj.weeks.filter(slWeeks => slWeeks.weekNo === week);
+          if (!givenWeek.length) {
+            sLObj.weeks.push({
+              weekNo: week,
+              name: false
+            });
+          }
+        }
+        seasonsList.push(sLObj);
+      }
+      %>
       <label for="scores-season" class="sr-only">Season:</label>
       <select class="scores-season" id="scores-season">
-        <% for (let i = 0; i < seasons.length; i += 1) { %>
-          <% const season = seasons[i]; %>
+        <% for (let i = 0; i < seasonsList.length; i += 1) { %>
+          <% const season = seasonsList[i]; %>
           <option value="<%= season.seasonNo %>" <%= season.seasonNo === games.season ? 'selected' : '' %>><%= `Season ${season.seasonNo}` %></option>
         <% } %>
       </select>
       <label for="scores-week" class="sr-only">Week:</label>
       <select class="scores-week" id="scores-week">
-        <% for (let i = 0; i < seasons.length; i += 1) { %>
-          <% const season = seasons[i]; %>
+        <% for (let i = 0; i < seasonsList.length; i += 1) { %>
+          <% const season = seasonsList[i]; %>
           <% if (season.seasonNo === games.season) { %>
             <% for (let j = 1; j < season.weeks.length; j += 1) { %>
               <% const week = season.weeks[j]; %>

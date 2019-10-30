@@ -1,7 +1,7 @@
 <div class="scores-games">
   <% for (let i = 0; i < games.json.length; i += 1) { %>
     <%
-      const {id, home, away, status} = games.json[i];
+      const {id, home, away, status, endTime_utc} = games.json[i];
       const homeTeam = teams.filter(team => team.name === home.name)[0];
       const awayTeam = teams.filter(team => team.name === away.name)[0];
       const gameTeams = [
@@ -42,7 +42,7 @@
           <tr>
             <td class="scores-team">
               <div class="scores-team-logo lazy-img" data-bg="/images/logos/<%= team.abbr %>.svg" aria-hidden="true"></div>
-              <span class="scores-team-name" title="<%= team.name %>">
+              <span class="scores-team-name <%= !final && team.name !== status.possession ? 'is-defense' : '' %>" title="<%= team.name %>">
                 <%= team.short ? team.short : team.name %>
               </span>
               <!-- TODO <span class="scores-team-record">
@@ -68,13 +68,26 @@
         <% }); %>
       </tbody>
       <caption>
+        <%
+          const currentTimestamp = Math.floor(Date.now() / 1000);
+          const lastPlayTime = endTime_utc ? endTime_utc : startTime_utc;
+          const timeDiff = currentTimestamp - lastPlayTime;
+          let timeString = `${timeDiff} sec${timeDiff > 1 ? 's' : ''}`;
+          if (timeDiff > 86400) {
+            timeString = `${Math.round(timeDiff / 86400)} day${Math.round(timeDiff / 86400) > 1 ? 's' : ''}`;
+          } else if (timeDiff > 3600) {
+            timeString = `${Math.round(timeDiff / 3600)} hour${Math.round(timeDiff / 3600) > 1 ? 's' : ''}`;
+          } else if (timeDiff > 60) {
+            timeString = `${Math.round(timeDiff / 60)} min${Math.round(timeDiff / 60) > 1 ? 's' : ''}`;
+          }
+        %>
         <% if (final) { %>
           <a href="<%= `https://redd.it/${id}` %>" class="scores-link" target="_blank" rel="noopener noreferrer">
-            <span>View on reddit &gt;</span>
+            <span>Finished <%= timeString %> ago &gt;</span>
           </div>
         <% } else { %>
           <a href="<%= `https://reddit-stream.com/comments/${id}` %>" class="scores-link" target="_blank" rel="noopener noreferrer">
-            <span>View on reddit-stream &gt;</span>
+            <span>Last play <%= timeString %> ago &gt;</span>
           </div>
         <% } %>
       </caption>

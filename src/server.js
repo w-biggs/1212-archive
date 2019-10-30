@@ -39,7 +39,7 @@ const data = {
   pn,
   wPn,
   season: 2,
-  week: 7,
+  week: 8,
 };
 
 // List of conferences.

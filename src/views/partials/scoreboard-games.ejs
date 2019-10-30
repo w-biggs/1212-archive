@@ -58,7 +58,8 @@
         <a href="<%= `https://reddit-stream.com/comments/${id}` %>" class="scoreboard-stream-link" target="_blank" rel="noopener noreferrer">
           <%
             const currentTimestamp = Math.floor(Date.now() / 1000);
-            const timeDiff = currentTimestamp - score.endTime_utc;
+            const lastPlayTime = score.endTime_utc ? score.endTime_utc : score.startTime_utc;
+            const timeDiff = currentTimestamp - lastPlayTime;
             let timeString = `${timeDiff} sec${timeDiff > 1 ? 's' : ''}`;
             if (timeDiff > 86400) {
               timeString = `${Math.round(timeDiff / 86400)} day${Math.round(timeDiff / 86400) > 1 ? 's' : ''}`;
