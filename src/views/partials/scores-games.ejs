@@ -1,7 +1,7 @@
 <div class="scores-games">
   <% for (let i = 0; i < games.json.length; i += 1) { %>
     <%
-      const {id, home, away, status, endTime_utc} = games.json[i];
+      const {id, home, away, status, endTime_utc, startTime_utc} = games.json[i];
       const homeTeam = teams.filter(team => team.name === home.name)[0];
       const awayTeam = teams.filter(team => team.name === away.name)[0];
       const gameTeams = [
