@@ -2,7 +2,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>OneTwoOneTwo</title>
+  <%
+    let title = '';
+    if (url.startsWith('/scores')) {
+      title += 'Scores - ';
+    } else if (url.startsWith('/standings')) {
+      title += 'Standings - ';
+    } else if (url.startsWith('/stats')) {
+      title += 'Stats - ';
+    }
+    title += 'OneTwoOneTwo';
+  %>
+  <title><%= title %></title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&display=swap&subset=latin-ext">
   <link rel="stylesheet" href="/css/main.css">
   <!-- Search Engine -->
