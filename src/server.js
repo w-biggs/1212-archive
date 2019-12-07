@@ -39,7 +39,7 @@ const data = {
   pn,
   wPn,
   season: 2,
-  week: 8,
+  week: 10,
 };
 
 // List of conferences.
@@ -130,7 +130,7 @@ app.get('/scores/:season/:week/:conf?/', (req, res) => {
     }));
 });
 
-app.post('/reload-scores', (req, res) => {
+app.post('/reload-scoreboard', (req, res) => {
   const scoreData = {};
   getScores(data.season, data.week)
     .then((response) => {

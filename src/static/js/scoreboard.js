@@ -9,7 +9,7 @@ const reloadScores = function reloadScoresWithPostRequest(callback) {
   const scoreboard = document.getElementsByClassName('scoreboard-games')[0];
 
   const request = new XMLHttpRequest();
-  request.open('POST', '/reload-scores');
+  request.open('POST', '/reload-scoreboard');
   request.onreadystatechange = function log() {
     if (request.readyState === 4 && request.status === 200) {
       const placeholderDiv = document.createElement('div');
